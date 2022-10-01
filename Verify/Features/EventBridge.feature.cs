@@ -21,14 +21,14 @@ namespace Verify.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("EventBridge")]
-    [NUnit.Framework.CategoryAttribute("RunThis")]
+    [NUnit.Framework.CategoryAttribute("EventBridge")]
     public partial class EventBridgeFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "RunThis"};
+                "EventBridge"};
         
 #line 1 "EventBridge.feature"
 #line hidden
@@ -38,7 +38,7 @@ namespace Verify.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "EventBridge", null, ProgrammingLanguage.CSharp, new string[] {
-                        "RunThis"});
+                        "EventBridge"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -104,16 +104,10 @@ namespace Verify.Features
             {
                 this.ScenarioStart();
 #line 7
-    testRunner.Given("I log in into AWS EventBridge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
     testRunner.When("I list all rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 8
     testRunner.Then("I check \"pdm-dev-vfy-psvDaq-clock\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 10
-    testRunner.Then("I close the AWS EventBridge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -2,40 +2,36 @@ using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
 using Verify.AWSHandlers;
+using Verify.Context;
 
 namespace Verify.StepDefinitions
 {
     [Binding]
     public class EventBridgeStepDefinitions
     {
-        public EventBridgeHandler eventBridgeHandler;
 
-        [Given(@"I log in into AWS EventBridge")]
-        public void GivenILogInIntoAWSEventBridge()
+        private AWSContext _awsContext;
+
+        public EventBridgeStepDefinitions(AWSContext awsContext)
         {
-            eventBridgeHandler = new EventBridgeHandler();
+            this._awsContext = awsContext;
         }
 
         [When(@"I list all rules")]
         public async Task WhenIListAllRules()
         {
-            await eventBridgeHandler.ListAllRules();
+            await this._awsContext.EventBridgeClient.ListAllRules();
         }
 
         [Then(@"I check ""([^""]*)"" is created")]
         public async Task ThenICheckIsCreated(string name)
         {
-            var found = await eventBridgeHandler.CheckItRuleExist(name);
+            var found = await this._awsContext.EventBridgeClient.CheckItRuleExist(name);
 
             Console.WriteLine("Rule was found? " + found);
 
             Assert.True(found); 
         }
 
-        [Then(@"I close the AWS EventBridge")]
-        public void ThenICloseTheAWSEventBridge()
-        {
-            eventBridgeHandler.closeClient();
-        }
     }
 }

@@ -12,7 +12,7 @@ namespace Verify.AWSHandlers
 {
     public class EventBridgeHandler
     {
-        public AmazonEventBridgeClient client;
+        private AmazonEventBridgeClient client;
         public EventBridgeHandler()
         {
             Console.WriteLine("Creating EventBridge client...");
