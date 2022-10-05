@@ -20,25 +20,22 @@ namespace Verify.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EventBridge")]
-    [NUnit.Framework.CategoryAttribute("EventBridge")]
-    public partial class EventBridgeFeature
+    [NUnit.Framework.DescriptionAttribute("SNS")]
+    public partial class SNSFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "EventBridge"};
+        private string[] _featureTags = ((string[])(null));
         
-#line 1 "EventBridge.feature"
+#line 1 "SNS.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "EventBridge", null, ProgrammingLanguage.CSharp, new string[] {
-                        "EventBridge"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SNS", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,16 +74,29 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check if rule <ruleName> is set")]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaq-clock\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaq-clock\"", null)]
-        public virtual void CheckIfRuleRuleNameIsSet(string ruleName, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Check if rule <topicName> is set")]
+        [NUnit.Framework.CategoryAttribute("SNS")]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqRequests-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqResults-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqRequests-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqResults-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-p1-psvDaqRequests-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-p1-psvDaqResults-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqRequests-topic\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqResults-topic\"", null)]
+        public virtual void CheckIfRuleTopicNameIsSet(string topicName, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "SNS"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("ruleName", ruleName);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if rule <ruleName> is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            argumentsOfScenario.Add("topicName", topicName);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if rule <topicName> is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,11 +116,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.When("I list all rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 8
- testRunner.Then(string.Format("I check {0} is created", ruleName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I list all topics", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+ testRunner.Then(string.Format("I check {0} is available", topicName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

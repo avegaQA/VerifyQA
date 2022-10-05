@@ -2,7 +2,6 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using TechTalk.SpecFlow;
-using Verify.Context;
 
 namespace Verify.Hooks
 {

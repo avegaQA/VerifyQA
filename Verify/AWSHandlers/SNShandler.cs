@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Verify.AWSHandlers
 {
-    internal class SNShandler
+    public class SNShandler : HandlerBase
     {
         public AmazonSimpleNotificationServiceClient client;
 
@@ -22,10 +22,31 @@ namespace Verify.AWSHandlers
 
             var credentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
 
-            this.client = new AmazonSimpleNotificationServiceClient(credentials, RegionEndpoint.USEast2);
+            this.client = new AmazonSimpleNotificationServiceClient(credentials, this.region);
         }
 
-        public static async Task GetTopicListAsync(IAmazonSimpleNotificationService client)
+        public async Task<Boolean> CheckIfTopicExists(String topicName)
+        {
+            string nextToken = string.Empty;
+
+            do
+            {
+                var response = await client.ListTopicsAsync(nextToken);
+                foreach (var topic in response.Topics)
+                {
+                    Console.WriteLine($"{topic.TopicArn}");
+                    if (topic.TopicArn.Contains(topicName))
+                    {
+                        return true;
+                    }
+                }
+                nextToken = response.NextToken;
+            }
+            while (!string.IsNullOrEmpty(nextToken));
+            return false;
+        }
+
+        public async Task GetTopicListAsync()
         {
             string nextToken = string.Empty;
 
@@ -38,12 +59,17 @@ namespace Verify.AWSHandlers
             while (!string.IsNullOrEmpty(nextToken));
         }
 
-        public static void DisplayTopicsList(List<Topic> topicList)
+        public void DisplayTopicsList(List<Topic> topicList)
         {
             foreach (var topic in topicList)
             {
                 Console.WriteLine($"{topic.TopicArn}");
             }
+        }
+
+        public void closeClient()
+        {
+            this.client.Dispose();
         }
     }
 }

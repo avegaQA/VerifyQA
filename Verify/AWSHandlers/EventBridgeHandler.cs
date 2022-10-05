@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Verify.AWSHandlers
 {
-    public class EventBridgeHandler
+    public class EventBridgeHandler : HandlerBase
     {
         private AmazonEventBridgeClient client;
         public EventBridgeHandler()
@@ -22,7 +22,7 @@ namespace Verify.AWSHandlers
 
             var credentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
 
-            this.client = new AmazonEventBridgeClient(credentials, RegionEndpoint.USEast2);
+            this.client = new AmazonEventBridgeClient(credentials, this.region);
 
             Console.WriteLine("EventBridge client created!");
         }

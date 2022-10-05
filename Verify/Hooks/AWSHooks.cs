@@ -25,6 +25,18 @@ namespace Verify.Hooks
             this._awsContext.EventBridgeClient.closeClient();
         }
 
+        [BeforeScenario("SNS")]
+        public void BeforeScenarioSNS()
+        {
+            this._awsContext.SNSClient = new SNShandler();
+        }
+
+        [AfterScenario("SNS")]
+        public void AfterScenarioSNS()
+        {
+            this._awsContext.SNSClient.closeClient();
+        }
+
 
     }
 }

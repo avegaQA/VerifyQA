@@ -2,7 +2,13 @@
 #Keywords Summary :
 @EventBridge
 Feature: EventBridge
-  
-  Scenario: Check if rule is set
-    When I list all rules
-    Then I check "pdm-dev-vfy-psvDaq-clock" is created
+
+Scenario Outline: Check if rule <ruleName> is set
+	When I list all rules
+	Then I check <ruleName> is created
+
+Examples:
+	| ruleName                   |
+	| "pdm-dev-vfy-psvDaq-clock" |
+	| "pdm-ftr-vfy-psvDaq-clock" |
+
