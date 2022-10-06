@@ -74,7 +74,7 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check if rule <topicName> is set")]
+        [NUnit.Framework.DescriptionAttribute("Check if topic is set")]
         [NUnit.Framework.CategoryAttribute("SNS")]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqRequests-topic\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqResults-topic\"", null)]
@@ -84,7 +84,7 @@ namespace Verify.Features
         [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-p1-psvDaqResults-topic\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqRequests-topic\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqResults-topic\"", null)]
-        public virtual void CheckIfRuleTopicNameIsSet(string topicName, string[] exampleTags)
+        public virtual void CheckIfTopicIsSet(string topicName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "SNS"};
@@ -95,7 +95,7 @@ namespace Verify.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("topicName", topicName);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if rule <topicName> is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if topic is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

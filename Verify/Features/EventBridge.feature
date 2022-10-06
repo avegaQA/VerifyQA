@@ -3,7 +3,7 @@
 @EventBridge
 Feature: EventBridge
 
-Scenario Outline: Check if rule <ruleName> is set
+Scenario Outline: Check if rule is set
 	When I list all rules
 	Then I check <ruleName> is created
 
@@ -11,4 +11,5 @@ Examples:
 	| ruleName                   |
 	| "pdm-dev-vfy-psvDaq-clock" |
 	| "pdm-ftr-vfy-psvDaq-clock" |
+	| "pdm-ftr-vfy-psvDaq-clock-fail" |
 

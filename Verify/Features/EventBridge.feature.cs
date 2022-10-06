@@ -77,15 +77,16 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check if rule <ruleName> is set")]
+        [NUnit.Framework.DescriptionAttribute("Check if rule is set")]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaq-clock\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaq-clock\"", null)]
-        public virtual void CheckIfRuleRuleNameIsSet(string ruleName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaq-clock-fail\"", null)]
+        public virtual void CheckIfRuleIsSet(string ruleName, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ruleName", ruleName);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if rule <ruleName> is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if rule is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

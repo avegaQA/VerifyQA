@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verify.Hooks;
 
 namespace Verify.AWSHandlers
 {
@@ -47,8 +48,8 @@ namespace Verify.AWSHandlers
 
                 foreach (var rule in rules)
                 {
-                    Console.WriteLine("The rule name is " + rule.Name);
-                    Console.WriteLine("The rule ARN is " + rule.Arn);
+                    this.LogAndReport("The rule name is " + rule.Name);
+                    this.LogAndReport("The rule ARN is " + rule.Arn);
                 };
                 Console.WriteLine("Rules Printed....");
             }

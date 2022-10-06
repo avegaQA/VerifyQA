@@ -13,12 +13,15 @@ namespace Verify.Hooks
         private static ExtentTest scenario;
         private static ExtentReports extent;
 
+        private ScenarioContext _scenarioContext;
+        public static String testStepText;
+
         [BeforeTestRun]
         public static void ReportIni()
         {
-            Console.WriteLine("Start reports");
-            String path = Directory.GetCurrentDirectory() + @"\Reports\ExtentReport.html";
-            Console.WriteLine("Report will be available at:" + path);
+            String workingDirectory = Environment.CurrentDirectory;
+
+            String path = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\Reports\ExtentReport.html";
 
             var htmlReporter = new ExtentHtmlReporter(path);
 
@@ -46,9 +49,45 @@ namespace Verify.Hooks
         }
 
         [AfterStep]
-        public void InsertreportingSteps()
+        public void InsertreportingSteps(ScenarioContext scenarioContext)
         {
-            scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+            String stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
+
+            _scenarioContext = scenarioContext;
+
+            if (_scenarioContext.TestError == null)
+            {
+                if (stepType.Equals("Given"))
+                    scenario.CreateNode<Given>("<b>"+ScenarioStepContext.Current.StepInfo.Text+"</b>").Info(testStepText);
+                else if (stepType.Equals("When"))
+                    scenario.CreateNode<When>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Info(testStepText);
+                else if (stepType.Equals("Then"))
+                    scenario.CreateNode<Then>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Info(testStepText);
+                else
+                    scenario.CreateNode<And>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Info(testStepText);
+            }
+            else
+            {
+                String errorMessage = _scenarioContext.TestError.Message;
+                if (stepType.Equals("Given"))
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                else if (stepType.Equals("When"))
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                else if (stepType.Equals("Then"))
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                else
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+            }
+
+            testStepText = "";
+
+
+
+        }
+
+        public static void defineTestText(String log)
+        {
+            testStepText += "&nbsp;&nbsp;<i>->" + log+ "</i><br>";
         }
 
     }

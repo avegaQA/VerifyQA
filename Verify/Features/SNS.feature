@@ -4,7 +4,7 @@ A short summary of the feature
 
 @SNS
 
-Scenario Outline: Check if rule <topicName> is set
+Scenario Outline: Check if topic is set
 	When I list all topics
 	Then I check <topicName> is available
 

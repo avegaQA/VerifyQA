@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verify.Hooks;
 
 namespace Verify.AWSHandlers
 {
@@ -63,7 +64,8 @@ namespace Verify.AWSHandlers
         {
             foreach (var topic in topicList)
             {
-                Console.WriteLine($"{topic.TopicArn}");
+                //Console.WriteLine($"{topic.TopicArn}");
+                this.LogAndReport("The Topic ARN is " + topic.TopicArn);
             }
         }
 
