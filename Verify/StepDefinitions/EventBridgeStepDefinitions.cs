@@ -7,7 +7,7 @@ using Verify.Context;
 namespace Verify.StepDefinitions
 {
     [Binding]
-    public class EventBridgeStepDefinitions
+    public class EventBridgeStepDefinitions : TestBase
     {
 
         private AWSContext _awsContext;

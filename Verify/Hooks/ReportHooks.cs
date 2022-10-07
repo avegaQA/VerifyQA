@@ -70,13 +70,13 @@ namespace Verify.Hooks
             {
                 String errorMessage = _scenarioContext.TestError.Message;
                 if (stepType.Equals("Given"))
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<Given>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
                 else if (stepType.Equals("When"))
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<When>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
                 else if (stepType.Equals("Then"))
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<Then>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
                 else
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<And>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
             }
 
             testStepText = "";
@@ -87,6 +87,7 @@ namespace Verify.Hooks
 
         public static void defineTestText(String log)
         {
+            log = log.Replace("\n", "<br>");
             testStepText += "&nbsp;&nbsp;<i>->" + log+ "</i><br>";
         }
 

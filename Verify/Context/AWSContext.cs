@@ -9,5 +9,7 @@ namespace Verify.Context
 
         public SNShandler SNSClient { get; set; }
 
+        public CloudWatchLogsHandler CloudWatchLogsClient { get; set; }
+
     }
 }

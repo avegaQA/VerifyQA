@@ -6,7 +6,7 @@ using Verify.Context;
 namespace Verify.StepDefinitions
 {
     [Binding]
-    public class SNSStepDefinitions
+    public class SNSStepDefinitions : TestBase
     {
         private AWSContext _awsContext;
 

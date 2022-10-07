@@ -64,9 +64,25 @@ namespace Verify.AWSHandlers
         {
             foreach (var topic in topicList)
             {
-                //Console.WriteLine($"{topic.TopicArn}");
                 this.LogAndReport("The Topic ARN is " + topic.TopicArn);
             }
+        }
+
+        public async Task pubTopicAsync(String message, String topicArn)
+        {
+            Dictionary<string, MessageAttributeValue> messageAttributes = new Dictionary<string, MessageAttributeValue>();
+
+            messageAttributes.Add("message_destinations", new MessageAttributeValue() { 
+                DataType = "String.Array",
+                StringValue = "[\"null-primary-source\"]"
+            });
+
+            PublishRequest request = new PublishRequest(topicArn, message, "This is an automated test");
+
+            request.MessageAttributes = messageAttributes;
+            PublishResponse response =  await client.PublishAsync(request);
+            this.LogAndReport("Message ID: " + response.MessageId);
+            this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
         }
 
         public void closeClient()
