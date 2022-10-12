@@ -88,6 +88,7 @@ namespace Verify.Hooks
         public static void defineTestText(String log)
         {
             log = log.Replace("\n", "<br>");
+            log = log.Replace("\t", "&nbsp;");
             testStepText += "&nbsp;&nbsp;<i>->" + log+ "</i><br>";
         }
 

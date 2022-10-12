@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verify.Context;
 using Verify.Hooks;
 
 namespace Verify.AWSHandlers
@@ -83,6 +84,18 @@ namespace Verify.AWSHandlers
             PublishResponse response =  await client.PublishAsync(request);
             this.LogAndReport("Message ID: " + response.MessageId);
             this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
+        }
+
+        public async Task pubTopicAsyncWithAttr(String message, String topicArn, Dictionary<string, MessageAttributeValue> messageAttributes)
+        {
+
+            PublishRequest request = new PublishRequest(topicArn, message, "This is an automated test");
+
+            request.MessageAttributes = messageAttributes;
+            PublishResponse response = await client.PublishAsync(request);
+            this.LogAndReport("Message ID: " + response.MessageId);
+            this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
+            if (AWSContext.troubleShootReports) this.LogAndReport("Message: " + message);
         }
 
         public void closeClient()

@@ -37,6 +37,18 @@ namespace Verify.Hooks
             this._awsContext.SNSClient.closeClient();
         }
 
+        [BeforeScenario("CloudWatchLogs")]
+        public void BeforeScenarioCloudWatchLogs()
+        {
+            this._awsContext.CloudWatchLogsClient = new CloudWatchLogsHandler();
+        }
+
+        [AfterScenario("CloudWatchLogs")]
+        public void AfterScenarioCloudWatchLogs()
+        {
+            this._awsContext.CloudWatchLogsClient.closeClient();
+        }
+
 
     }
 }

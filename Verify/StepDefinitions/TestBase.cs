@@ -11,6 +11,8 @@ namespace Verify.StepDefinitions
 {
     public class TestBase
     {
+
+        public JObject payload = new JObject();
         public void LogAndReport(String log)
         {
             Console.WriteLine(log);

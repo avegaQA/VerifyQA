@@ -1,4 +1,4 @@
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
 using TechTalk.SpecFlow;
 using Verify.Context;
@@ -24,9 +24,9 @@ namespace Verify.StepDefinitions
 
             JObject payload = this.readJSONfile("Retrieve_LicensePSVData.json");
 
-            payload["messageId"]     = id;
+            payload["messageId"] = id;
             payload["correlationId"] = id;
-            payload["causationId"]   = id;
+            payload["causationId"] = id;
 
             this.LogAndReport("Payload message ID: " + payload["messageId"]);
 
@@ -36,7 +36,7 @@ namespace Verify.StepDefinitions
         [Then(@"I verify the Cloudwatch logs")]
         public void ThenIVerifyTheCloudwatchLogs()
         {
-            
+
         }
     }
 }
