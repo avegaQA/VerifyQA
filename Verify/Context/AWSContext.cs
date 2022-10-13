@@ -7,6 +7,10 @@ namespace Verify.Context
 {
     public class AWSContext
     {
+        public static Boolean reportLog = true;
+
+        public static Boolean consoleLog = true;
+
         public static Boolean troubleShootReports = true;
 
         public String messsageID { get; set; }

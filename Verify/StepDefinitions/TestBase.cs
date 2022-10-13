@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verify.Context;
 using Verify.Hooks;
 
 namespace Verify.StepDefinitions
@@ -15,8 +16,13 @@ namespace Verify.StepDefinitions
         public JObject payload = new JObject();
         public void LogAndReport(String log)
         {
-            Console.WriteLine(log);
-            ReportHooks.defineTestText(log);
+            if (AWSContext.consoleLog) Console.WriteLine(log);
+            if (AWSContext.reportLog) ReportHooks.defineTestText(log);
+        }
+
+        public void addLinkToReport(String link, String text)
+        {
+            ReportHooks.addLinkToReport(link, text);
         }
 
         public JObject readJSONfile(String fileName)

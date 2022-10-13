@@ -71,8 +71,10 @@ namespace Verify.AWSHandlers
 
             List<LogStream> logStreams = await getLastStreams(groupName, 3);
 
+            
             foreach(LogStream logStream in logStreams)
             {
+                Console.WriteLine("Starting search in: " + logStream.LogStreamName);
                 logMessages = await getCWlogEventsAsync(groupName, logStream.LogStreamName);
 
                 foreach(String logMessage in logMessages)

@@ -1,4 +1,5 @@
 using Amazon.SimpleNotificationService.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using TechTalk.SpecFlow;
 using Verify.Context;
@@ -42,6 +43,23 @@ namespace Verify.StepDefinitions
                 StringValue = "[\"IABoardOfMedicine\"]"
             });
         }
+
+        [Then(@"I parse the json response for IOWA Board of medicine")]
+        public void ThenIParseTheJsonResponseForIOWABoardOfMedicine()
+        {
+            String resp = this._awsContext.response["@m"].ToString().Replace("PSV result parsed: ", "") + "}";
+            this._awsContext.response = JObject.Parse(resp);
+            if (AWSContext.troubleShootReports) this.LogAndReport(this._awsContext.response.ToString());
+        }
+
+        [Then(@"I check proof of artifact")]
+        public void ThenICheckProofOfArtifact()
+        {
+            String path = this._awsContext.response.SelectToken("_links.get_proofArtifact.href").ToString();
+            this.addLinkToReport(path, "Click here to see PDF");
+        }
+
+
 
     }
 }

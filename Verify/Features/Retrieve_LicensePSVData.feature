@@ -1,6 +1,8 @@
 ﻿
 @SNS
 @CloudWatchLogs
+@ignore
+@Ignore
 Feature: Retrieve_LicensePSVData
   
   Scenario: Retrieve_LicensePSVData

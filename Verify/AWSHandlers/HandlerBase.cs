@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Amazon;
+using Verify.Context;
 using Verify.Hooks;
 
 namespace Verify.AWSHandlers
@@ -14,8 +15,9 @@ namespace Verify.AWSHandlers
 
         public void LogAndReport(String log)
         {
-            Console.WriteLine(log);
-            ReportHooks.defineTestText(log);
+            
+            if (AWSContext.consoleLog) Console.WriteLine(log);
+            if (AWSContext.reportLog) ReportHooks.defineTestText(log);
         }
     }
 }

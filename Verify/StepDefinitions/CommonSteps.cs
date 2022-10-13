@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,8 +43,8 @@ namespace Verify.StepDefinitions
         [When(@"I publish the json to the ""([^""]*)"" arn")]
         public async Task WhenIPublishTheJsonToTheArnAsync(string arnName)
         {
-            await this._awsContext.SNSClient.pubTopicAsyncWithAttr(this._awsContext.payload.ToString(), 
-                arnName , 
+            await this._awsContext.SNSClient.pubTopicAsyncWithAttr(this._awsContext.payload.ToString(),
+                arnName,
                 this._awsContext.snsMessageAttributes);
         }
 
@@ -53,19 +54,35 @@ namespace Verify.StepDefinitions
         {
             int attempts = 10;
             String log;
-            for(int i = 0; i < attempts; i++)
+            for (int i = 0; i < attempts; i++)
             {
+                Console.WriteLine("Starting log search attempt " + i + "/" + attempts);
                 Thread.Sleep(10000);
                 log = await this._awsContext.CloudWatchLogsClient.getLogByMessageId(this._awsContext.messsageID, groupName);
-                if(log != null)
+                if (log != null)
                 {
-                    if(AWSContext.troubleShootReports) this.LogAndReport(log);
+                    Console.WriteLine("log Found!");
+                    Console.WriteLine(log);
+                    if (AWSContext.troubleShootReports) this.LogAndReport(log);
                     this._awsContext.response = JObject.Parse(log);
                     break;
                 }
             }
-            
+
         }
+
+        [Then(@"I verify the key ""([^""]*)"" with the value ""([^""]*)""")]
+        public void ThenIVerifyTheKeyWithTheValue(string key, string value)
+        {
+
+            String real = value.ToLower().Replace(" ", "");
+            String expected = this._awsContext.response.SelectToken(key).ToString().ToLower().Replace(" ","");
+            this.LogAndReport("Expected value: " + value);
+            this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(key));
+
+            Assert.AreEqual(real, expected);
+        }
+
 
 
     }

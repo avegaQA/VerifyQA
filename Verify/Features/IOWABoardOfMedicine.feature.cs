@@ -81,14 +81,16 @@ namespace Verify.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search by name")]
-        [NUnit.Framework.TestCaseAttribute("Fred", "Goldblatt", "DO-02020", null)]
-        public virtual void SearchByName(string firstName, string lastName, string licenseNumber, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Fred", "Goldblatt", "DO-02020", "Jan 31 1984 12:00AM", "11/01/2024", null)]
+        public virtual void SearchByName(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("firstName", firstName);
             argumentsOfScenario.Add("lastName", lastName);
             argumentsOfScenario.Add("licenseNumber", licenseNumber);
+            argumentsOfScenario.Add("issueDate", issueDate);
+            argumentsOfScenario.Add("expirationDate", expirationDate);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search by name", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
@@ -135,6 +137,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.Then("I look for the messageId in CloudWatchLogs group \"/aws/lambda/pdm-dev-vfy-daqWork" +
                         "ers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 16
+ testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.And(string.Format("I verify the key \"licenseDetails.issueDate\" with the value \"{0}\"", issueDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+ testRunner.And(string.Format("I verify the key \"licenseDetails.expirationDate\" with the value \"{0}\"", expirationDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.And(string.Format("I verify the key \"licenseDetails.licenseNumber\" with the value \"{0}\"", licenseNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+ testRunner.And("I check proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -70,13 +70,13 @@ namespace Verify.Hooks
             {
                 String errorMessage = _scenarioContext.TestError.Message;
                 if (stepType.Equals("Given"))
-                    scenario.CreateNode<Given>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<Given>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "<br>" + testStepText + "</i>");
                 else if (stepType.Equals("When"))
-                    scenario.CreateNode<When>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<When>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "<br>" + testStepText + "</i>");
                 else if (stepType.Equals("Then"))
-                    scenario.CreateNode<Then>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<Then>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "<br>" + testStepText + "</i>");
                 else
-                    scenario.CreateNode<And>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "</i>");
+                    scenario.CreateNode<And>("<b>" + ScenarioStepContext.Current.StepInfo.Text + "</b>").Fail("<i>" + errorMessage + "<br>" + testStepText + "</i>");
             }
 
             testStepText = "";
@@ -87,9 +87,14 @@ namespace Verify.Hooks
 
         public static void defineTestText(String log)
         {
-            log = log.Replace("\n", "<br>");
-            log = log.Replace("\t", "&nbsp;");
+            //log = log.Replace("\n", "<br>");
+            //log = log.Replace("\t", "&nbsp;");
             testStepText += "&nbsp;&nbsp;<i>->" + log+ "</i><br>";
+        }
+
+        public static void addLinkToReport(String link, String text)
+        {
+            testStepText = "<a href= \"" + link + "\">" + text + "</a>";
         }
 
     }

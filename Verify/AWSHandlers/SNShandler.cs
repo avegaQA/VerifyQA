@@ -96,6 +96,8 @@ namespace Verify.AWSHandlers
             this.LogAndReport("Message ID: " + response.MessageId);
             this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
             if (AWSContext.troubleShootReports) this.LogAndReport("Message: " + message);
+            Console.WriteLine("SNS topic: " + topicArn);
+            Console.WriteLine("SNS Message: " + message);
         }
 
         public void closeClient()
