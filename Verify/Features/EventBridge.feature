@@ -11,5 +11,4 @@ Examples:
 	| ruleName                   |
 	| "pdm-dev-vfy-psvDaq-clock" |
 	| "pdm-ftr-vfy-psvDaq-clock" |
-	| "pdm-ftr-vfy-psvDaq-clock-fail" |
 

@@ -53,11 +53,12 @@ namespace Verify.StepDefinitions
         public async Task ThenILookForTheMessageIdInCloudWatchLogsGroupAsync(string groupName)
         {
             int attempts = 10;
-            String log;
+            int waitBetweenAttempts = 10000;
+            String log = null;
             for (int i = 0; i < attempts; i++)
             {
                 Console.WriteLine("Starting log search attempt " + i + "/" + attempts);
-                Thread.Sleep(10000);
+                Thread.Sleep(waitBetweenAttempts);
                 log = await this._awsContext.CloudWatchLogsClient.getLogByMessageId(this._awsContext.messsageID, groupName);
                 if (log != null)
                 {
@@ -69,11 +70,23 @@ namespace Verify.StepDefinitions
                 }
             }
 
+            if(AWSContext.troubleShootReports){
+                if (this._awsContext.CloudWatchLogsClient.errorLog.Count() > 0)
+                    this.LogAndReport("Error / Exception found in CW logs");
+                foreach (String cwLog in this._awsContext.CloudWatchLogsClient.errorLog)
+                {
+                    this.LogAndReport(cwLog);
+                }
+            }
+ 
+            Assert.NotNull(log);
+
         }
 
         [Then(@"I verify the key ""([^""]*)"" with the value ""([^""]*)""")]
         public void ThenIVerifyTheKeyWithTheValue(string key, string value)
         {
+            if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
 
             String real = value.ToLower().Replace(" ", "");
             String expected = this._awsContext.response.SelectToken(key).ToString().ToLower().Replace(" ","");

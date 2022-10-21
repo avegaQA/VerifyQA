@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@8539670db814bf19a0ddbe9a6d19058aea0cf981/spark/css/spark-style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa bdd-report">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary"></span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">10/21/2022 6:28:21 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row test-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tests</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>						<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																														<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+								            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">EventBridge</p> 
+								<p class="duration text-sm">0h:0m:1s+100ms</p> 
+								<span class="datetime">18:28:21 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">EventBridge</h5>
+										<span class='badge badge-success'>10/21/2022 6:28:21 PM</span>
+										<span class='badge badge-danger'>10/21/2022 6:28:22 PM</span>
+										<span class='badge badge-default'>0h:0m:1s+100ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if rule is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all rules</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The rule name is AutoScalingManagedRule</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/AutoScalingManagedRule</i><br>&nbsp;&nbsp;<i>->The rule name is aws-controltower-ConfigComplianceChangeEventRule</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/aws-controltower-ConfigComplianceChangeEventRule</i><br>&nbsp;&nbsp;<i>->The rule name is pdm-dev-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/pdm-dev-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule name is pdm-ftr-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/pdm-ftr-vfy-psvDaq-clock</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-dev-vfy-psvDaq-clock" is created</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if rule is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all rules</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The rule name is AutoScalingManagedRule</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/AutoScalingManagedRule</i><br>&nbsp;&nbsp;<i>->The rule name is aws-controltower-ConfigComplianceChangeEventRule</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/aws-controltower-ConfigComplianceChangeEventRule</i><br>&nbsp;&nbsp;<i>->The rule name is pdm-dev-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/pdm-dev-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule name is pdm-ftr-vfy-psvDaq-clock</i><br>&nbsp;&nbsp;<i>->The rule ARN is arn:aws:events:us-east-2:379493731719:rule/pdm-ftr-vfy-psvDaq-clock</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-ftr-vfy-psvDaq-clock" is created</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="fail" author="" device="" tag="" test-id="8"> 
+						<div class="status-avatar fail-bg">
+							<i class="fa fa-times text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">IOWA Board of Medicine</p> 
+								<p class="duration text-sm">0h:4m:13s+035ms</p> 
+								<span class="datetime">18:28:22 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-fail">IOWA Board of Medicine</h5>
+										<span class='badge badge-success'>10/21/2022 6:28:22 PM</span>
+										<span class='badge badge-danger'>10/21/2022 6:32:35 PM</span>
+										<span class='badge badge-default'>0h:4m:13s+035ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search doctor</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Fred"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Goldblatt"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "DO-02020"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 46422_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 83024fe0-1672-55e0-8c28-142d3b2a248f</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check for error messages</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:28:52.2007859Z","messageId":"b0d8cdab-ecb2-4629-8c87-9c5b49fa2795","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"46422_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-10-21T23:28:52.1928427+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/46422_AUTOTEST/iaBoardOfMedicineProofArtifact-46422_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.issueDate" with the value "Jan 31 1984 12:00AM"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: Jan 31 1984 12:00AM</i><br>&nbsp;&nbsp;<i>->Real value: Jan 31 1984 12:00AM</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.expirationDate" with the value "11/01/2024"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 11/01/2024</i><br>&nbsp;&nbsp;<i>->Real value: 11/01/2024</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.licenseNumber" with the value "DO-02020"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: DO-02020</i><br>&nbsp;&nbsp;<i>->Real value: DO-02020</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check the disciplinary records to match with "0"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 0</i><br>&nbsp;&nbsp;<i>->Real value: 0</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check proof of artifact</b></span>
+                            </div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/46422_AUTOTEST/iaBoardOfMedicineProofArtifact-46422_AUTOTEST.pdf">Click here to see PDF</a></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search doctor</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Sally"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Smith"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "R-12632"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 45114_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 5b46e322-a4c8-50f6-a9e6-b8ef894ca5de</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check for error messages</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:29:37.4333258Z","messageId":"6222d0c3-a626-4bf0-a145-d984b6b7ba8d","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"45114_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"R-12632","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"06/08/2022","expirationDate":"06/30/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Sally","lastName":"Smith"},"dataAcquiredOn":"2022-10-21T23:29:37.4253844+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/45114_AUTOTEST/iaBoardOfMedicineProofArtifact-45114_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.issueDate" with the value "06/08/2022"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 06/08/2022</i><br>&nbsp;&nbsp;<i>->Real value: 06/08/2022</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.expirationDate" with the value "06/30/2024"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 06/30/2024</i><br>&nbsp;&nbsp;<i>->Real value: 06/30/2024</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.licenseNumber" with the value "R-12632"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: R-12632</i><br>&nbsp;&nbsp;<i>->Real value: R-12632</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check the disciplinary records to match with "0"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 0</i><br>&nbsp;&nbsp;<i>->Real value: 0</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check proof of artifact</b></span>
+                            </div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/45114_AUTOTEST/iaBoardOfMedicineProofArtifact-45114_AUTOTEST.pdf">Click here to see PDF</a></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search doctor</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Kathleen"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Jones"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "MD-32008"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 57706_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 8ff76e09-285d-5e55-af31-35c405f28d70</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check for error messages</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:30:15.9134Z","messageId":"094b625b-9cd7-44e7-adae-39578b113041","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"57706_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"MD-32008","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"010","issueDate":"Aug 12 1997 12:00AM","expirationDate":"12/01/2022","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Kathleen","lastName":"Jones"},"dataAcquiredOn":"2022-10-21T23:30:15.9130573+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/57706_AUTOTEST/iaBoardOfMedicineProofArtifact-57706_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.issueDate" with the value "Aug 12 1997 12:00AM"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: Aug 12 1997 12:00AM</i><br>&nbsp;&nbsp;<i>->Real value: Aug 12 1997 12:00AM</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.expirationDate" with the value "12/01/2022"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 12/01/2022</i><br>&nbsp;&nbsp;<i>->Real value: 12/01/2022</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.licenseNumber" with the value "MD-32008"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: MD-32008</i><br>&nbsp;&nbsp;<i>->Real value: MD-32008</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check the disciplinary records to match with "0"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 0</i><br>&nbsp;&nbsp;<i>->Real value: 0</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check proof of artifact</b></span>
+                            </div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/57706_AUTOTEST/iaBoardOfMedicineProofArtifact-57706_AUTOTEST.pdf">Click here to see PDF</a></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search doctor</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Abigail"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Scrogum"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "R-12485"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 88380_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: f928eccb-5756-5e07-9d71-b7067a86208c</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
+                                </span>
+                                <span>Then <b>I check for error messages</b></span>
+                            </div>
+			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:30:39.4287408Z","messageId":"3b383cfc-63c8-4260-9078-bd5c34f7b685","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"88380_AUTOTEST","data":{"errorMessage":"The operation has been rate-limited and should be retried after 00:00:00.9099043"}}</i><br></i></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search doctor</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Kirk"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Smith"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "NA"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 81590_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 4655c0ec-f924-501c-b607-9b21d4c2acba</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
+                                </span>
+                                <span>Then <b>I check for error messages</b></span>
+                            </div>
+			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:31:10.5620623Z","messageId":"d7df182f-9a5c-4ad5-b11a-f8f95a6ab591","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"81590_AUTOTEST","data":{"errorMessage":"The request signature we calculated does not match the signature you provided. Check your key and signing method."}}</i><br></i></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Search in a non existant board</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "Alfonso"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "Vega"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "QA"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the destination to "PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 85983_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 40376d39-7f88-58a6-8fcd-36f4518f82e9</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PsvDaqMessage_Misdelivered","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:31:40.6839177Z","messageId":"746154fd-e724-49c9-a723-e18483705e11","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"85983_AUTOTEST","data":{"misdeliveredMessage":{"version":"1.0","messageType":"Retrieve_LicensePSVData","source":"PSV-DAQ | Scheduled License Monitoring Initiator","destination":"PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine","sendDate":"2022-02-16T19:42:00Z","messageId":"85983_AUTOTEST","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"037c5027-daae-442e-976c-90050abbc254","data":{"licenseHash":"x01","searchAttributes":{"licenseNumber":"QA","licenseType":"state_issued","primarySource":"CA","fieldOfLicensure":"015","individualNames":[{"firstName":"Alfonso","lastName":"Vega"}],"businessNames":[]},"subscribingSystemIds":["sVerify","sDirectory"]}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "destination" with the value "PSV-DAQ | Failures"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: PSV-DAQ | Failures</i><br>&nbsp;&nbsp;<i>->Real value: PSV - DAQ | Failures</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "messageType" with the value "PsvDaqMessage_Misdelivered"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: PsvDaqMessage_Misdelivered</i><br>&nbsp;&nbsp;<i>->Real value: PsvDaqMessage_Misdelivered</i><br></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: User does not exist</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the first name "aqweds"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the last name "sdftrtf"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the license number "sdftgfddsf"</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 19716_AUTOTEST</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: ca33a1fa-a6ee-5896-94cd-fa3788c7ee87</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"RetrievingDataFromPrimarySource_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:32:17.18845Z","messageId":"16254803-b440-42fc-a7e8-b53abe07a7c6","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"19716_AUTOTEST","data":{"errorMessage":"Not license found in the external PSV System. Inner errors: [\u0022No Record Found\u0022]"}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "destination" with the value "PSV-DAQ | Failures"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: PSV-DAQ | Failures</i><br>&nbsp;&nbsp;<i>->Real value: PSV - DAQ | Failures</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "messageType" with the value "RetrievingDataFromPrimarySource_Failed"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: RetrievingDataFromPrimarySource_Failed</i><br>&nbsp;&nbsp;<i>->Real value: RetrievingDataFromPrimarySource_Failed</i><br></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="102"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Retrieve_LicensePSVData</p> 
+								<p class="duration text-sm">0h:0m:0s+553ms</p> 
+								<span class="datetime">18:32:35 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">Retrieve_LicensePSVData</h5>
+										<span class='badge badge-success'>10/21/2022 6:32:35 PM</span>
+										<span class='badge badge-danger'>10/21/2022 6:32:36 PM</span>
+										<span class='badge badge-default'>0h:0m:0s+553ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Retrieve_LicensePSVData</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the payload to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload message ID: 70571_AUTOTEST</i><br>&nbsp;&nbsp;<i>->Message ID: cb5ba7ce-6fa9-5895-a490-fc0341fcc178</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the Cloudwatch logs</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="106"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">SNS</p> 
+								<p class="duration text-sm">0h:0m:1s+452ms</p> 
+								<span class="datetime">18:32:36 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">SNS</h5>
+										<span class='badge badge-success'>10/21/2022 6:32:36 PM</span>
+										<span class='badge badge-danger'>10/21/2022 6:32:37 PM</span>
+										<span class='badge badge-default'>0h:0m:1s+452ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-dev-vfy-p1-psvDaqRequests-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-dev-vfy-p1-psvDaqResults-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-dev-vfy-psvDaqRequests-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-dev-vfy-psvDaqResults-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-ftr-vfy-p1-psvDaqRequests-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-ftr-vfy-p1-psvDaqResults-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-ftr-vfy-psvDaqRequests-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Check if topic is set</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I list all topics</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check "pdm-ftr-vfy-psvDaqResults-topic" is available</b></span>
+                            </div>
+			<div class="details"></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>
+										<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='parent-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='75%'>
+	                    <b>3</b> features passed
+                    </small></div>
+	                <div>
+	                    <small data-tooltip='25%'><b>1</b> features failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='child-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='88.88888888888889%'><b>16</b> scenarios passed</small></div>
+	                <div>
+	                    <small data-tooltip='11.11111111111111%'><b>2</b> scenarios failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+				<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='grandchild-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='98.14814814814815%'><b>106</b> steps passed</small></div>
+	                <div>
+	                    <small data-tooltip='1.8518518518518516%'><b>2</b> steps failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light">4</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>75%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light">18</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>88.89%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Start</h6>
+							<h6 class="font-weight-light">10/21/2022 6:28:21 PM</h6>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Duration</h6>
+							<h6 class="font-weight-light">00:04:16.1683815</h6>
+							<span class="text-semibold text-danger font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-danger opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+							</div>
+</div>
+<script>
+	var statusGroup = {
+    parentCount: 4,
+		passParent: 3,
+		failParent: 1,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 1,
+		childCount: 18,
+		passChild: 16,
+		failChild: 2,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 2,
+		grandChildCount: 108,
+		passGrandChild: 106,
+		failGrandChild: 2,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 2,
+	};
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@cc89904c1a12065be1d08fc4994a258ef01b12bd/spark/js/scripts.js"></script>
+<script type='text/javascript'>
+	
+</script>
+</body>
+
+</html>

@@ -13,6 +13,8 @@ namespace Verify.AWSHandlers
     {
         public AmazonCloudWatchLogsClient client;
 
+        public List<string> errorLog = new List<string>();
+
         public CloudWatchLogsHandler()
         {
             var AWS_ACCESS_KEY_ID = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID");
@@ -79,7 +81,15 @@ namespace Verify.AWSHandlers
 
                 foreach(String logMessage in logMessages)
                 {
-                    if (logMessage.Contains(messageid) && logMessage.Contains("PSV result parsed")) return logMessage;
+                    if((logMessage.ToLower().Contains("error") || logMessage.ToLower().Contains("exception") || logMessage.ToLower().Contains("fail")) 
+                        && !errorLog.Contains(logMessage) && logMessage.Contains(messageid))
+                        this.errorLog.Add(logMessage);
+                    if (logMessage.Contains(messageid) && logMessage.Contains("Message published"))
+                    {
+                        this.LogAndReport("Log found in: " + logStream.LogStreamName);
+                        return logMessage;
+                    }
+                        
                 }
             }
 

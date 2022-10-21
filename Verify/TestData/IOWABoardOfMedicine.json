@@ -18,14 +18,6 @@
         {
           "firstName": "Sally",
           "lastName": "Smith"
-        },
-        {
-          "firstName": "Jim",
-          "lastName": "Doe"
-        },
-        {
-          "firstName": "Jim",
-          "lastName": "Smith"
         }
       ],
       "businessNames": []

@@ -11,7 +11,7 @@ namespace Verify.Context
 
         public static Boolean consoleLog = true;
 
-        public static Boolean troubleShootReports = true;
+        public static Boolean troubleShootReports = false;
 
         public String messsageID { get; set; }
         public EventBridgeHandler EventBridgeClient { get; set; }
@@ -20,9 +20,13 @@ namespace Verify.Context
 
         public CloudWatchLogsHandler CloudWatchLogsClient { get; set; }
 
+        public RDSHandler RDSClient { get; set; }
+
         public JObject payload { get; set; }
 
         public JObject response { get; set; }
+
+        //private readonly ISecretsManager _secretsManager;
 
         public Dictionary<string, MessageAttributeValue> snsMessageAttributes = new Dictionary<string, MessageAttributeValue>();
 

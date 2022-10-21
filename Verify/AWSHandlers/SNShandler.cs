@@ -17,6 +17,8 @@ namespace Verify.AWSHandlers
     {
         public AmazonSimpleNotificationServiceClient client;
 
+        public String messageID;
+
         public SNShandler()
         {
             var AWS_ACCESS_KEY_ID       = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID");
@@ -83,6 +85,7 @@ namespace Verify.AWSHandlers
             request.MessageAttributes = messageAttributes;
             PublishResponse response =  await client.PublishAsync(request);
             this.LogAndReport("Message ID: " + response.MessageId);
+            this.messageID = response.MessageId;
             this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
         }
 
@@ -95,7 +98,7 @@ namespace Verify.AWSHandlers
             PublishResponse response = await client.PublishAsync(request);
             this.LogAndReport("Message ID: " + response.MessageId);
             this.LogAndReport("Status: " + response.HttpStatusCode.ToString());
-            if (AWSContext.troubleShootReports) this.LogAndReport("Message: " + message);
+            this.LogAndReport("Message: " + message);
             Console.WriteLine("SNS topic: " + topicArn);
             Console.WriteLine("SNS Message: " + message);
         }

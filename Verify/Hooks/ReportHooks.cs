@@ -20,10 +20,17 @@ namespace Verify.Hooks
         public static void ReportIni()
         {
             String workingDirectory = Environment.CurrentDirectory;
+            String rootPath = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
 
-            String path = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\Reports\ExtentReport.html";
+            DateTime now = DateTime.Now;
+            String folderName = now.ToString("yyyy-MM-dd_HH.mm.ss");
+            String reportFolderPath = rootPath + @"\Reports\" + folderName;
 
-            var htmlReporter = new ExtentHtmlReporter(path);
+            Directory.CreateDirectory(reportFolderPath);
+
+            String reportPath = reportFolderPath + @"\ExtentReport.html";
+
+            var htmlReporter = new ExtentHtmlReporter(reportPath);
 
             extent =  new ExtentReports();
             extent.AttachReporter(htmlReporter);
