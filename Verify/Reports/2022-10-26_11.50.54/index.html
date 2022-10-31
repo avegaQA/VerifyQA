@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">10/21/2022 6:28:21 PM</span>
+                    <span class="badge badge-primary">10/26/2022 11:50:54 AM</span>
                 </a>
             </li>
         </ul>
@@ -119,8 +119,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">EventBridge</p> 
-								<p class="duration text-sm">0h:0m:1s+100ms</p> 
-								<span class="datetime">18:28:21 PM</span>
+								<p class="duration text-sm">0h:0m:1s+014ms</p> 
+								<span class="datetime">11:50:54 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -128,9 +128,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">EventBridge</h5>
-										<span class='badge badge-success'>10/21/2022 6:28:21 PM</span>
-										<span class='badge badge-danger'>10/21/2022 6:28:22 PM</span>
-										<span class='badge badge-default'>0h:0m:1s+100ms</span>
+										<span class='badge badge-success'>10/26/2022 11:50:54 AM</span>
+										<span class='badge badge-danger'>10/26/2022 11:50:55 AM</span>
+										<span class='badge badge-default'>0h:0m:1s+014ms</span>
 									</div>
 																	</div>
 							</div>
@@ -202,8 +202,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">IOWA Board of Medicine</p> 
-								<p class="duration text-sm">0h:4m:13s+035ms</p> 
-								<span class="datetime">18:28:22 PM</span>
+								<p class="duration text-sm">0h:4m:10s+516ms</p> 
+								<span class="datetime">11:50:55 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -211,9 +211,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-fail">IOWA Board of Medicine</h5>
-										<span class='badge badge-success'>10/21/2022 6:28:22 PM</span>
-										<span class='badge badge-danger'>10/21/2022 6:32:35 PM</span>
-										<span class='badge badge-default'>0h:4m:13s+035ms</span>
+										<span class='badge badge-success'>10/26/2022 11:50:55 AM</span>
+										<span class='badge badge-danger'>10/26/2022 11:55:06 AM</span>
+										<span class='badge badge-default'>0h:4m:10s+516ms</span>
 									</div>
 																	</div>
 							</div>
@@ -264,7 +264,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 46422_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 53595_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -278,14 +278,43 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 83024fe0-1672-55e0-8c28-142d3b2a248f</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 33021049-a8f6-58f1-8cf0-4b9acf457457</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "53595_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "DO-02020",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Fred",
+          "lastName": "Goldblatt"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -299,7 +328,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:28:52.2007859Z","messageId":"b0d8cdab-ecb2-4629-8c87-9c5b49fa2795","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"46422_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-10-21T23:28:52.1928427+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/46422_AUTOTEST/iaBoardOfMedicineProofArtifact-46422_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-26T16:51:27.6587617Z","messageId":"a7570fe5-b65a-4c81-9651-62a517200192","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"53595_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-10-26T16:51:27.656319+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/53595_AUTOTEST/iaBoardOfMedicineProofArtifact-53595_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -334,7 +363,7 @@
                                 </span>
                                 <span>Then <b>I check proof of artifact</b></span>
                             </div>
-			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/46422_AUTOTEST/iaBoardOfMedicineProofArtifact-46422_AUTOTEST.pdf">Click here to see PDF</a></div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/53595_AUTOTEST/iaBoardOfMedicineProofArtifact-53595_AUTOTEST.pdf">Click here to see PDF</a></div>
                     </div>
 				</div>
 	</div>
@@ -383,7 +412,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 45114_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 19145_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -397,14 +426,43 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 5b46e322-a4c8-50f6-a9e6-b8ef894ca5de</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: e358c8a1-482e-5d07-b54b-93722ff2c88a</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "19145_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "R-12632",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Sally",
+          "lastName": "Smith"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -418,7 +476,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:29:37.4333258Z","messageId":"6222d0c3-a626-4bf0-a145-d984b6b7ba8d","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"45114_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"R-12632","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"06/08/2022","expirationDate":"06/30/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Sally","lastName":"Smith"},"dataAcquiredOn":"2022-10-21T23:29:37.4253844+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/45114_AUTOTEST/iaBoardOfMedicineProofArtifact-45114_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-26T16:52:05.3105917Z","messageId":"7af2c7fd-6350-4475-899f-bce6f66bb5af","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"19145_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"R-12632","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"06/08/2022","expirationDate":"06/30/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Sally","lastName":"Smith"},"dataAcquiredOn":"2022-10-26T16:52:05.3104195+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/19145_AUTOTEST/iaBoardOfMedicineProofArtifact-19145_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -453,7 +511,7 @@
                                 </span>
                                 <span>Then <b>I check proof of artifact</b></span>
                             </div>
-			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/45114_AUTOTEST/iaBoardOfMedicineProofArtifact-45114_AUTOTEST.pdf">Click here to see PDF</a></div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/19145_AUTOTEST/iaBoardOfMedicineProofArtifact-19145_AUTOTEST.pdf">Click here to see PDF</a></div>
                     </div>
 				</div>
 	</div>
@@ -502,7 +560,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 57706_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 24713_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -516,14 +574,43 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 8ff76e09-285d-5e55-af31-35c405f28d70</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 857752a3-a3e3-56e9-bce7-0970c41db34b</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "24713_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "MD-32008",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Kathleen",
+          "lastName": "Jones"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -537,7 +624,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-21T23:30:15.9134Z","messageId":"094b625b-9cd7-44e7-adae-39578b113041","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"57706_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"MD-32008","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"010","issueDate":"Aug 12 1997 12:00AM","expirationDate":"12/01/2022","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Kathleen","lastName":"Jones"},"dataAcquiredOn":"2022-10-21T23:30:15.9130573+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/57706_AUTOTEST/iaBoardOfMedicineProofArtifact-57706_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-26T16:52:38.1448821Z","messageId":"a9d947aa-83b9-49ec-960d-07f73b7fee7c","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"24713_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"MD-32008","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"010","issueDate":"Aug 12 1997 12:00AM","expirationDate":"12/01/2022","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Kathleen","lastName":"Jones"},"dataAcquiredOn":"2022-10-26T16:52:38.1448327+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/24713_AUTOTEST/iaBoardOfMedicineProofArtifact-24713_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -572,7 +659,7 @@
                                 </span>
                                 <span>Then <b>I check proof of artifact</b></span>
                             </div>
-			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/57706_AUTOTEST/iaBoardOfMedicineProofArtifact-57706_AUTOTEST.pdf">Click here to see PDF</a></div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/24713_AUTOTEST/iaBoardOfMedicineProofArtifact-24713_AUTOTEST.pdf">Click here to see PDF</a></div>
                     </div>
 				</div>
 	</div>
@@ -580,8 +667,8 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Search doctor</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -621,7 +708,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 88380_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 50779_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -635,21 +722,92 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: f928eccb-5756-5e07-9d71-b7067a86208c</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 2c116cad-eb35-5e91-bb0f-377e83159c78</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "50779_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "R-12485",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Abigail",
+          "lastName": "Scrogum"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I check for error messages</b></span>
                             </div>
-			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:30:39.4287408Z","messageId":"3b383cfc-63c8-4260-9078-bd5c34f7b685","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"88380_AUTOTEST","data":{"errorMessage":"The operation has been rate-limited and should be retried after 00:00:00.9099043"}}</i><br></i></div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-10-26T16:53:12.7480729Z","messageId":"7758ba2c-26db-4ef5-ac8b-40e9dd8f1017","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"50779_AUTOTEST","data":{"licenseDetails":{"licenseNumber":"R-12485","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"05/20/2022","expirationDate":"06/30/2025","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Abigail","lastName":"Scrogum"},"dataAcquiredOn":"2022-10-26T16:53:12.7480182+00:00","_links":{"get_proofArtifact":{"href":"https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/50779_AUTOTEST/iaBoardOfMedicineProofArtifact-50779_AUTOTEST.pdf","method":"GET","headers":{"accept":"application/pdf"}}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.issueDate" with the value "05/20/2022"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 05/20/2022</i><br>&nbsp;&nbsp;<i>->Real value: 05/20/2022</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.expirationDate" with the value "06/30/2025"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 06/30/2025</i><br>&nbsp;&nbsp;<i>->Real value: 06/30/2025</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the key "data.licenseDetails.licenseNumber" with the value "R-12485"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: R-12485</i><br>&nbsp;&nbsp;<i>->Real value: R-12485</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check the disciplinary records to match with "0"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value: 0</i><br>&nbsp;&nbsp;<i>->Real value: 0</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I check proof of artifact</b></span>
+                            </div>
+			<div class="details"><a href= "https://verify-apps-nonprod.s3.us-east-2.amazonaws.com/IABoardOfMedicine/50779_AUTOTEST/iaBoardOfMedicineProofArtifact-50779_AUTOTEST.pdf">Click here to see PDF</a></div>
                     </div>
 				</div>
 	</div>
@@ -698,7 +856,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 81590_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 25451_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -712,21 +870,50 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 4655c0ec-f924-501c-b607-9b21d4c2acba</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 41188666-ce61-5092-b9d5-ddb5a62255d6</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "25451_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Kirk",
+          "lastName": "Smith"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
                                 <span>Then <b>I check for error messages</b></span>
                             </div>
-			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:31:10.5620623Z","messageId":"d7df182f-9a5c-4ad5-b11a-f8f95a6ab591","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"81590_AUTOTEST","data":{"errorMessage":"The request signature we calculated does not match the signature you provided. Check your key and signing method."}}</i><br></i></div>
+			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-26T16:53:50.2487223Z","messageId":"496607e0-dc91-467c-bf7a-ba8914001b17","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"25451_AUTOTEST","data":{"errorMessage":"The request signature we calculated does not match the signature you provided. Check your key and signing method."}}</i><br></i></div>
                     </div>
 				</div>
 	</div>
@@ -782,7 +969,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 85983_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 12927_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -796,21 +983,50 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 40376d39-7f88-58a6-8fcd-36f4518f82e9</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 0e551308-11dc-5eb6-9be9-48db79bb103f</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "12927_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "QA",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Alfonso",
+          "lastName": "Vega"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PsvDaqMessage_Misdelivered","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:31:40.6839177Z","messageId":"746154fd-e724-49c9-a723-e18483705e11","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"85983_AUTOTEST","data":{"misdeliveredMessage":{"version":"1.0","messageType":"Retrieve_LicensePSVData","source":"PSV-DAQ | Scheduled License Monitoring Initiator","destination":"PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine","sendDate":"2022-02-16T19:42:00Z","messageId":"85983_AUTOTEST","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"037c5027-daae-442e-976c-90050abbc254","data":{"licenseHash":"x01","searchAttributes":{"licenseNumber":"QA","licenseType":"state_issued","primarySource":"CA","fieldOfLicensure":"015","individualNames":[{"firstName":"Alfonso","lastName":"Vega"}],"businessNames":[]},"subscribingSystemIds":["sVerify","sDirectory"]}}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PsvDaqMessage_Misdelivered","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-26T16:54:20.1524403Z","messageId":"d60b0de8-7d02-432a-b206-a9e937de99e0","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"12927_AUTOTEST","data":{"misdeliveredMessage":{"version":"1.0","messageType":"Retrieve_LicensePSVData","source":"PSV-DAQ | Scheduled License Monitoring Initiator","destination":"PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine","sendDate":"2022-02-16T19:42:00Z","messageId":"12927_AUTOTEST","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"037c5027-daae-442e-976c-90050abbc254","data":{"licenseHash":"x01","searchAttributes":{"licenseNumber":"QA","licenseType":"state_issued","primarySource":"CA","fieldOfLicensure":"015","individualNames":[{"firstName":"Alfonso","lastName":"Vega"}],"businessNames":[]},"subscribingSystemIds":["sVerify","sDirectory"]}}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -873,7 +1089,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 19716_AUTOTEST</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 46203_AUTOTEST</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -887,21 +1103,50 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: ca33a1fa-a6ee-5896-94cd-fa3788c7ee87</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 44c36cf2-6ada-5db7-9e54-372102505999</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "46203_AUTOTEST",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "sdftgfddsf",
+      "licenseType": "state_issued",
+      "primarySource": "CA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "aqweds",
+          "lastName": "sdftrtf"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/21/[$LATEST]59b0cd3f8d6d4ba89b9baea8af73d7b5</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/10/26/[$LATEST]141cd2ed70ad4bc3816afe6fa017d4de</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"RetrievingDataFromPrimarySource_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-21T23:32:17.18845Z","messageId":"16254803-b440-42fc-a7e8-b53abe07a7c6","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"19716_AUTOTEST","data":{"errorMessage":"Not license found in the external PSV System. Inner errors: [\u0022No Record Found\u0022]"}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"RetrievingDataFromPrimarySource_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"PSV - DAQ | Failures","sendDate":"2022-10-26T16:54:59.7665796Z","messageId":"d2e5e8aa-9bdb-4283-9613-8b21de5114ea","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"46203_AUTOTEST","data":{"errorMessage":"Not license found in the external PSV System. Inner errors: [\u0022No Record Found\u0022]"}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -922,15 +1167,15 @@
 </div>
 						</div>
 					</li>
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="102"> 
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="108"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">Retrieve_LicensePSVData</p> 
-								<p class="duration text-sm">0h:0m:0s+553ms</p> 
-								<span class="datetime">18:32:35 PM</span>
+								<p class="duration text-sm">0h:0m:0s+390ms</p> 
+								<span class="datetime">11:55:06 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -938,9 +1183,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">Retrieve_LicensePSVData</h5>
-										<span class='badge badge-success'>10/21/2022 6:32:35 PM</span>
-										<span class='badge badge-danger'>10/21/2022 6:32:36 PM</span>
-										<span class='badge badge-default'>0h:0m:0s+553ms</span>
+										<span class='badge badge-success'>10/26/2022 11:55:06 AM</span>
+										<span class='badge badge-danger'>10/26/2022 11:55:06 AM</span>
+										<span class='badge badge-default'>0h:0m:0s+390ms</span>
 									</div>
 																	</div>
 							</div>
@@ -963,7 +1208,7 @@
                                 </span>
                                 <span>When <b>I publish the payload to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload message ID: 70571_AUTOTEST</i><br>&nbsp;&nbsp;<i>->Message ID: cb5ba7ce-6fa9-5895-a490-fc0341fcc178</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload message ID: 18344_AUTOTEST</i><br>&nbsp;&nbsp;<i>->Message ID: 52bfb0ed-4eac-565f-b02d-eb3e2602e3b0</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -977,15 +1222,15 @@
 </div>
 						</div>
 					</li>
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="106"> 
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="112"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">SNS</p> 
-								<p class="duration text-sm">0h:0m:1s+452ms</p> 
-								<span class="datetime">18:32:36 PM</span>
+								<p class="duration text-sm">0h:0m:1s+505ms</p> 
+								<span class="datetime">11:55:06 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -993,9 +1238,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">SNS</h5>
-										<span class='badge badge-success'>10/21/2022 6:32:36 PM</span>
-										<span class='badge badge-danger'>10/21/2022 6:32:37 PM</span>
-										<span class='badge badge-default'>0h:0m:1s+452ms</span>
+										<span class='badge badge-success'>10/26/2022 11:55:06 AM</span>
+										<span class='badge badge-danger'>10/26/2022 11:55:08 AM</span>
+										<span class='badge badge-default'>0h:0m:1s+505ms</span>
 									</div>
 																	</div>
 							</div>
@@ -1018,7 +1263,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1046,7 +1291,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1074,7 +1319,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1102,7 +1347,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1130,7 +1375,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1158,7 +1403,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1186,7 +1431,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1214,7 +1459,7 @@
                                 </span>
                                 <span>When <b>I list all topics</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:clint-test</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:aws-controltower-SecurityNotifications</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-amo-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-p1-psvDaqResults-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqRequests-topic</i><br>&nbsp;&nbsp;<i>->The Topic ARN is arn:aws:sns:us-east-2:379493731719:pdm-ftr-vfy-psvDaqResults-topic</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -1281,9 +1526,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='88.88888888888889%'><b>16</b> scenarios passed</small></div>
+	                <div><small data-tooltip='94.44444444444444%'><b>17</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='11.11111111111111%'><b>2</b> scenarios failed, 
+	                    <small data-tooltip='5.555555555555555%'><b>1</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1301,9 +1546,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='98.14814814814815%'><b>106</b> steps passed</small></div>
+	                <div><small data-tooltip='99.12280701754386%'><b>113</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='1.8518518518518516%'><b>2</b> steps failed, 
+	                    <small data-tooltip='0.8771929824561403%'><b>1</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1340,7 +1585,7 @@
 							<h2 class="font-size-28 font-weight-light">18</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>88.89%</span>
+								<span>94.44%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1356,7 +1601,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">10/21/2022 6:28:21 PM</h6>
+							<h6 class="font-weight-light">10/26/2022 11:50:54 AM</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1372,7 +1617,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:04:16.1683815</h6>
+							<h6 class="font-weight-light">00:04:13.4715480</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1397,25 +1642,25 @@
 		skipParent: 0,
 		exceptionsParent: 1,
 		childCount: 18,
-		passChild: 16,
-		failChild: 2,
+		passChild: 17,
+		failChild: 1,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 2,
-		grandChildCount: 108,
-		passGrandChild: 106,
-		failGrandChild: 2,
+		exceptionsChild: 1,
+		grandChildCount: 114,
+		passGrandChild: 113,
+		failGrandChild: 1,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 2,
+		exceptionsGrandChild: 1,
 	};
 </script>
 

@@ -52,8 +52,8 @@ namespace Verify.StepDefinitions
         [Then(@"I look for the messageId in CloudWatchLogs group ""([^""]*)""")]
         public async Task ThenILookForTheMessageIdInCloudWatchLogsGroupAsync(string groupName)
         {
-            int attempts = 10;
-            int waitBetweenAttempts = 10000;
+            int attempts = 20;
+            int waitBetweenAttempts = 5000;
             String log = null;
             for (int i = 0; i < attempts; i++)
             {

@@ -55,6 +55,7 @@ Scenario: Search in a non existant board
 	And I set IABoardOfMedicine message attributes
 
 	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
+
 	Then I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
 	And I parse the json response for IOWA Board of medicine
 	And I verify the key "destination" with the value "PSV-DAQ | Failures"

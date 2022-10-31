@@ -17,14 +17,11 @@ namespace Verify.AWSHandlers
     {
         public AmazonSimpleNotificationServiceClient client;
 
-        public String messageID;
+        public String messageID = "";
 
         public SNShandler()
         {
-            var AWS_ACCESS_KEY_ID       = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID");
-            var AWS_SECRET_ACCESS_KEY   = Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
-
-            var credentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
+            var credentials = this.GetCredentials();
 
             this.client = new AmazonSimpleNotificationServiceClient(credentials, this.region);
         }

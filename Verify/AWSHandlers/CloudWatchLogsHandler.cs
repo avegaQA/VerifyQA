@@ -17,10 +17,7 @@ namespace Verify.AWSHandlers
 
         public CloudWatchLogsHandler()
         {
-            var AWS_ACCESS_KEY_ID = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID");
-            var AWS_SECRET_ACCESS_KEY = Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
-
-            var credentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
+            var credentials = this.GetCredentials();
 
             this.client = new AmazonCloudWatchLogsClient(credentials, this.region);
         }
