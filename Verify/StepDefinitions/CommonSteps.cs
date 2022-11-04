@@ -23,9 +23,8 @@ namespace Verify.StepDefinitions
         [Given(@"I load the messageId")]
         public void GivenILoadTheMessageId()
         {
-            Random rd = new Random();
 
-            String id = rd.Next(10000, 90000) + "_AUTOTEST";
+            String id = Guid.NewGuid().ToString();
 
             this._awsContext.payload["messageId"] = id;
             this._awsContext.messsageID = id;

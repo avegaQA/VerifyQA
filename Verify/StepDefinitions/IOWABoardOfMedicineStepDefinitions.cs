@@ -2,6 +2,7 @@ using Amazon.SimpleNotificationService.Model;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using TechTalk.SpecFlow;
 using Verify.Context;
 
@@ -16,6 +17,42 @@ namespace Verify.StepDefinitions
         {
             this._awsContext = awsContext;
         }
+
+        [Given(@"I prepare the JSON data")]
+        public void GivenIPrepareTheJSONData(Table table)
+        {
+            Dictionary<string, string> jsonValues = this.ToDictionary(table);
+            foreach(var value in jsonValues)
+            {               
+                String val = value.Value.Equals("NA") ? "" : value.Value;
+                this.LogAndReport("Replacing " + value.Key + " with " + val);
+                this._awsContext.payload.SelectToken(value.Key).Replace(val);
+            }
+
+            Console.WriteLine(this._awsContext.payload.ToString());
+        }
+
+        [Then(@"I verify the JSON response")]
+        public void ThenIVerifyTheJSONResponse(Table table)
+        {
+            Dictionary<string, string> expectedValues = this.ToDictionary(table);
+
+            foreach (var expectedValue in expectedValues)
+            {
+                String value = expectedValue.Value;
+                if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
+
+                String real = value.ToLower().Replace(" ", "");
+                String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
+                this.LogAndReport("Expected value in "+ expectedValue.Key + ": " + value);
+                this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
+
+                Assert.AreEqual(real, expected);
+
+            }
+        }
+
+
 
         [Given(@"I load the first name ""([^""]*)""")]
         public void GivenILoadTheFirstName(string name)
@@ -77,7 +114,7 @@ namespace Verify.StepDefinitions
         [Then(@"I check the disciplinary records to match with ""([^""]*)""")]
         public void ThenICheckTeDisciplinaryRecordsToMatchWith(string expected)
         {
-            JArray items = (JArray)this._awsContext.response["data"]["licenseDetails"]["disciplinaryActionRecords"];
+            JArray items = (JArray)this._awsContext.response["data"]["_links"]["get_disciplinaryActionRecords"];
             int length = items.Count;
 
             this.LogAndReport("Expected value: " + expected);
