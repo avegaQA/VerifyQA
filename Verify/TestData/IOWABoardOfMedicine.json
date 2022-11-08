@@ -11,13 +11,17 @@
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "R-12632",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
-          "firstName": "Sally",
-          "lastName": "Smith"
+          "firstName": "drfhgfc",
+          "lastName": "cfhhcc"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []

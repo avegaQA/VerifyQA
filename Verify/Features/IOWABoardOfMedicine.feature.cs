@@ -22,7 +22,7 @@ namespace Verify.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("IOWA Board of Medicine")]
     [NUnit.Framework.CategoryAttribute("SNS")]
-    [NUnit.Framework.CategoryAttribute("CloudWatchLogs")]
+    [NUnit.Framework.CategoryAttribute("SQS")]
     public partial class IOWABoardOfMedicineFeature
     {
         
@@ -30,7 +30,7 @@ namespace Verify.Features
         
         private string[] _featureTags = new string[] {
                 "SNS",
-                "CloudWatchLogs"};
+                "SQS"};
         
 #line 1 "IOWABoardOfMedicine.feature"
 #line hidden
@@ -41,7 +41,7 @@ namespace Verify.Features
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "IOWA Board of Medicine", null, ProgrammingLanguage.CSharp, new string[] {
                         "SNS",
-                        "CloudWatchLogs"});
+                        "SQS"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,7 +83,7 @@ namespace Verify.Features
         [NUnit.Framework.DescriptionAttribute("Search doctor")]
         [NUnit.Framework.TestCaseAttribute("Fred", "Goldblatt", "DO-02020", "Jan 31 1984 12:00AM", "11/01/2024", "0", null)]
         [NUnit.Framework.TestCaseAttribute("Sally", "Smith", "R-12632", "06/08/2022", "06/30/2024", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Kathleen", "Jones", "MD-32008", "Aug 12 1997 12:00AM", "12/01/2022", "0", null)]
+        [NUnit.Framework.TestCaseAttribute("Kathleen", "Jones", "MD-32008", "Aug 12 1997 12:00AM", "12/01/2024", "0", null)]
         [NUnit.Framework.TestCaseAttribute("Abigail", "Scrogum", "R-12485", "05/20/2022", "06/30/2025", "0", null)]
         [NUnit.Framework.TestCaseAttribute("Kirk", "Smith", "NA", "NA", "04/26/2002", "2", null)]
         public virtual void SearchDoctor(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string disciplinaryActionRecords, string[] exampleTags)
@@ -97,7 +97,7 @@ namespace Verify.Features
             argumentsOfScenario.Add("expirationDate", expirationDate);
             argumentsOfScenario.Add("disciplinaryActionRecords", disciplinaryActionRecords);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search doctor", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 10
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -132,27 +132,27 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-#line 10
+#line 11
  testRunner.And("I prepare the JSON data", ((string)(null)), table1, "And ");
 #line hidden
-#line 15
+#line 16
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 17
  testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 19
  testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
                         "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
- testRunner.Then("I look for the messageId in CloudWatchLogs group \"/aws/lambda/pdm-dev-vfy-daqWork" +
-                        "ers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
+                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 21
+#line 23
  testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
+#line 24
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,13 +167,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "data.licenseDetails.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-#line 23
+#line 25
  testRunner.And("I verify the JSON response", ((string)(null)), table2, "And ");
 #line hidden
-#line 29
+#line 31
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 32
  testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -181,13 +181,13 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User does not exist")]
-        public virtual void UserDoesNotExist()
+        [NUnit.Framework.DescriptionAttribute("Cross-product of names")]
+        public virtual void Cross_ProductOfNames()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User does not exist", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 43
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cross-product of names", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -207,7 +207,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 45
+#line 47
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -215,125 +215,52 @@ this.ScenarioInitialize(scenarioInfo);
                             "value"});
                 table3.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].firstName",
-                            "sefsefsese"});
+                            "Fred"});
                 table3.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[0].lastName",
-                            "sefssef"});
+                            "data.searchAttributes.individualNames[1].lastName",
+                            "Goldblatt"});
                 table3.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
-                            "sefesfdr"});
-#line 46
+                            "DO-02020"});
+#line 48
  testRunner.And("I prepare the JSON data", ((string)(null)), table3, "And ");
 #line hidden
-#line 51
+#line 53
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 54
  testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
- testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
-                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 56
- testRunner.Then("I look for the messageId in CloudWatchLogs group \"/aws/lambda/pdm-dev-vfy-daqWork" +
-                        "ers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
+                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 57
+ testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
                 table4.AddRow(new string[] {
-                            "destination",
-                            "PSV-DAQ | Failures"});
+                            "data.licenseDetails.issueDate",
+                            "Jan 31 1984 12:00AM"});
                 table4.AddRow(new string[] {
-                            "messageType",
-                            "ProviderLicenseMatch_NotFound"});
-#line 58
+                            "data.licenseDetails.expirationDate",
+                            "11/01/2024"});
+                table4.AddRow(new string[] {
+                            "data.licenseDetails.licenseNumber",
+                            "DO-02020"});
+#line 59
  testRunner.And("I verify the JSON response", ((string)(null)), table4, "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search in a non existant board")]
-        public virtual void SearchInANonExistantBoard()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search in a non existant board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 65
-this.ScenarioInitialize(scenarioInfo);
+ testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 67
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "key",
-                            "value"});
-                table5.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[0].firstName",
-                            "Alfonso"});
-                table5.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[0].lastName",
-                            "Vega"});
-                table5.AddRow(new string[] {
-                            "data.searchAttributes.licenseNumber",
-                            "QA"});
-                table5.AddRow(new string[] {
-                            "destination",
-                            "PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine"});
-#line 68
- testRunner.And("I prepare the JSON data", ((string)(null)), table5, "And ");
-#line hidden
-#line 74
- testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 75
- testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 77
- testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
-                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 79
- testRunner.Then("I look for the messageId in CloudWatchLogs group \"/aws/lambda/pdm-dev-vfy-daqWork" +
-                        "ers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 80
- testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "key",
-                            "value"});
-                table6.AddRow(new string[] {
-                            "destination",
-                            "PSV-DAQ | Failures"});
-                table6.AddRow(new string[] {
-                            "messageType",
-                            "PsvDaqMessage_Misdelivered"});
-#line 81
- testRunner.And("I verify the JSON response", ((string)(null)), table6, "And ");
+#line 66
+ testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

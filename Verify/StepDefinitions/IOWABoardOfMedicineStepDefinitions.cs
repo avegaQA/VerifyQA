@@ -22,8 +22,8 @@ namespace Verify.StepDefinitions
         public void GivenIPrepareTheJSONData(Table table)
         {
             Dictionary<string, string> jsonValues = this.ToDictionary(table);
-            foreach(var value in jsonValues)
-            {               
+            foreach (var value in jsonValues)
+            {
                 String val = value.Value.Equals("NA") ? "" : value.Value;
                 this.LogAndReport("Replacing " + value.Key + " with " + val);
                 this._awsContext.payload.SelectToken(value.Key).Replace(val);
@@ -44,7 +44,7 @@ namespace Verify.StepDefinitions
 
                 String real = value.ToLower().Replace(" ", "");
                 String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
-                this.LogAndReport("Expected value in "+ expectedValue.Key + ": " + value);
+                this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
                 this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
 
                 Assert.AreEqual(real, expected);
@@ -86,7 +86,7 @@ namespace Verify.StepDefinitions
         [Then(@"I parse the json response for IOWA Board of medicine")]
         public void ThenIParseTheJsonResponseForIOWABoardOfMedicine()
         {
-            String resp = this._awsContext.response["message"].ToString();
+            String resp = this._awsContext.response["Message"].ToString();
             this.LogAndReport(resp);
             this._awsContext.response = JObject.Parse(resp);
         }
@@ -94,13 +94,16 @@ namespace Verify.StepDefinitions
         [Then(@"I check for error messages")]
         public void ThenICheckForErrorMessages()
         {
-            String resp = this._awsContext.response["message"].ToString();           
-            if (resp.ToLower().Contains("error") || resp.ToLower().Contains("fail") || resp.ToLower().Contains("exception"))
+            String resp = this._awsContext.response["Message"].ToString();
+            if (resp.ToLower().Contains("error")
+                || resp.ToLower().Contains("fail")
+                || resp.ToLower().Contains("exception")
+                || resp.ToLower().Contains("Unsupported"))
             {
                 this.LogAndReport(resp);
                 Assert.Fail("Response contains error message");
             }
-                
+
         }
 
         [Given(@"I load the destination to ""([^""]*)""")]
@@ -144,8 +147,18 @@ namespace Verify.StepDefinitions
             this._awsContext.RDSClient.closeClient();
         }
 
+        [Given(@"I set the messageID to ""([^""]*)""")]
+        public void GivenISetTheMessageIDTo(string messageId)
+        {
+            Random rnd = new Random();
+            String id = rnd.Next(100000, 900000) + messageId;
+
+            this._awsContext.payload["messageId"] = id;
+            this._awsContext.messsageID = id;
+            this.LogAndReport("Payload messageID: " + id);
 
 
 
+        }
     }
 }

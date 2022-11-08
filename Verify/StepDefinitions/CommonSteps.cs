@@ -47,6 +47,34 @@ namespace Verify.StepDefinitions
                 this._awsContext.snsMessageAttributes);
         }
 
+        [Then(@"I look for the JSON response in ""([^""]*)""")]
+        public async Task ThenILookForTheJSONResponseIn(string sqsUrl)
+        {
+            this._awsContext.SQSClient.sqsURL = sqsUrl;
+
+            int attempts = 20;
+            int waitBetweenAttempts = 5000;
+            String log = null;
+            for (int i = 0; i < attempts; i++)
+            {
+                Console.WriteLine("Starting log search attempt " + i + "/" + attempts);
+                Thread.Sleep(waitBetweenAttempts);
+                log = await this._awsContext.SQSClient.FindLogWithMessageId(this._awsContext.messsageID);
+                if (log != null)
+                {
+                    Console.WriteLine("log Found!");
+                    Console.WriteLine(log);
+                    if (AWSContext.troubleShootReports) this.LogAndReport(log);
+                    this._awsContext.response = JObject.Parse(log);
+                    break;
+                }
+            }
+
+            Assert.NotNull(log);
+
+        }
+
+
 
         [Then(@"I look for the messageId in CloudWatchLogs group ""([^""]*)""")]
         public async Task ThenILookForTheMessageIdInCloudWatchLogsGroupAsync(string groupName)

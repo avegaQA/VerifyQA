@@ -37,6 +37,18 @@ namespace Verify.Hooks
             this._awsContext.SNSClient.closeClient();
         }
 
+        [BeforeScenario("SQS")]
+        public void BeforeScenarioSQS()
+        {
+            this._awsContext.SQSClient = new SQSHandler();
+        }
+
+        [AfterScenario("SQS")]
+        public void AfterScenarioSQS()
+        {
+            this._awsContext.SQSClient.closeClient();
+        }
+
         [BeforeScenario("CloudWatchLogs")]
         public void BeforeScenarioCloudWatchLogs()
         {

@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">11/4/2022 1:02:16 PM</span>
+                    <span class="badge badge-primary">11/8/2022 1:19:09 PM</span>
                 </a>
             </li>
         </ul>
@@ -119,8 +119,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">EventBridge</p> 
-								<p class="duration text-sm">0h:0m:0s+929ms</p> 
-								<span class="datetime">13:02:16 PM</span>
+								<p class="duration text-sm">0h:0m:1s+250ms</p> 
+								<span class="datetime">13:19:09 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -128,9 +128,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">EventBridge</h5>
-										<span class='badge badge-success'>11/4/2022 1:02:16 PM</span>
-										<span class='badge badge-danger'>11/4/2022 1:02:17 PM</span>
-										<span class='badge badge-default'>0h:0m:0s+929ms</span>
+										<span class='badge badge-success'>11/8/2022 1:19:09 PM</span>
+										<span class='badge badge-danger'>11/8/2022 1:19:10 PM</span>
+										<span class='badge badge-default'>0h:0m:1s+250ms</span>
 									</div>
 																	</div>
 							</div>
@@ -202,8 +202,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">IOWA Board of Medicine</p> 
-								<p class="duration text-sm">0h:5m:24s+717ms</p> 
-								<span class="datetime">13:02:17 PM</span>
+								<p class="duration text-sm">0h:4m:42s+952ms</p> 
+								<span class="datetime">13:19:10 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -211,14 +211,65 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-fail">IOWA Board of Medicine</h5>
-										<span class='badge badge-success'>11/4/2022 1:02:17 PM</span>
-										<span class='badge badge-danger'>11/4/2022 1:07:42 PM</span>
-										<span class='badge badge-default'>0h:5m:24s+717ms</span>
+										<span class='badge badge-success'>11/8/2022 1:19:10 PM</span>
+										<span class='badge badge-danger'>11/8/2022 1:23:53 PM</span>
+										<span class='badge badge-default'>0h:4m:42s+952ms</span>
 									</div>
 																	</div>
 							</div>
 
 <div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: Cross-product of names</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I prepare the JSON data</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].firstName with Fred</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[1].lastName with Goldblatt</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.licenseNumber with DO-02020</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: bf7bb099-02f5-4c51-9b91-796525a2cdcb</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                            </div>
+			<div class="details"><i>  Expected: not null
+  But was:  null
+<br></i></div>
+                    </div>
+				</div>
+	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
@@ -250,7 +301,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 8b4173ff-2e2b-462c-8d4c-5c22710729ec</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 2de58a7a-a5f4-4698-af61-ca6401e70d25</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -264,26 +315,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 8143a21e-fc48-53a3-8ce0-f9c19fb2be72</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: bba6564d-f42e-5466-9977-0da95a78194c</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "8b4173ff-2e2b-462c-8d4c-5c22710729ec",
+  "messageId": "2de58a7a-a5f4-4698-af61-ca6401e70d25",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "DO-02020",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "Fred",
           "lastName": "Goldblatt"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -298,9 +353,9 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: 64f20c98-8550-45be-a8d9-011befc080a2</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -314,7 +369,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:02:42.5818267Z","messageId":"9b55089b-f233-454f-ab3c-ffe97194bd9e","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"8b4173ff-2e2b-462c-8d4c-5c22710729ec","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-11-04T19:02:40.932258+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/0914a042-c554-4e90-ae95-7271ac17b742","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/ecc0f918-a4d7-4ac2-82e8-2d80837368bf","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:21:21.2851192Z","messageId":"9c225623-2c3a-4ffc-8a42-78aa6f70e7d5","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"2de58a7a-a5f4-4698-af61-ca6401e70d25","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-11-08T19:21:18.4267807+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/21d5a92d-3123-4aec-80df-c3b7aa135b04","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/57f31062-02e1-4bb7-9c45-e8974b7796ff","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -335,7 +390,7 @@
                                 </span>
                                 <span>Then <b>I verify the proof of artifact</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-8b4173ff-2e2b-462c-8d4c-5c22710729ec.pdf</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/0914a042-c554-4e90-ae95-7271ac17b742?AWSAccessKeyId=ASIAX6HXU6SGRV33VMON&Expires=1667589470&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-8b4173ff-2e2b-462c-8d4c-5c22710729ec.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEPP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIEqCOm4rHE4WJdc8He5thNKSxDEG3%2BKy0bSiEUTU33ECAiEA54LfCChIchtyUbaYFVHlbFojaOfCLgpQOZ8XtykvkSAq1QQI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDKRzi3dfxmvCq8NSzCqpBN71fE4KU2xy94v9ADWA6N1CL4K0qCY7FDuqdNHFC0Rgu%2Fywwg1NDSDuskRYItdrDpGKt%2BPHcuanv8eEriKM8UOhKLM4OwCQGmV5Diihf0sIAm1ylmy%2Bj1pho6FdQA5Cw8WJd1nkjO8ezu7lGAgVYSoHMOq7XgLhIHmdOBKkY%2FCIUjjg7yOBAZ3yt8rLPwOWTBGSAjSyfvGPLsW4TqPvOBiMim3gWL7vyez6%2BbHZDGC%2F2vghgRD%2BCN4BO%2BArcqkC1d39Nd%2B3cLRqYBeDC6RosnydEbY%2Bv9Mft0ecJBmpmDDIHF%2BO3o3TqjJCSoSlQeUyi6ILljfW%2Fzh%2B3yWEqFGh6lPMg874DRYZ0PSYJ8kgoUJI%2BMVbdQxrIefkqhX%2FPVsuI%2F8wmtyYylGl0dgRf3R8gXWsRk%2FYzC3sxgNgNrAfAkzFle6wHF9BaG%2FO4SP6C5LD9wHiwlXiEd44pLwOBxBv2GvL09kgGtutu4%2BLp11IeaL2gD8qq2qk6HSnWKA8S5Ov3Cn6DcEOsRpDcxX8pFUe0jcWx4YhuYNIAVarMsRq2LPnPByhmkV%2BjgntBJgSnLhCiSzFtfpGw%2F7wlQ56iK4VSdsZM10ZMAV7oDGjjUYNKkUvCV1gXQ1SsAGC%2BGu2idasBRkQx14RFsmdlb9pc8gHZ5I4KHtRSQjB77hrSoKvG2yIrj0LGG0iiLjatHqZRKC2F8hcBHaj2MncxnKGgIqQBT%2FWYBQXQA3G1dgwqb2VmwY6qQF0uboERU2cxmFPmNIoTNENLEaLsfORB6L%2FZ2G%2B1gSlZ3QWmnBoxYvGxqEg1jiRyhJ83P7Free54s5P%2Ba1KJi%2Fb0X72QgMP9U6YHmAU1gocu2RHRF%2FDjd9plpt%2Bem%2FQn7duxcU5wqMrPo8fHSBElcsMNOcUcrOIsD8KUhjscyJyLKqU1LsaEZhWORDbBgpbKqffIb4u2aMynS1p2jgd3ShbSVqqIedvx1nN&Signature=a2D11STCVUlYiFNUNZFDuSRpOCU%3D">Presigned URL (Expires in 30min)</a></div>
+			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-2de58a7a-a5f4-4698-af61-ca6401e70d25.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/21d5a92d-3123-4aec-80df-c3b7aa135b04?AWSAccessKeyId=ASIAX6HXU6SGQ7W52FWG&Expires=1667936186&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-2de58a7a-a5f4-4698-af61-ca6401e70d25.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEFMaCXVzLXdlc3QtMiJHMEUCICMFHHnKyNdjrbPUTIXt%2BqiR8vJk1mp1wqxJxUlZ5it%2BAiEAptITqEgCL0TF6Yv4ChnZxFwVdQU2H1lqXBI8EBe0KOsqzAQITBAAGgw1NDU5ODAyMTY0NjEiDFxs%2FcNPsyftyEV%2BxyqpBN3VKonNcd%2Ff8HFvIqImUFafNNl9z67m2ASQTYq7m64bwFq%2B24v66YFgxRU2U8ZnJIHOpBuwT%2FntZ5ZQjRd05VHIsRMZXhVH%2B9rLwesYW%2BFz6ykDX8wA7Yv70xo%2FNzxmb632adzyK8lWVDFrkBQ%2FXE%2BN0LndbqLL81Lp2eimHWxwQdqAuGqZlwic%2Fc7pQGgCYbQtB6kDcKkn0k0bF57eVCPCNefAHqg2FpI5Nkicd61NdX3Vn1Tsbn4Ai%2Flasi6nWGb13vQUwfXY3UjwpNlrLqItAagc6VfKcwT5MBpyCGpmhTRMKcTskuqL%2FdEn%2FMFUS3hWUdpaNmdQx6PrGkpbX2l2c3lSiq%2FPY8EUUa1zE%2Fvq%2BvsrRhG9IFU8uzaffjEWJoJ572ouQoltolNTtx%2FLuKfdEa9iirp42IGWQZndwdkgoXZ5mJArp8wGfPLWKEZNvUb01qY4wKZiPgEj4jsz%2FPo55Twk87TH2A4zHAjS%2B5qiL1PJrc4cvvIuIGQV8b9pZkRtb73ePg04IHmlZJH1yGbl5b08ao3lpUcvlo25%2FevKNROA0pcvTCEEY6K%2BcepV7uzOferixOt%2BK93qMkNkbiJv8G9ncrksOJFk%2B76MSMe%2Bfma%2FnkYM4EiJfWkA02QZE%2FVkgynzD0yvPxsJ1TuGUGWHU1rhtxdlDhPPvbesPrgAk4SjrurXU6W7OA4cw6XRl4ImJPDiKks%2F9nx7oZ6Tw7Jt3barK5jlrNsw7sWqmwY6qQH2s8o5R51IBxjZeE1rPke8FQrAlm5szeLqwq60wOmDVbIRWZ99B2Fhd%2FxJNM3gNkdz5UBwmcd0t%2BwwKIDsKhwgqpm7P%2FvpUWNK0c6RvzaWEXFyULLYtCxGmLGaE9bMv2iTCZNon55JArAkJZLfhQoKwdzVAwo9eUkQMeOvMb4GHjsBNUKnTsn%2FpxSDa7Iw%2BTx7yi98QE0r0MvMK%2FWB%2Bq1GIq7FwpIJEozi&Signature=mKMH3gPy85ROu%2BFNxIwZxRZOEIc%3D">Presigned URL (Expires in 30min)</a></div>
                     </div>
 				</div>
 	</div>
@@ -370,7 +425,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 437af92c-a477-441e-b0da-4f821a0b6f68</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: d44ab028-e72b-440c-b443-a88f3b93a723</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -384,26 +439,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: ef4cfb7a-d1f2-51c6-ab57-a0a5b5e86457</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: b6e93dab-9318-58a7-841b-664f3d6e82a1</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "437af92c-a477-441e-b0da-4f821a0b6f68",
+  "messageId": "d44ab028-e72b-440c-b443-a88f3b93a723",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "R-12632",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "Sally",
           "lastName": "Smith"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -418,9 +477,9 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: 8ece0942-4b4e-457b-a7ce-acd3a6eb31a3</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -434,7 +493,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:03:15.4335062Z","messageId":"04838095-dc8f-49da-8483-584b99166393","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"437af92c-a477-441e-b0da-4f821a0b6f68","data":{"licenseDetails":{"licenseNumber":"R-12632","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"06/08/2022","expirationDate":"06/30/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Sally","lastName":"Smith"},"dataAcquiredOn":"2022-11-04T19:03:13.7697086+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/2c8170f8-a33f-442d-8907-0e0957c49284","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/e6c83ae2-2ac7-4820-9c83-b2250e1a3537","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:21:50.512405Z","messageId":"34046f7b-3712-4c27-aea9-9abe0eaf7fb0","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"d44ab028-e72b-440c-b443-a88f3b93a723","data":{"licenseDetails":{"licenseNumber":"R-12632","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"06/08/2022","expirationDate":"06/30/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Sally","lastName":"Smith"},"dataAcquiredOn":"2022-11-08T19:21:48.9824459+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/0d8da538-baee-42ac-a536-6962adc74298","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/e85a1b2a-ed94-437f-a5be-1f749c4a767b","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -455,7 +514,7 @@
                                 </span>
                                 <span>Then <b>I verify the proof of artifact</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-437af92c-a477-441e-b0da-4f821a0b6f68.pdf</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/2c8170f8-a33f-442d-8907-0e0957c49284?AWSAccessKeyId=ASIAX6HXU6SGRV33VMON&Expires=1667589507&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-437af92c-a477-441e-b0da-4f821a0b6f68.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEPP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIEqCOm4rHE4WJdc8He5thNKSxDEG3%2BKy0bSiEUTU33ECAiEA54LfCChIchtyUbaYFVHlbFojaOfCLgpQOZ8XtykvkSAq1QQI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDKRzi3dfxmvCq8NSzCqpBN71fE4KU2xy94v9ADWA6N1CL4K0qCY7FDuqdNHFC0Rgu%2Fywwg1NDSDuskRYItdrDpGKt%2BPHcuanv8eEriKM8UOhKLM4OwCQGmV5Diihf0sIAm1ylmy%2Bj1pho6FdQA5Cw8WJd1nkjO8ezu7lGAgVYSoHMOq7XgLhIHmdOBKkY%2FCIUjjg7yOBAZ3yt8rLPwOWTBGSAjSyfvGPLsW4TqPvOBiMim3gWL7vyez6%2BbHZDGC%2F2vghgRD%2BCN4BO%2BArcqkC1d39Nd%2B3cLRqYBeDC6RosnydEbY%2Bv9Mft0ecJBmpmDDIHF%2BO3o3TqjJCSoSlQeUyi6ILljfW%2Fzh%2B3yWEqFGh6lPMg874DRYZ0PSYJ8kgoUJI%2BMVbdQxrIefkqhX%2FPVsuI%2F8wmtyYylGl0dgRf3R8gXWsRk%2FYzC3sxgNgNrAfAkzFle6wHF9BaG%2FO4SP6C5LD9wHiwlXiEd44pLwOBxBv2GvL09kgGtutu4%2BLp11IeaL2gD8qq2qk6HSnWKA8S5Ov3Cn6DcEOsRpDcxX8pFUe0jcWx4YhuYNIAVarMsRq2LPnPByhmkV%2BjgntBJgSnLhCiSzFtfpGw%2F7wlQ56iK4VSdsZM10ZMAV7oDGjjUYNKkUvCV1gXQ1SsAGC%2BGu2idasBRkQx14RFsmdlb9pc8gHZ5I4KHtRSQjB77hrSoKvG2yIrj0LGG0iiLjatHqZRKC2F8hcBHaj2MncxnKGgIqQBT%2FWYBQXQA3G1dgwqb2VmwY6qQF0uboERU2cxmFPmNIoTNENLEaLsfORB6L%2FZ2G%2B1gSlZ3QWmnBoxYvGxqEg1jiRyhJ83P7Free54s5P%2Ba1KJi%2Fb0X72QgMP9U6YHmAU1gocu2RHRF%2FDjd9plpt%2Bem%2FQn7duxcU5wqMrPo8fHSBElcsMNOcUcrOIsD8KUhjscyJyLKqU1LsaEZhWORDbBgpbKqffIb4u2aMynS1p2jgd3ShbSVqqIedvx1nN&Signature=ttIXszsIyLeuARSmiKaLVH17N3c%3D">Presigned URL (Expires in 30min)</a></div>
+			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-d44ab028-e72b-440c-b443-a88f3b93a723.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/0d8da538-baee-42ac-a536-6962adc74298?AWSAccessKeyId=ASIAX6HXU6SGQ7W52FWG&Expires=1667936218&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-d44ab028-e72b-440c-b443-a88f3b93a723.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEFMaCXVzLXdlc3QtMiJHMEUCICMFHHnKyNdjrbPUTIXt%2BqiR8vJk1mp1wqxJxUlZ5it%2BAiEAptITqEgCL0TF6Yv4ChnZxFwVdQU2H1lqXBI8EBe0KOsqzAQITBAAGgw1NDU5ODAyMTY0NjEiDFxs%2FcNPsyftyEV%2BxyqpBN3VKonNcd%2Ff8HFvIqImUFafNNl9z67m2ASQTYq7m64bwFq%2B24v66YFgxRU2U8ZnJIHOpBuwT%2FntZ5ZQjRd05VHIsRMZXhVH%2B9rLwesYW%2BFz6ykDX8wA7Yv70xo%2FNzxmb632adzyK8lWVDFrkBQ%2FXE%2BN0LndbqLL81Lp2eimHWxwQdqAuGqZlwic%2Fc7pQGgCYbQtB6kDcKkn0k0bF57eVCPCNefAHqg2FpI5Nkicd61NdX3Vn1Tsbn4Ai%2Flasi6nWGb13vQUwfXY3UjwpNlrLqItAagc6VfKcwT5MBpyCGpmhTRMKcTskuqL%2FdEn%2FMFUS3hWUdpaNmdQx6PrGkpbX2l2c3lSiq%2FPY8EUUa1zE%2Fvq%2BvsrRhG9IFU8uzaffjEWJoJ572ouQoltolNTtx%2FLuKfdEa9iirp42IGWQZndwdkgoXZ5mJArp8wGfPLWKEZNvUb01qY4wKZiPgEj4jsz%2FPo55Twk87TH2A4zHAjS%2B5qiL1PJrc4cvvIuIGQV8b9pZkRtb73ePg04IHmlZJH1yGbl5b08ao3lpUcvlo25%2FevKNROA0pcvTCEEY6K%2BcepV7uzOferixOt%2BK93qMkNkbiJv8G9ncrksOJFk%2B76MSMe%2Bfma%2FnkYM4EiJfWkA02QZE%2FVkgynzD0yvPxsJ1TuGUGWHU1rhtxdlDhPPvbesPrgAk4SjrurXU6W7OA4cw6XRl4ImJPDiKks%2F9nx7oZ6Tw7Jt3barK5jlrNsw7sWqmwY6qQH2s8o5R51IBxjZeE1rPke8FQrAlm5szeLqwq60wOmDVbIRWZ99B2Fhd%2FxJNM3gNkdz5UBwmcd0t%2BwwKIDsKhwgqpm7P%2FvpUWNK0c6RvzaWEXFyULLYtCxGmLGaE9bMv2iTCZNon55JArAkJZLfhQoKwdzVAwo9eUkQMeOvMb4GHjsBNUKnTsn%2FpxSDa7Iw%2BTx7yi98QE0r0MvMK%2FWB%2Bq1GIq7FwpIJEozi&Signature=elBBU6LKYgwVbLhd9%2BH5AGpYkwE%3D">Presigned URL (Expires in 30min)</a></div>
                     </div>
 				</div>
 	</div>
@@ -463,8 +522,8 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Search doctor</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -490,7 +549,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 6999e484-299b-4e27-91e1-716990471d15</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 00618b7a-5e1d-43f7-9c15-f7749c2a9909</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -504,26 +563,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 1561a79f-c035-5523-88fd-fc40a40a0e46</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 9be2f192-d993-5523-85d6-aa7677052d49</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "6999e484-299b-4e27-91e1-716990471d15",
+  "messageId": "00618b7a-5e1d-43f7-9c15-f7749c2a9909",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "MD-32008",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "Kathleen",
           "lastName": "Jones"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -538,9 +601,9 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: ef1671ec-a7fd-4d6b-95e7-c72578f79426</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -554,18 +617,28 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:03:53.901428Z","messageId":"5761783d-1990-4565-a7be-e263460e5bc6","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"6999e484-299b-4e27-91e1-716990471d15","data":{"licenseDetails":{"licenseNumber":"MD-32008","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"010","issueDate":"Aug 12 1997 12:00AM","expirationDate":"12/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Kathleen","lastName":"Jones"},"dataAcquiredOn":"2022-11-04T19:03:52.1622865+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/bab412a6-1fc2-4e56-a3d1-312a8255c686","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/5434cbd7-d624-422d-b851-0eeb81dbbcbe","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:22:17.2686777Z","messageId":"3ddc4b36-8928-4e2c-8ac3-c65e1653eab9","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"00618b7a-5e1d-43f7-9c15-f7749c2a9909","data":{"licenseDetails":{"licenseNumber":"MD-32008","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"010","issueDate":"Aug 12 1997 12:00AM","expirationDate":"12/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Kathleen","lastName":"Jones"},"dataAcquiredOn":"2022-11-08T19:22:15.5840015+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/9f7ffe0d-e43c-4285-89a1-dbc6f0a8fbac","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/9e747b16-14c0-4cd9-a290-5fd9a9d192c5","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I verify the JSON response</b></span>
                             </div>
-			<div class="details"><i>  String lengths are both 10. Strings differ at index 9.
-  Expected: "12/01/2022"
-  But was:  "12/01/2024"
-  --------------------^
-<br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.issueDate: Aug 12 1997 12:00AM</i><br>&nbsp;&nbsp;<i>->Real value: Aug 12 1997 12:00AM</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.expirationDate: 12/01/2022</i><br>&nbsp;&nbsp;<i>->Real value: 12/01/2024</i><br></i></div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.issueDate: Aug 12 1997 12:00AM</i><br>&nbsp;&nbsp;<i>->Real value: Aug 12 1997 12:00AM</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.expirationDate: 12/01/2024</i><br>&nbsp;&nbsp;<i>->Real value: 12/01/2024</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.licenseNumber: MD-32008</i><br>&nbsp;&nbsp;<i>->Real value: MD-32008</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I get the access token</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the proof of artifact</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-00618b7a-5e1d-43f7-9c15-f7749c2a9909.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/9f7ffe0d-e43c-4285-89a1-dbc6f0a8fbac?AWSAccessKeyId=ASIAX6HXU6SGQ7W52FWG&Expires=1667936276&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-00618b7a-5e1d-43f7-9c15-f7749c2a9909.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEFMaCXVzLXdlc3QtMiJHMEUCICMFHHnKyNdjrbPUTIXt%2BqiR8vJk1mp1wqxJxUlZ5it%2BAiEAptITqEgCL0TF6Yv4ChnZxFwVdQU2H1lqXBI8EBe0KOsqzAQITBAAGgw1NDU5ODAyMTY0NjEiDFxs%2FcNPsyftyEV%2BxyqpBN3VKonNcd%2Ff8HFvIqImUFafNNl9z67m2ASQTYq7m64bwFq%2B24v66YFgxRU2U8ZnJIHOpBuwT%2FntZ5ZQjRd05VHIsRMZXhVH%2B9rLwesYW%2BFz6ykDX8wA7Yv70xo%2FNzxmb632adzyK8lWVDFrkBQ%2FXE%2BN0LndbqLL81Lp2eimHWxwQdqAuGqZlwic%2Fc7pQGgCYbQtB6kDcKkn0k0bF57eVCPCNefAHqg2FpI5Nkicd61NdX3Vn1Tsbn4Ai%2Flasi6nWGb13vQUwfXY3UjwpNlrLqItAagc6VfKcwT5MBpyCGpmhTRMKcTskuqL%2FdEn%2FMFUS3hWUdpaNmdQx6PrGkpbX2l2c3lSiq%2FPY8EUUa1zE%2Fvq%2BvsrRhG9IFU8uzaffjEWJoJ572ouQoltolNTtx%2FLuKfdEa9iirp42IGWQZndwdkgoXZ5mJArp8wGfPLWKEZNvUb01qY4wKZiPgEj4jsz%2FPo55Twk87TH2A4zHAjS%2B5qiL1PJrc4cvvIuIGQV8b9pZkRtb73ePg04IHmlZJH1yGbl5b08ao3lpUcvlo25%2FevKNROA0pcvTCEEY6K%2BcepV7uzOferixOt%2BK93qMkNkbiJv8G9ncrksOJFk%2B76MSMe%2Bfma%2FnkYM4EiJfWkA02QZE%2FVkgynzD0yvPxsJ1TuGUGWHU1rhtxdlDhPPvbesPrgAk4SjrurXU6W7OA4cw6XRl4ImJPDiKks%2F9nx7oZ6Tw7Jt3barK5jlrNsw7sWqmwY6qQH2s8o5R51IBxjZeE1rPke8FQrAlm5szeLqwq60wOmDVbIRWZ99B2Fhd%2FxJNM3gNkdz5UBwmcd0t%2BwwKIDsKhwgqpm7P%2FvpUWNK0c6RvzaWEXFyULLYtCxGmLGaE9bMv2iTCZNon55JArAkJZLfhQoKwdzVAwo9eUkQMeOvMb4GHjsBNUKnTsn%2FpxSDa7Iw%2BTx7yi98QE0r0MvMK%2FWB%2Bq1GIq7FwpIJEozi&Signature=FKmiNfmwN%2BrZ888sEiK2OKJA5A8%3D">Presigned URL (Expires in 30min)</a></div>
                     </div>
 				</div>
 	</div>
@@ -600,7 +673,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: c6f2a494-ca95-47ee-a9aa-e4b0f7fd6f5e</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 9df6f119-15b8-43cf-819d-2d03830d95be</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -614,26 +687,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 8014283f-ac0c-52c0-a9e3-73e0c86e3ae1</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: bce74a93-8b68-5a2d-a5c8-117725b8273c</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "c6f2a494-ca95-47ee-a9aa-e4b0f7fd6f5e",
+  "messageId": "9df6f119-15b8-43cf-819d-2d03830d95be",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "R-12485",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "Abigail",
           "lastName": "Scrogum"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -648,9 +725,9 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: b5f98eae-7b51-4d2f-b179-201a2105a48f</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -664,7 +741,7 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:04:29.4942334Z","messageId":"7305f127-b298-4fd7-a499-02493c77bde9","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"c6f2a494-ca95-47ee-a9aa-e4b0f7fd6f5e","data":{"licenseDetails":{"licenseNumber":"R-12485","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"05/20/2022","expirationDate":"06/30/2025","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Abigail","lastName":"Scrogum"},"dataAcquiredOn":"2022-11-04T19:04:27.7200391+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/9594b0dd-f7c3-47b7-a1e2-14d0cbf020de","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/e8f0bad9-bfdb-49ac-a3fb-8dd3590a8981","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:23:21.8922962Z","messageId":"c0726a66-9f0e-4657-9d08-d37ff1c58ecc","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"9df6f119-15b8-43cf-819d-2d03830d95be","data":{"licenseDetails":{"licenseNumber":"R-12485","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"05/20/2022","expirationDate":"06/30/2025","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Abigail","lastName":"Scrogum"},"dataAcquiredOn":"2022-11-08T19:23:19.4780663+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/a4901bc0-ddbf-41a5-9d2e-b2888a561d83","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/ddcee4ea-9edb-4010-af0e-6f04fe31d88a","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -685,7 +762,7 @@
                                 </span>
                                 <span>Then <b>I verify the proof of artifact</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-c6f2a494-ca95-47ee-a9aa-e4b0f7fd6f5e.pdf</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/9594b0dd-f7c3-47b7-a1e2-14d0cbf020de?AWSAccessKeyId=ASIAX6HXU6SGRV33VMON&Expires=1667589579&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-c6f2a494-ca95-47ee-a9aa-e4b0f7fd6f5e.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEPP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIEqCOm4rHE4WJdc8He5thNKSxDEG3%2BKy0bSiEUTU33ECAiEA54LfCChIchtyUbaYFVHlbFojaOfCLgpQOZ8XtykvkSAq1QQI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDKRzi3dfxmvCq8NSzCqpBN71fE4KU2xy94v9ADWA6N1CL4K0qCY7FDuqdNHFC0Rgu%2Fywwg1NDSDuskRYItdrDpGKt%2BPHcuanv8eEriKM8UOhKLM4OwCQGmV5Diihf0sIAm1ylmy%2Bj1pho6FdQA5Cw8WJd1nkjO8ezu7lGAgVYSoHMOq7XgLhIHmdOBKkY%2FCIUjjg7yOBAZ3yt8rLPwOWTBGSAjSyfvGPLsW4TqPvOBiMim3gWL7vyez6%2BbHZDGC%2F2vghgRD%2BCN4BO%2BArcqkC1d39Nd%2B3cLRqYBeDC6RosnydEbY%2Bv9Mft0ecJBmpmDDIHF%2BO3o3TqjJCSoSlQeUyi6ILljfW%2Fzh%2B3yWEqFGh6lPMg874DRYZ0PSYJ8kgoUJI%2BMVbdQxrIefkqhX%2FPVsuI%2F8wmtyYylGl0dgRf3R8gXWsRk%2FYzC3sxgNgNrAfAkzFle6wHF9BaG%2FO4SP6C5LD9wHiwlXiEd44pLwOBxBv2GvL09kgGtutu4%2BLp11IeaL2gD8qq2qk6HSnWKA8S5Ov3Cn6DcEOsRpDcxX8pFUe0jcWx4YhuYNIAVarMsRq2LPnPByhmkV%2BjgntBJgSnLhCiSzFtfpGw%2F7wlQ56iK4VSdsZM10ZMAV7oDGjjUYNKkUvCV1gXQ1SsAGC%2BGu2idasBRkQx14RFsmdlb9pc8gHZ5I4KHtRSQjB77hrSoKvG2yIrj0LGG0iiLjatHqZRKC2F8hcBHaj2MncxnKGgIqQBT%2FWYBQXQA3G1dgwqb2VmwY6qQF0uboERU2cxmFPmNIoTNENLEaLsfORB6L%2FZ2G%2B1gSlZ3QWmnBoxYvGxqEg1jiRyhJ83P7Free54s5P%2Ba1KJi%2Fb0X72QgMP9U6YHmAU1gocu2RHRF%2FDjd9plpt%2Bem%2FQn7duxcU5wqMrPo8fHSBElcsMNOcUcrOIsD8KUhjscyJyLKqU1LsaEZhWORDbBgpbKqffIb4u2aMynS1p2jgd3ShbSVqqIedvx1nN&Signature=h2JloL2Zl3f1kG4Q2pk6qa599OE%3D">Presigned URL (Expires in 30min)</a></div>
+			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-9df6f119-15b8-43cf-819d-2d03830d95be.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/a4901bc0-ddbf-41a5-9d2e-b2888a561d83?AWSAccessKeyId=ASIAX6HXU6SGQ7W52FWG&Expires=1667936303&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-9df6f119-15b8-43cf-819d-2d03830d95be.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEFMaCXVzLXdlc3QtMiJHMEUCICMFHHnKyNdjrbPUTIXt%2BqiR8vJk1mp1wqxJxUlZ5it%2BAiEAptITqEgCL0TF6Yv4ChnZxFwVdQU2H1lqXBI8EBe0KOsqzAQITBAAGgw1NDU5ODAyMTY0NjEiDFxs%2FcNPsyftyEV%2BxyqpBN3VKonNcd%2Ff8HFvIqImUFafNNl9z67m2ASQTYq7m64bwFq%2B24v66YFgxRU2U8ZnJIHOpBuwT%2FntZ5ZQjRd05VHIsRMZXhVH%2B9rLwesYW%2BFz6ykDX8wA7Yv70xo%2FNzxmb632adzyK8lWVDFrkBQ%2FXE%2BN0LndbqLL81Lp2eimHWxwQdqAuGqZlwic%2Fc7pQGgCYbQtB6kDcKkn0k0bF57eVCPCNefAHqg2FpI5Nkicd61NdX3Vn1Tsbn4Ai%2Flasi6nWGb13vQUwfXY3UjwpNlrLqItAagc6VfKcwT5MBpyCGpmhTRMKcTskuqL%2FdEn%2FMFUS3hWUdpaNmdQx6PrGkpbX2l2c3lSiq%2FPY8EUUa1zE%2Fvq%2BvsrRhG9IFU8uzaffjEWJoJ572ouQoltolNTtx%2FLuKfdEa9iirp42IGWQZndwdkgoXZ5mJArp8wGfPLWKEZNvUb01qY4wKZiPgEj4jsz%2FPo55Twk87TH2A4zHAjS%2B5qiL1PJrc4cvvIuIGQV8b9pZkRtb73ePg04IHmlZJH1yGbl5b08ao3lpUcvlo25%2FevKNROA0pcvTCEEY6K%2BcepV7uzOferixOt%2BK93qMkNkbiJv8G9ncrksOJFk%2B76MSMe%2Bfma%2FnkYM4EiJfWkA02QZE%2FVkgynzD0yvPxsJ1TuGUGWHU1rhtxdlDhPPvbesPrgAk4SjrurXU6W7OA4cw6XRl4ImJPDiKks%2F9nx7oZ6Tw7Jt3barK5jlrNsw7sWqmwY6qQH2s8o5R51IBxjZeE1rPke8FQrAlm5szeLqwq60wOmDVbIRWZ99B2Fhd%2FxJNM3gNkdz5UBwmcd0t%2BwwKIDsKhwgqpm7P%2FvpUWNK0c6RvzaWEXFyULLYtCxGmLGaE9bMv2iTCZNon55JArAkJZLfhQoKwdzVAwo9eUkQMeOvMb4GHjsBNUKnTsn%2FpxSDa7Iw%2BTx7yi98QE0r0MvMK%2FWB%2Bq1GIq7FwpIJEozi&Signature=7cFK5YXm7ysCSPuhPneeJDQIOg0%3D">Presigned URL (Expires in 30min)</a></div>
                     </div>
 				</div>
 	</div>
@@ -693,8 +770,8 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Search doctor</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -720,7 +797,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 6888f9a9-416d-4bf0-b219-57c9802ded3e</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: c63ed311-a11f-4321-90ad-f80b2376a2fd</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -734,26 +811,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 0cfa509e-de98-56a0-9723-0b41ba1f8ff1</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: ef895d8c-8006-5fa4-8d41-06682eedd6e2</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "6888f9a9-416d-4bf0-b219-57c9802ded3e",
+  "messageId": "c63ed311-a11f-4321-90ad-f80b2376a2fd",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "Kirk",
           "lastName": "Smith"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -768,51 +849,50 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: a3f2748a-5def-41ee-aca0-7937f3b25e09</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
                                 </span>
                                 <span>Then <b>I check for error messages</b></span>
                             </div>
-			<div class="details"></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:05:07.5564Z","messageId":"489f7773-cfff-4c88-a8dc-a6dfe8a0f8c4","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"6888f9a9-416d-4bf0-b219-57c9802ded3e","data":{"licenseDetails":{"licenseNumber":"","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"","issueDate":"","expirationDate":"04/26/2002","status":"Unknown","disciplinaryActionRecords":["Yes"]},"providerDetails":{"firstName":"Kirk","lastName":"Smith"},"dataAcquiredOn":"2022-11-04T19:05:04.3378785+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/688afa4b-b6a1-4cd5-a36b-8a995dea55e3","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/cde09fb8-3006-4783-b90e-b2f6259e52fe","method":"GET","headers":{"accept":"text/html"}}],"get_disciplinaryActionRecords":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/b42a03d4-00d4-483c-be6c-e149aa7122d9","method":"GET","headers":{"accept":"application/pdf"}},{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/e93ac0d9-513d-4c7e-b428-3eae8b8decd0","method":"GET","headers":{"accept":"application/pdf"}}]}}}</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I verify the JSON response</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.issueDate: </i><br>&nbsp;&nbsp;<i>->Real value: </i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.expirationDate: 04/26/2002</i><br>&nbsp;&nbsp;<i>->Real value: 04/26/2002</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.licenseNumber: </i><br>&nbsp;&nbsp;<i>->Real value: </i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I get the access token</b></span>
-                            </div>
-			<div class="details"></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I verify the proof of artifact</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-6888f9a9-416d-4bf0-b219-57c9802ded3e.pdf</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/688afa4b-b6a1-4cd5-a36b-8a995dea55e3?AWSAccessKeyId=ASIAX6HXU6SGRV33VMON&Expires=1667589612&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-6888f9a9-416d-4bf0-b219-57c9802ded3e.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEPP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIEqCOm4rHE4WJdc8He5thNKSxDEG3%2BKy0bSiEUTU33ECAiEA54LfCChIchtyUbaYFVHlbFojaOfCLgpQOZ8XtykvkSAq1QQI3P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDKRzi3dfxmvCq8NSzCqpBN71fE4KU2xy94v9ADWA6N1CL4K0qCY7FDuqdNHFC0Rgu%2Fywwg1NDSDuskRYItdrDpGKt%2BPHcuanv8eEriKM8UOhKLM4OwCQGmV5Diihf0sIAm1ylmy%2Bj1pho6FdQA5Cw8WJd1nkjO8ezu7lGAgVYSoHMOq7XgLhIHmdOBKkY%2FCIUjjg7yOBAZ3yt8rLPwOWTBGSAjSyfvGPLsW4TqPvOBiMim3gWL7vyez6%2BbHZDGC%2F2vghgRD%2BCN4BO%2BArcqkC1d39Nd%2B3cLRqYBeDC6RosnydEbY%2Bv9Mft0ecJBmpmDDIHF%2BO3o3TqjJCSoSlQeUyi6ILljfW%2Fzh%2B3yWEqFGh6lPMg874DRYZ0PSYJ8kgoUJI%2BMVbdQxrIefkqhX%2FPVsuI%2F8wmtyYylGl0dgRf3R8gXWsRk%2FYzC3sxgNgNrAfAkzFle6wHF9BaG%2FO4SP6C5LD9wHiwlXiEd44pLwOBxBv2GvL09kgGtutu4%2BLp11IeaL2gD8qq2qk6HSnWKA8S5Ov3Cn6DcEOsRpDcxX8pFUe0jcWx4YhuYNIAVarMsRq2LPnPByhmkV%2BjgntBJgSnLhCiSzFtfpGw%2F7wlQ56iK4VSdsZM10ZMAV7oDGjjUYNKkUvCV1gXQ1SsAGC%2BGu2idasBRkQx14RFsmdlb9pc8gHZ5I4KHtRSQjB77hrSoKvG2yIrj0LGG0iiLjatHqZRKC2F8hcBHaj2MncxnKGgIqQBT%2FWYBQXQA3G1dgwqb2VmwY6qQF0uboERU2cxmFPmNIoTNENLEaLsfORB6L%2FZ2G%2B1gSlZ3QWmnBoxYvGxqEg1jiRyhJ83P7Free54s5P%2Ba1KJi%2Fb0X72QgMP9U6YHmAU1gocu2RHRF%2FDjd9plpt%2Bem%2FQn7duxcU5wqMrPo8fHSBElcsMNOcUcrOIsD8KUhjscyJyLKqU1LsaEZhWORDbBgpbKqffIb4u2aMynS1p2jgd3ShbSVqqIedvx1nN&Signature=yajcgycCD4ImCvkGZXsGHdTHGSA%3D">Presigned URL (Expires in 30min)</a></div>
+			<div class="details"><i>Response contains error message<br>&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ParsingPrimarySourceData_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:23:50.1259189Z","messageId":"88af9f50-483b-4d68-9936-c0882e40ba11","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"c63ed311-a11f-4321-90ad-f80b2376a2fd","data":{"description":"Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the \u0027Response\u0027 property of this exception for details.","searchAttributes":{"licenseNumber":"","licenseType":"state_issued","primarySource":"IA","fieldOfLicensure":"015","individualNames":[{"firstName":"Kirk","lastName":"Smith"},{"firstName":"cfhch","lastName":"cfhchf"}],"businessNames":[]}}}</i><br></i></div>
                     </div>
 				</div>
 	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="fail" author="" device="" tag="" test-id="71"> 
+						<div class="status-avatar fail-bg">
+							<i class="fa fa-times text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">IOWA Board of Medicine Unhappy paths</p> 
+								<p class="duration text-sm">0h:3m:11s+063ms</p> 
+								<span class="datetime">13:23:53 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-fail">IOWA Board of Medicine Unhappy paths</h5>
+										<span class='badge badge-success'>11/8/2022 1:23:53 PM</span>
+										<span class='badge badge-danger'>11/8/2022 1:27:04 PM</span>
+										<span class='badge badge-default'>0h:3m:11s+063ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: Search in a non existant board</div>
+				<div class="node">Scenario: PrimarySourceDataAcquisition_Failed</div>
 				<div class="status-avatar float-left fail-bg">
 					<i class="fa fa-times text-white"></i>
 				</div>
@@ -824,23 +904,16 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
+                                <span>Given <b>I open the "IOWABoardOfMedicineIncomplete" json</b></span>
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I prepare the JSON data</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].firstName with Alfonso</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].lastName with Vega</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.licenseNumber with QA</i><br>&nbsp;&nbsp;<i>->Replacing destination with PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 4455e2f2-ff2a-4421-8170-198afe1f7d42</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 0114e325-7b73-474c-8a62-c654869e9e71</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -854,41 +927,21 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: f9c2f318-5d4e-5bc8-8838-a8c739e6dd23</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: e18ff7a8-ed11-5b60-b0a9-ac4c421ba28b</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
-  "destination": "PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "4455e2f2-ff2a-4421-8170-198afe1f7d42",
+  "messageId": "0114e325-7b73-474c-8a62-c654869e9e71",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
-  "causationId": "037c5027-daae-442e-976c-90050abbc254",
-  "data": {
-    "licenseHash": "x01",
-    "searchAttributes": {
-      "licenseNumber": "QA",
-      "licenseType": "state",
-      "primarySource": "CA",
-      "fieldOfLicensure": "015",
-      "individualNames": [
-        {
-          "firstName": "Alfonso",
-          "lastName": "Vega"
-        }
-      ],
-      "businessNames": []
-    },
-    "subscribingSystemIds": [
-      "sVerify",
-      "sDirectory"
-    ]
-  }
+  "causationId": "037c5027-daae-442e-976c-90050abbc254"
 }</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
 			<div class="details"><i>  Expected: not null
   But was:  null
@@ -899,9 +952,9 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: User does not exist</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="node">Scenario: ProviderLicenseMatch_NotFound</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -927,7 +980,7 @@
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: a923ccdb-818f-4ede-a3d9-6b50f1fde841</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 527a90a0-0e1a-4fcd-b605-7108103c9f18</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -941,26 +994,30 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: f3cd942e-7fef-55cd-a0cd-cff11ace3ac4</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: bf460e0a-b6ca-5a94-b937-55ee19bb9fdc</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "a923ccdb-818f-4ede-a3d9-6b50f1fde841",
+  "messageId": "527a90a0-0e1a-4fcd-b605-7108103c9f18",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
       "licenseNumber": "sefesfdr",
-      "licenseType": "state",
-      "primarySource": "CA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
           "firstName": "sefsefsese",
           "lastName": "sefssef"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
         }
       ],
       "businessNames": []
@@ -975,61 +1032,30 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Log found in: 2022/11/04/[$LATEST]94b79ddb779a45c7a3593d5b19e4bea8</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: 66ae16fb-60e3-4030-9f59-0d47a90bfb11</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ProviderLicenseMatch_NotFound","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-04T19:07:33.708321Z","messageId":"3391a60e-58f3-4ccc-a57f-5f89ab240792","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"a923ccdb-818f-4ede-a3d9-6b50f1fde841","data":{"description":"Search on the following provider license details did not produce any matching results.","searchAttributes":{"licenseNumber":"sefesfdr","licenseType":"state","primarySource":"CA","fieldOfLicensure":"015","individualNames":[{"firstName":"sefsefsese","lastName":"sefssef"}],"businessNames":[]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"ProviderLicenseMatch_NotFound","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:26:01.4314303Z","messageId":"c3352a17-1597-42e8-b2b6-32a1fc10500f","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"527a90a0-0e1a-4fcd-b605-7108103c9f18","data":{"description":"Search on the following provider license details did not produce any matching results.","searchAttributes":{"licenseNumber":"sefesfdr","licenseType":"state_issued","primarySource":"IA","fieldOfLicensure":"015","individualNames":[{"firstName":"sefsefsese","lastName":"sefssef"},{"firstName":"cfhch","lastName":"cfhchf"}],"businessNames":[]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I verify the JSON response</b></span>
                             </div>
-			<div class="details"><i>  Expected string length 16 but was 18. Strings differ at index 0.
-  Expected: "psv-daq|failures"
-  But was:  "sverify,sdirectory"
-  -----------^
-<br>&nbsp;&nbsp;<i>->Expected value in destination: PSV-DAQ | Failures</i><br>&nbsp;&nbsp;<i>->Real value: sVerify, sDirectory</i><br></i></div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: ProviderLicenseMatch_NotFound</i><br>&nbsp;&nbsp;<i>->Real value: ProviderLicenseMatch_NotFound</i><br></div>
                     </div>
 				</div>
 	</div>
-</div>
-						</div>
-					</li>
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="83"> 
-						<div class="status-avatar pass-bg">
-							<i class="fa fa-check text-white"></i>
-						</div>
-						<div class="open-test">
-							<div class="test-detail"> 
-								<p class="name">Retrieve_LicensePSVData</p> 
-								<p class="duration text-sm">0h:0m:0s+360ms</p> 
-								<span class="datetime">13:07:42 PM</span>
-							</div>
-						</div>
-						<div class="test-contents d-none">
-							<div class="detail-head">
-								<div class="p-v-10 d-inline-block">	
-									<div class="info">
-										<h5 class="test-status text-pass">Retrieve_LicensePSVData</h5>
-										<span class='badge badge-success'>11/4/2022 1:07:42 PM</span>
-										<span class='badge badge-danger'>11/4/2022 1:07:42 PM</span>
-										<span class='badge badge-default'>0h:0m:0s+360ms</span>
-									</div>
-																	</div>
-							</div>
-
-<div class="accordion mt-4">
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: Retrieve_LicensePSVData</div>
+				<div class="node">Scenario: PsvDaqMessage_Misdelivered</div>
 				<div class="status-avatar float-left pass-bg">
 					<i class="fa fa-check text-white"></i>
 				</div>
@@ -1037,35 +1063,213 @@
 		</div>
 				<div class="collapse">
                     <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start when" title="">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>When <b>I publish the payload to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload message ID: 22680_AUTOTEST</i><br>&nbsp;&nbsp;<i>->Message ID: 3e6e8871-2924-51a0-bcca-d3ae4c1a448a</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br></div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I prepare the JSON data</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].firstName with Alfonso</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].lastName with Vega</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.licenseNumber with QA</i><br>&nbsp;&nbsp;<i>->Replacing destination with PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 6596ce23-c2fc-46df-b153-4fb4dbcb4a17</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 67e7f47c-fe54-59de-a609-af9851df0114</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "6596ce23-c2fc-46df-b153-4fb4dbcb4a17",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "QA",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "Alfonso",
+          "lastName": "Vega"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I verify the Cloudwatch logs</b></span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: 2063075f-4185-41c0-bf51-87aeb8c18db1</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PsvDaqMessage_Misdelivered","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:26:21.7161897Z","messageId":"53160309-e0c9-4b36-af59-e1237a774d4c","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"6596ce23-c2fc-46df-b153-4fb4dbcb4a17","data":{"misdeliveredMessage":{"version":"1.0","messageType":"Retrieve_LicensePSVData","source":"PSV-DAQ | Scheduled License Monitoring Initiator","destination":"PSV-DAQ | DAQ Workers | MiddleEarthBoardOfMedicine","sendDate":"2022-02-16T19:42:00Z","messageId":"6596ce23-c2fc-46df-b153-4fb4dbcb4a17","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"037c5027-daae-442e-976c-90050abbc254","data":{"licenseHash":"x01","searchAttributes":{"licenseNumber":"QA","licenseType":"state_issued","primarySource":"IA","fieldOfLicensure":"015","individualNames":[{"firstName":"Alfonso","lastName":"Vega"},{"firstName":"cfhch","lastName":"cfhchf"}],"businessNames":[]},"subscribingSystemIds":["sVerify","sDirectory"]}}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the JSON response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: PsvDaqMessage_Misdelivered</i><br>&nbsp;&nbsp;<i>->Real value: PsvDaqMessage_Misdelivered</i><br></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: RequestForUnsupportedLicense_Received</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicine" json</b></span>
                             </div>
 			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I prepare the JSON data</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.primarySource with TA</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.fieldOfLicensure with 000</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 36b1ffcd-8096-40b2-a74e-1fb247235bfe</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 5d1b73b3-af84-5611-a2b6-285700212c3c</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "36b1ffcd-8096-40b2-a74e-1fb247235bfe",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licenseNumber": "R-12632",
+      "licenseType": "state_issued",
+      "primarySource": "TA",
+      "fieldOfLicensure": "000",
+      "individualNames": [
+        {
+          "firstName": "drfhgfc",
+          "lastName": "cfhhcc"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Fond in: 377c1002-6791-4406-90d0-9fecea15ff35</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"RequestForUnsupportedLicense_Received","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-08T19:26:48.9760238Z","messageId":"5b92cbe8-4ad8-4daa-8654-7607fe36e67c","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"36b1ffcd-8096-40b2-a74e-1fb247235bfe","data":{"description":"Attempted to process a license data request for license having an unsupported combination of prmarySource, licenseType, and fieldOfLicensure values.","searchAttributes":{"licenseNumber":"R-12632","licenseType":"state_issued","primarySource":"TA","fieldOfLicensure":"000","individualNames":[{"firstName":"drfhgfc","lastName":"cfhhcc"},{"firstName":"cfhch","lastName":"cfhchf"}],"businessNames":[]}}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the JSON response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: RequestForUnsupportedLicense_Received</i><br>&nbsp;&nbsp;<i>->Real value: RequestForUnsupportedLicense_Received</i><br></div>
                     </div>
 				</div>
 	</div>
 </div>
 						</div>
 					</li>
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="87"> 
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="105"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">SNS</p> 
-								<p class="duration text-sm">0h:0m:1s+637ms</p> 
-								<span class="datetime">13:07:42 PM</span>
+								<p class="duration text-sm">0h:0m:1s+956ms</p> 
+								<span class="datetime">13:27:04 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -1073,9 +1277,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">SNS</h5>
-										<span class='badge badge-success'>11/4/2022 1:07:42 PM</span>
-										<span class='badge badge-danger'>11/4/2022 1:07:44 PM</span>
-										<span class='badge badge-default'>0h:0m:1s+637ms</span>
+										<span class='badge badge-success'>11/8/2022 1:27:04 PM</span>
+										<span class='badge badge-danger'>11/8/2022 1:27:06 PM</span>
+										<span class='badge badge-default'>0h:0m:1s+956ms</span>
 									</div>
 																	</div>
 							</div>
@@ -1339,11 +1543,11 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='75%'>
-	                    <b>3</b> features passed
+	                <div><small data-tooltip='50%'>
+	                    <b>2</b> features passed
                     </small></div>
 	                <div>
-	                    <small data-tooltip='25%'><b>1</b> features failed, 
+	                    <small data-tooltip='50%'><b>2</b> features failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1361,9 +1565,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='83.33333333333334%'><b>15</b> scenarios passed</small></div>
+	                <div><small data-tooltip='85%'><b>17</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='16.666666666666664%'><b>3</b> scenarios failed, 
+	                    <small data-tooltip='15%'><b>3</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1381,9 +1585,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='96.62921348314607%'><b>86</b> steps passed</small></div>
+	                <div><small data-tooltip='97.14285714285714%'><b>102</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='3.3707865168539324%'><b>3</b> steps failed, 
+	                    <small data-tooltip='2.857142857142857%'><b>3</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1401,7 +1605,7 @@
 							<h2 class="font-size-28 font-weight-light">4</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>75%</span>
+								<span>50%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1417,10 +1621,10 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Scenarios</h6>
-							<h2 class="font-size-28 font-weight-light">18</h2>
+							<h2 class="font-size-28 font-weight-light">20</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>83.33%</span>
+								<span>85%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1436,7 +1640,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">11/4/2022 1:02:16 PM</h6>
+							<h6 class="font-weight-light">11/8/2022 1:19:09 PM</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1452,7 +1656,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:05:27.6905386</h6>
+							<h6 class="font-weight-light">00:07:57.2629857</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1469,15 +1673,15 @@
 <script>
 	var statusGroup = {
     parentCount: 4,
-		passParent: 3,
-		failParent: 1,
+		passParent: 2,
+		failParent: 2,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 1,
-		childCount: 18,
-		passChild: 15,
+		exceptionsParent: 2,
+		childCount: 20,
+		passChild: 17,
 		failChild: 3,
 		fatalChild: 0,
 		errorChild: 0,
@@ -1486,8 +1690,8 @@
 		infoChild: 0,
 		debugChild: 0,
 		exceptionsChild: 3,
-		grandChildCount: 89,
-		passGrandChild: 86,
+		grandChildCount: 105,
+		passGrandChild: 102,
 		failGrandChild: 3,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,

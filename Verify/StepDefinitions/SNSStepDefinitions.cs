@@ -1,3 +1,4 @@
+using Amazon.SQS.Model;
 using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
@@ -30,5 +31,17 @@ namespace Verify.StepDefinitions
             Console.WriteLine("Found? " + exist);
             Assert.True(exist);
         }
+
+        [When(@"I list all messages in queue")]
+        public async Task WhenIListAllMessagesInQueue()
+        {
+            ReceiveMessageResponse messages = await this._awsContext.SQSClient.GetMessage(10);
+
+            foreach(Message message in messages.Messages)
+            {
+                this.LogAndReport(message.Body.ToString());
+            }
+        }
+
     }
 }

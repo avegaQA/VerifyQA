@@ -18,3 +18,8 @@ Examples:
 	| "pdm-ftr-vfy-p1-psvDaqResults-topic"  |
 	| "pdm-ftr-vfy-psvDaqRequests-topic"    |
 	| "pdm-ftr-vfy-psvDaqResults-topic"     |
+
+
+#@SQS
+#Scenario: Test SQS
+#	When I list all messages in queue

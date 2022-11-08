@@ -1,7 +1,8 @@
 ﻿# User Story: https://dev.azure.com/symplr/Provider%20Management/_sprints/taskboard/Gondor/Provider%20Management/2022%20PI%204/Sprint%201?workitem=459745
 
 @SNS
-@CloudWatchLogs
+@SQS
+#@CloudWatchLogs
 Feature: IOWA Board of Medicine
 
 Scenario Outline: Search doctor
@@ -17,7 +18,8 @@ Scenario Outline: Search doctor
 
 	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
 
-	Then I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
+	#Then I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
+	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
 	And I check for error messages
 	And I parse the json response for IOWA Board of medicine
 	And I verify the JSON response
@@ -40,50 +42,31 @@ Examples:
 
 #***************************************************************************************************************************************
 
-Scenario: User does not exist
+Scenario: Cross-product of names
 
 	Given I open the "IOWABoardOfMedicine" json
 	And I prepare the JSON data
-		| key                                                | value      |
-		| data.searchAttributes.individualNames[0].firstName | sefsefsese |
-		| data.searchAttributes.individualNames[0].lastName  | sefssef    |
-		| data.searchAttributes.licenseNumber                | sefesfdr   |
+		| key                                                | value     |
+		| data.searchAttributes.individualNames[0].firstName | Fred      |
+		| data.searchAttributes.individualNames[1].lastName  | Goldblatt |
+		| data.searchAttributes.licenseNumber                | DO-02020  |
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 
-	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
-
-	Then I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
+	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
+	And I check for error messages
 	And I parse the json response for IOWA Board of medicine
 	And I verify the JSON response
-		| key         | value                         |
-		| destination | PSV-DAQ \| Failures           |
-		| messageType | ProviderLicenseMatch_NotFound |
+		| key                                | value               |
+		| data.licenseDetails.issueDate      | Jan 31 1984 12:00AM |
+		| data.licenseDetails.expirationDate | 11/01/2024          |
+		| data.licenseDetails.licenseNumber  | DO-02020            |
+
+	Then I get the access token
+	And I verify the proof of artifact
 
 #***************************************************************************************************************************************
 
-Scenario: Search in a non existant board
-
-	Given I open the "IOWABoardOfMedicine" json
-	And I prepare the JSON data
-		| key                                                | value                                                |
-		| data.searchAttributes.individualNames[0].firstName | Alfonso                                              |
-		| data.searchAttributes.individualNames[0].lastName  | Vega                                                 |
-		| data.searchAttributes.licenseNumber                | QA                                                   |
-		| destination                                        | PSV-DAQ \| DAQ Workers \| MiddleEarthBoardOfMedicine |
-	And I load the messageId
-	And I set IABoardOfMedicine message attributes
-
-	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
-
-	Then I look for the messageId in CloudWatchLogs group "/aws/lambda/pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
-	And I parse the json response for IOWA Board of medicine
-	And I verify the JSON response
-		| key         | value                      |
-		| destination | PSV-DAQ \| Failures        |
-		| messageType | PsvDaqMessage_Misdelivered |
-
-#***************************************************************************************************************************************
 
 
 
