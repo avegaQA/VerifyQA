@@ -61,6 +61,18 @@ namespace Verify.Hooks
             this._awsContext.CloudWatchLogsClient.closeClient();
         }
 
+        [BeforeScenario("Lambda")]
+        public void BeforeScenarioLambda()
+        {
+            this._awsContext.LambdaClient = new LambdaHandler();
+        }
+
+        [AfterScenario("Lambda")]
+        public void AfterScenarioLambda()
+        {
+            this._awsContext.LambdaClient.closeClient();
+        }
+
 
     }
 }

@@ -21,16 +21,12 @@ namespace Verify.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("IOWA Board of Medicine")]
-    [NUnit.Framework.CategoryAttribute("SNS")]
-    [NUnit.Framework.CategoryAttribute("SQS")]
     public partial class IOWABoardOfMedicineFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "SNS",
-                "SQS"};
+        private string[] _featureTags = ((string[])(null));
         
 #line 1 "IOWABoardOfMedicine.feature"
 #line hidden
@@ -39,9 +35,7 @@ namespace Verify.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "IOWA Board of Medicine", null, ProgrammingLanguage.CSharp, new string[] {
-                        "SNS",
-                        "SQS"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "IOWA Board of Medicine", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,14 +75,31 @@ namespace Verify.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search doctor")]
-        [NUnit.Framework.TestCaseAttribute("Fred", "Goldblatt", "DO-02020", "Jan 31 1984 12:00AM", "11/01/2024", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Sally", "Smith", "R-12632", "06/08/2022", "06/30/2024", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Kathleen", "Jones", "MD-32008", "Aug 12 1997 12:00AM", "12/01/2024", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Abigail", "Scrogum", "R-12485", "05/20/2022", "06/30/2025", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Kirk", "Smith", "NA", "NA", "04/26/2002", "2", null)]
-        public virtual void SearchDoctor(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string disciplinaryActionRecords, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("SNS")]
+        [NUnit.Framework.CategoryAttribute("SQS")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.003")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.004")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.005")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.006")]
+        [NUnit.Framework.TestCaseAttribute("Fred", "Goldblatt", "DO-02020", "Jan 31 1984 12:00AM", "11/01/2024", "0", "x02", null)]
+        [NUnit.Framework.TestCaseAttribute("Sally", "Smith", "R-12632", "06/08/2022", "06/30/2024", "0", "F74BF2B5C91BB04243432CD8AF30A7D2", null)]
+        [NUnit.Framework.TestCaseAttribute("Kathleen", "Jones", "MD-32008", "Aug 12 1997 12:00AM", "12/01/2024", "0", "x01", null)]
+        [NUnit.Framework.TestCaseAttribute("Abigail", "Scrogum", "R-12485", "05/20/2022", "06/30/2025", "0", "x02", null)]
+        [NUnit.Framework.TestCaseAttribute("Kirk", "Smith", "NA", "NA", "04/26/2002", "2", "F74BF2B5C91BB04243432CD8AF30A7D2", null)]
+        public virtual void SearchDoctor(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string disciplinaryActionRecords, string licenseHash, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "SNS",
+                    "SQS",
+                    "SRS_459745.003",
+                    "SRS_459745.004",
+                    "SRS_459745.005",
+                    "SRS_459745.006"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("firstName", firstName);
             argumentsOfScenario.Add("lastName", lastName);
@@ -96,8 +107,9 @@ namespace Verify.Features
             argumentsOfScenario.Add("issueDate", issueDate);
             argumentsOfScenario.Add("expirationDate", expirationDate);
             argumentsOfScenario.Add("disciplinaryActionRecords", disciplinaryActionRecords);
+            argumentsOfScenario.Add("licenseHash", licenseHash);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search doctor", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 8
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -117,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 10
+#line 12
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -132,27 +144,30 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-#line 11
+                table1.AddRow(new string[] {
+                            "data.licenseHash",
+                            string.Format("{0}", licenseHash)});
+#line 13
  testRunner.And("I prepare the JSON data", ((string)(null)), table1, "And ");
 #line hidden
-#line 16
+#line 19
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 20
  testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 22
  testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
                         "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 24
  testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
                         "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 23
+#line 25
  testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 26
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,27 +182,58 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "data.licenseDetails.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-#line 25
+                table2.AddRow(new string[] {
+                            "messageType",
+                            "LicensePSVData_Acquired"});
+#line 27
  testRunner.And("I verify the JSON response", ((string)(null)), table2, "And ");
 #line hidden
-#line 31
+#line 34
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 35
  testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.And("I verify the Raw HTML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.And(string.Format("I check the disciplinary records to match with \"{0}\"", disciplinaryActionRecords), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cross-product of names")]
-        public virtual void Cross_ProductOfNames()
+        [NUnit.Framework.DescriptionAttribute("PrimarySource, LicenseType and FieldOFLicensure valid combinations")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.002")]
+        [NUnit.Framework.CategoryAttribute("Deprecated")]
+        [NUnit.Framework.CategoryAttribute("SNS")]
+        [NUnit.Framework.CategoryAttribute("SQS")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.001")]
+        [NUnit.Framework.TestCaseAttribute("IA", "010", "state_issued", null)]
+        [NUnit.Framework.TestCaseAttribute("IA", "015", "state_issued", null)]
+        [NUnit.Framework.TestCaseAttribute("IA", "020", "state_issued", null)]
+        [NUnit.Framework.TestCaseAttribute("IA", "025", "state_issued", null)]
+        public virtual void PrimarySourceLicenseTypeAndFieldOFLicensureValidCombinations(string primarySource, string fieldOfLicensure, string licenseType, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "SRS_459745.002",
+                    "Deprecated",
+                    "SNS",
+                    "SQS",
+                    "SRS_459745.001"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cross-product of names", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 45
+            argumentsOfScenario.Add("PrimarySource", primarySource);
+            argumentsOfScenario.Add("FieldOfLicensure", fieldOfLicensure);
+            argumentsOfScenario.Add("LicenseType", licenseType);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PrimarySource, LicenseType and FieldOFLicensure valid combinations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 81
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -207,7 +253,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 47
+#line 83
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -215,52 +261,118 @@ this.ScenarioInitialize(scenarioInfo);
                             "value"});
                 table3.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].firstName",
-                            "Fred"});
+                            "Sally"});
                 table3.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[1].lastName",
-                            "Goldblatt"});
+                            "data.searchAttributes.individualNames[0].lastName",
+                            "Smith"});
                 table3.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
-                            "DO-02020"});
-#line 48
+                            "R-12632"});
+                table3.AddRow(new string[] {
+                            "data.searchAttributes.primarySource",
+                            string.Format("{0}", primarySource)});
+                table3.AddRow(new string[] {
+                            "data.searchAttributes.fieldOfLicensure",
+                            string.Format("{0}", fieldOfLicensure)});
+                table3.AddRow(new string[] {
+                            "data.searchAttributes.licenseType",
+                            string.Format("{0}", licenseType)});
+#line 84
  testRunner.And("I prepare the JSON data", ((string)(null)), table3, "And ");
 #line hidden
-#line 53
+#line 92
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 93
  testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
+#line 95
+ testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
+                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 97
  testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
                         "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 57
+#line 98
  testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 58
+#line 99
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
                 table4.AddRow(new string[] {
+                            "messageType",
+                            "LicensePSVData_Acquired"});
+                table4.AddRow(new string[] {
                             "data.licenseDetails.issueDate",
-                            "Jan 31 1984 12:00AM"});
-                table4.AddRow(new string[] {
-                            "data.licenseDetails.expirationDate",
-                            "11/01/2024"});
-                table4.AddRow(new string[] {
-                            "data.licenseDetails.licenseNumber",
-                            "DO-02020"});
-#line 59
+                            "06/08/2022"});
+#line 100
  testRunner.And("I verify the JSON response", ((string)(null)), table4, "And ");
 #line hidden
-#line 65
+#line 106
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 66
+#line 107
  testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 108
+ testRunner.And("I verify the Raw HTML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check for batchItemFailures")]
+        [NUnit.Framework.CategoryAttribute("Lambda")]
+        [NUnit.Framework.CategoryAttribute("SRS_459745.008")]
+        [NUnit.Framework.TestCaseAttribute("IOWAHappyLambdaTester", "0", null)]
+        [NUnit.Framework.TestCaseAttribute("IOWAUnhappyLambdaTester", "1", null)]
+        public virtual void CheckForBatchItemFailures(string jSONname, string numberOfFailures, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Lambda",
+                    "SRS_459745.008"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("JSONname", jSONname);
+            argumentsOfScenario.Add("NumberOfFailures", numberOfFailures);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for batchItemFailures", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 123
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 124
+ testRunner.Given(string.Format("I open the \"{0}\" json", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 126
+ testRunner.When("I test the lambda function \"pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 128
+ testRunner.Then(string.Format("I verify the lambda response \"{0}\"", numberOfFailures), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

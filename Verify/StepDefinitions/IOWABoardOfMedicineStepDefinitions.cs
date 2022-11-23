@@ -39,18 +39,36 @@ namespace Verify.StepDefinitions
 
             foreach (var expectedValue in expectedValues)
             {
-                String value = expectedValue.Value;
-                if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
+                if (expectedValue.Value.Equals("CONTAINS_EXCEPTION"))
+                {
+                    Assert.IsNotEmpty(this._awsContext.response.SelectToken(expectedValue.Key).ToString());
+                    this.LogAndReport("Expected value in " + expectedValue.Key + ": " + expectedValue.Value);
+                    this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
+                }
+                else
+                {
+                    String value = expectedValue.Value;
+                    if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
 
-                String real = value.ToLower().Replace(" ", "");
-                String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
-                this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
-                this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
+                    String real = value.ToLower().Replace(" ", "");
+                    String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
+                    this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
+                    this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
 
-                Assert.AreEqual(real, expected);
-
+                    Assert.AreEqual(real, expected);
+                }
+               
             }
         }
+
+        [Then(@"I verify the message destinations field")]
+        public void ThenIVerifyTheMessageDestinationsField()
+        {
+            String msgDestinations = this._awsContext.response.SelectToken("MessageAttributes.message_destinations").ToString();
+            this.LogAndReport("MessageAttributes.message_destinations: " + msgDestinations);
+            Assert.True(!msgDestinations.Contains("PSV-DAQ | Failures"));
+        }
+
 
 
 
@@ -111,22 +129,6 @@ namespace Verify.StepDefinitions
         {
             this._awsContext.payload["destination"] = destination;
         }
-
-
-
-        [Then(@"I check the disciplinary records to match with ""([^""]*)""")]
-        public void ThenICheckTeDisciplinaryRecordsToMatchWith(string expected)
-        {
-            JArray items = (JArray)this._awsContext.response["data"]["_links"]["get_disciplinaryActionRecords"];
-            int length = items.Count;
-
-            this.LogAndReport("Expected value: " + expected);
-            this.LogAndReport("Real value: " + length);
-
-            Assert.AreEqual(int.Parse(expected), length);
-        }
-
-
 
         [Then(@"I check proof of artifact")]
         public void ThenICheckProofOfArtifact()

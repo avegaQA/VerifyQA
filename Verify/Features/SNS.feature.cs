@@ -80,10 +80,6 @@ namespace Verify.Features
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqResults-topic\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqRequests-topic\"", null)]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqResults-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-p1-psvDaqRequests-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-p1-psvDaqResults-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqRequests-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaqResults-topic\"", null)]
         public virtual void CheckIfTopicIsSet(string topicName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

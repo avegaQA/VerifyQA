@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+      "receiptHandle": "MessageReceiptHandle",
+      "body": "{ \n    \"version\": \"1.0\", \n    \"messageType\": \"Retrieve_LicensePSVData\", \n    \"source\": \"PSV-DAQ | Scheduled License Monitoring Initiator\", \n    \"destination\": \"PSV-DAQ | DAQ Workers | IABoardOfMedicine\", \n    \"sendDate\": \"2022-02-16T19:42:00Z\", \n    \"messageId\": \"e47e2a93-2985-4d15-9b6c-08c32131a177\", \n    \"correlationId\": \"a15446ff-761a-4e81-bdef-be949e59156c\", \n    \"causationId\": \"037c5027-daae-442e-976c-90050abbc254\", \n    \"data\": { \n        \"licenseHash\": \"x01\", \n        \"searchAttributes\": { \n            \"licenseNumber\": \"R-12632\", \n            \"licenseType\": \"state_issued\", \n            \"primarySource\": \"IA\", \n            \"fieldOfLicensure\": \"010\", \n            \"individualNames\":[{ \"firstName\": \"Sally\",\"lastName\": \"Smith\" }, \n { \"firstName\": \"Jim\",\"lastName\": \"Doe\" }, \n { \"firstName\": \"Jim\",\"lastName\": \"Smith\" } \n ], \n \"businessNames\":[] \n      }, \n        \"subscribingSystemIds\": [ \n            \"sVerify\", \n            \"sDirectory\" \n        ] \n    } \n}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1523232000000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1523232000001"
+      },
+      "messageAttributes": {
+
+      },
+      "md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:{partition}:sqs:{region}:123456789012:MyQueue",
+      "awsRegion": "{region}"
+    }
+  ]
+}

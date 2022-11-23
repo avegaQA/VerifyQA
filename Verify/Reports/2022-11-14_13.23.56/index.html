@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@8539670db814bf19a0ddbe9a6d19058aea0cf981/spark/css/spark-style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa bdd-report">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary"></span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">11/14/2022 1:23:56 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row test-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tests</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+								            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">IOWA Board of Medicine Unhappy paths</p> 
+								<p class="duration text-sm">0h:1m:17s+927ms</p> 
+								<span class="datetime">13:23:56 PM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">IOWA Board of Medicine Unhappy paths</h5>
+										<span class='badge badge-success'>11/14/2022 1:23:56 PM</span>
+										<span class='badge badge-danger'>11/14/2022 1:25:14 PM</span>
+										<span class='badge badge-default'>0h:1m:17s+927ms</span>
+									</div>
+																	</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: PrimarySourceDataAcquisition_Failed</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "LicenseNumberCorrupted" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 1e72dd13-3f83-4d22-9fe4-9bd9a3a5b201</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 19811253-b3e6-5365-8c79-49bf2bebb6e8</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "1e72dd13-3f83-4d22-9fe4-9bd9a3a5b201",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licNumber": "R-12632",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "drfhgfc",
+          "lastName": "cfhhcc"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
+        }
+      ],
+      "businessNames": []
+    },
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Found in: ebc5a0ca-07e4-4be2-a8fd-76eca79257d5</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PrimarySourceDataAcquisition_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-14T19:24:17.361917Z","messageId":"27d1cf95-0ae6-4615-a30d-ffccaee627d2","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"1e72dd13-3f83-4d22-9fe4-9bd9a3a5b201","data":{"message":"The given key was not present in the dictionary.","referenceId":"cb43806c-5966-49cd-a509-ca81798e976a"}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the JSON response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Real value: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Expected value in data.message: CONTAINS_EXCEPTION</i><br>&nbsp;&nbsp;<i>->Real value: The given key was not present in the dictionary.</i><br></div>
+                    </div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: PrimarySourceDataAcquisition_Failed</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I open the "IOWABoardOfMedicineIncomplete" json</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I load the messageId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 65a7d50d-6fac-4a14-b87f-094890b3a3a6</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                            </div>
+			<div class="details"></div>
+                            <div class="d-flex align-items-center justify-content-start when" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: de3f0a90-f3a8-5327-8b35-517c6b8abc62</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+  "version": "1.0",
+  "messageType": "Retrieve_LicensePSVData",
+  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
+  "sendDate": "2022-02-16T19:42:00Z",
+  "messageId": "65a7d50d-6fac-4a14-b87f-094890b3a3a6",
+  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
+  "causationId": "037c5027-daae-442e-976c-90050abbc254",
+  "data": {
+    "subscribingSystemIds": [
+      "sVerify",
+      "sDirectory"
+    ]
+  }
+}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Found in: 120927ce-0237-4aef-8281-431a8dfb3c4a</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PrimarySourceDataAcquisition_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-14T19:24:38.3939065Z","messageId":"9a669040-d92a-427b-b0f5-917512424370","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"65a7d50d-6fac-4a14-b87f-094890b3a3a6","data":{"message":"The given key was not present in the dictionary.","referenceId":"65a7d50d-6fac-4a14-b87f-094890b3a3a6"}}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I verify the JSON response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Real value: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Expected value in data.message: CONTAINS_EXCEPTION</i><br>&nbsp;&nbsp;<i>->Real value: The given key was not present in the dictionary.</i><br></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>
+										<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='parent-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'>
+	                    <b>1</b> features passed
+                    </small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> features failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='child-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> scenarios failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+				<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='grandchild-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'><b>14</b> steps passed</small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> steps failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light">1</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light">2</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Start</h6>
+							<h6 class="font-weight-light">11/14/2022 1:23:56 PM</h6>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Duration</h6>
+							<h6 class="font-weight-light">00:01:17.9607652</h6>
+							<span class="text-semibold text-danger font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-danger opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+							</div>
+</div>
+<script>
+	var statusGroup = {
+    parentCount: 1,
+		passParent: 1,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 2,
+		passChild: 2,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 14,
+		passGrandChild: 14,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+	};
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@cc89904c1a12065be1d08fc4994a258ef01b12bd/spark/js/scripts.js"></script>
+<script type='text/javascript'>
+	
+</script>
+</body>
+
+</html>

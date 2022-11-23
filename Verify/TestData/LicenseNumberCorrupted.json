@@ -8,6 +8,24 @@
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
+    "licenseHash": "x01",
+    "searchAttributes": {
+      "licNumber": "R-12632",
+      "licenseType": "state_issued",
+      "primarySource": "IA",
+      "fieldOfLicensure": "015",
+      "individualNames": [
+        {
+          "firstName": "drfhgfc",
+          "lastName": "cfhhcc"
+        },
+        {
+          "firstName": "cfhch",
+          "lastName": "cfhchf"
+        }
+      ],
+      "businessNames": []
+    },
     "subscribingSystemIds": [
       "sVerify",
       "sDirectory"

@@ -42,7 +42,7 @@ namespace Verify.StepDefinitions
         [Then(@"I verify the proof of artifact")]
         public async Task ThenIVerifyTheProofOfArtifactAsync()
         {
-            RestResponse response = await this.GetProofOfArtifact();
+            RestResponse response = await this.GetProofOfArtifact(this._awsContext.response.SelectToken("data._links.get_proofArtifacts[0].href").ToString());
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             Dictionary<string, string> responseHeaders = HeadersToDictionary(response.Headers.ToList());
@@ -51,8 +51,55 @@ namespace Verify.StepDefinitions
             this.LogAndReport("Status code: " + response.StatusCode);
             Assert.IsTrue(responseHeaders["FileName"].Contains(this._awsContext.messsageID));
 
-            this.addLinkToReport(responseHeaders["PresignedUrl"], "Presigned URL (Expires in 30min)");
+            this.addLinkToReport(responseHeaders["PresignedUrl"], "Presigned PDF URL (Expires in 30min)");
         }
+
+        [Then(@"I verify the Raw HTML")]
+        public async Task ThenIVerifyTheRawHTML()
+        {
+            RestResponse response = await this.GetProofOfArtifact(this._awsContext.response.SelectToken("data._links.get_primarySourceRawHtml[0].href").ToString());
+
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Dictionary<string, string> responseHeaders = HeadersToDictionary(response.Headers.ToList());
+
+            this.LogAndReport("Status code: " + response.StatusCode);
+
+            this.addLinkToReport(responseHeaders["PresignedUrl"], "Presigned HTML URL (Expires in 30min)");
+        }
+
+        [Then(@"I check the disciplinary records to match with ""([^""]*)""")]
+        public async Task ThenICheckTeDisciplinaryRecordsToMatchWithAsync(string expected)
+        {
+            int records = int.Parse(expected);
+
+            var token = this._awsContext.response.SelectToken("data._links.get_disciplinaryActionRecords");
+
+            if (token != null)
+            {
+                JToken[] recordsData = this._awsContext.response.SelectToken("data._links.get_disciplinaryActionRecords").ToArray();
+                Assert.AreEqual(records, recordsData.Length);
+
+                foreach (JToken record in recordsData)
+                {
+                    RestResponse response = await this.GetProofOfArtifact(record["href"].ToString());
+
+                    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+                    Dictionary<string, string> responseHeaders = HeadersToDictionary(response.Headers.ToList());
+
+                    this.LogAndReport("File name: " + responseHeaders["FileName"]);
+                    this.LogAndReport("Status code: " + response.StatusCode);
+
+                    Assert.IsTrue(responseHeaders["FileName"].Contains(this._awsContext.messsageID));
+
+                    this.addLinkToReport(responseHeaders["PresignedUrl"], "Presigned PDF URL (Expires in 30min)");
+                }
+            }
+            else
+            {
+                Assert.AreEqual(records, 0);
+            }
+        }
+
 
         public async Task<RestResponse> GetAccessToken()
         {
@@ -71,14 +118,13 @@ namespace Verify.StepDefinitions
 
         }
 
-        public Task<RestResponse> GetProofOfArtifact()
+        public Task<RestResponse> GetProofOfArtifact(String pUrl)
         {
             client = new RestClient("http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com");
 
-            client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator( this.accessToken, "Bearer" );
-            String proofUrl = this._awsContext.response.SelectToken("data._links.get_proofArtifacts[0].href").ToString();
+            client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(this.accessToken, "Bearer");
 
-            request = new RestRequest(proofUrl);
+            request = new RestRequest(pUrl);
 
             return client.HeadAsync(request);
 

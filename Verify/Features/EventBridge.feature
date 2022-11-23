@@ -10,5 +10,5 @@ Scenario Outline: Check if rule is set
 Examples:
 	| ruleName                   |
 	| "pdm-dev-vfy-psvDaq-clock" |
-	| "pdm-ftr-vfy-psvDaq-clock" |
+	#| "pdm-ftr-vfy-psvDaq-clock" |
 

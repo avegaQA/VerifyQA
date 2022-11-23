@@ -52,7 +52,7 @@ namespace Verify.StepDefinitions
         {
             this._awsContext.SQSClient.sqsURL = sqsUrl;
 
-            int attempts = 20;
+            int attempts = 30;
             int waitBetweenAttempts = 5000;
             String log = null;
             for (int i = 0; i < attempts; i++)
@@ -123,7 +123,22 @@ namespace Verify.StepDefinitions
             Assert.AreEqual(real, expected);
         }
 
+        [When(@"I test the lambda function ""([^""]*)""")]
+        public async Task WhenITestTheLambdaFunction(string funcName)
+        {
+            String resp = await this._awsContext.LambdaClient.InvokeFunctionAsync(funcName, this._awsContext.payload.ToString());
 
+            this.LogAndReport("Lambda response: " + resp);
+            this._awsContext.response = JObject.Parse(resp);
+        }
+
+        [Then(@"I verify the lambda response ""([^""]*)""")]
+        public void ThenIVerifyTheLambdaResponse(string numberOfFailures)
+        {
+            JToken[] failures = this._awsContext.response.SelectToken("batchItemFailures").ToArray();
+
+            Assert.AreEqual(int.Parse(numberOfFailures), failures.Length);
+        }
 
     }
 }

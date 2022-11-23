@@ -14,10 +14,10 @@ Examples:
 	| "pdm-dev-vfy-p1-psvDaqResults-topic"  |
 	| "pdm-dev-vfy-psvDaqRequests-topic"    |
 	| "pdm-dev-vfy-psvDaqResults-topic"     |
-	| "pdm-ftr-vfy-p1-psvDaqRequests-topic" |
-	| "pdm-ftr-vfy-p1-psvDaqResults-topic"  |
-	| "pdm-ftr-vfy-psvDaqRequests-topic"    |
-	| "pdm-ftr-vfy-psvDaqResults-topic"     |
+	#| "pdm-ftr-vfy-p1-psvDaqRequests-topic" |
+	#| "pdm-ftr-vfy-p1-psvDaqResults-topic"  |
+	#| "pdm-ftr-vfy-psvDaqRequests-topic"    |
+	#| "pdm-ftr-vfy-psvDaqResults-topic"     |
 
 
 #@SQS

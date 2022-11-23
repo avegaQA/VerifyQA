@@ -2,8 +2,10 @@
 
 @SNS
 @SQS
+@SRS_459745.009
 Feature: IOWA Board of Medicine Unhappy paths
 
+@SRS_459745.015
 Scenario: ProviderLicenseMatch_NotFound
 
 	Given I open the "IOWABoardOfMedicine" json
@@ -25,6 +27,8 @@ Scenario: ProviderLicenseMatch_NotFound
 
 #***************************************************************************************************************************************
 
+@SRS_459745.001
+@SRS_502180.011
 Scenario: PsvDaqMessage_Misdelivered
 
 	Given I open the "IOWABoardOfMedicine" json
@@ -40,6 +44,7 @@ Scenario: PsvDaqMessage_Misdelivered
 	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
 
 	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
+	And I verify the message destinations field
 	And I parse the json response for IOWA Board of medicine
 	And I verify the JSON response
 		| key         | value                      |
@@ -47,6 +52,7 @@ Scenario: PsvDaqMessage_Misdelivered
 
 #***************************************************************************************************************************************
 
+@SRS_502180.012
 Scenario: RequestForUnsupportedLicense_Received
 
 	Given I open the "IOWABoardOfMedicine" json
@@ -67,9 +73,11 @@ Scenario: RequestForUnsupportedLicense_Received
 
 #***************************************************************************************************************************************
 
-Scenario: PrimarySourceDataAcquisition_Failed
+@SRS_459745.018 
+@SRS_459745.020 @SRS_459745.019
+Scenario Outline: PrimarySourceDataAcquisition_Failed
 
-	Given I open the "IOWABoardOfMedicineIncomplete" json
+	Given I open the "<JSONname>" json
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 
@@ -78,7 +86,19 @@ Scenario: PrimarySourceDataAcquisition_Failed
 	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
 	And I parse the json response for IOWA Board of medicine
 	And I verify the JSON response
-		| key         | value                               |
-		| messageType | PrimarySourceDataAcquisition_Failed |
+		| key          | value                               |
+		| messageType  | PrimarySourceDataAcquisition_Failed |
+		| data.message | CONTAINS_EXCEPTION                  |
+
+Examples:
+	| JSONname                      |
+	| LicenseNumberCorrupted        |
+	| IOWABoardOfMedicineIncomplete |
 
 #***************************************************************************************************************************************
+
+#		Requirements missing to automate:
+#		Difficult---------------------------- Requires corrupted image for testing TBD
+#		ConnectingToPrimarySourceSystem_Failed  SRS_459745.013  SRS_459745.014
+#		StorageOfProofArtifact_Failed			SRS_459745.107	https://symplr.visualstudio.com/6d691373-87da-4a72-ae51-3f0d823947c8/_workitems/edit/507281
+#		ParsingPrimarySourceData_Failed			SRS_459745.016  SRS_459745.017

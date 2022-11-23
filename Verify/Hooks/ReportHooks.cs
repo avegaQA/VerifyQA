@@ -101,7 +101,7 @@ namespace Verify.Hooks
 
         public static void addLinkToReport(String link, String text)
         {
-            testStepText += "<a href= \"" + link + "\">" + text + "</a>";
+            testStepText += "<a href= \"" + link + "\">" + text + "</a><br>";
         }
 
     }

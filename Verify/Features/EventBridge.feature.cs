@@ -79,7 +79,6 @@ namespace Verify.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check if rule is set")]
         [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaq-clock\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-ftr-vfy-psvDaq-clock\"", null)]
         public virtual void CheckIfRuleIsSet(string ruleName, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

@@ -45,7 +45,7 @@ namespace Verify.AWSHandlers
                 if (message.Body.ToString().Contains(messageId))
                 {
                     Console.WriteLine("Message found!");
-                    this.LogAndReport("Fond in: " + message.MessageId);
+                    this.LogAndReport("Found in: " + message.MessageId);
                     return message.Body.ToString();
                 }
             }

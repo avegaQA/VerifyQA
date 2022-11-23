@@ -20,6 +20,8 @@ namespace Verify.Context
 
         public SQSHandler SQSClient { get; set; }
 
+        public LambdaHandler LambdaClient { get; set; }
+
         public CloudWatchLogsHandler CloudWatchLogsClient { get; set; }
 
         public RDSHandler RDSClient { get; set; }
