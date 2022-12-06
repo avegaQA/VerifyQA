@@ -280,7 +280,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "key",
                             "value"});
                 table9.AddRow(new string[] {
-                            "data.searchAttributes.primarySource",
+                            "data.searchAttributes.jurisdiction",
                             "TA"});
                 table9.AddRow(new string[] {
                             "data.searchAttributes.fieldOfLicensure",
@@ -385,11 +385,81 @@ this.ScenarioInitialize(scenarioInfo);
                 table11.AddRow(new string[] {
                             "messageType",
                             "PrimarySourceDataAcquisition_Failed"});
-                table11.AddRow(new string[] {
-                            "data.message",
-                            "CONTAINS_EXCEPTION"});
 #line 88
  testRunner.And("I verify the JSON response", ((string)(null)), table11, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("PrimarySourceDataAcquisition_Failed check message")]
+        [NUnit.Framework.TestCaseAttribute("LicenseNumberCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. The property licenseNumber is missing.", null)]
+        [NUnit.Framework.TestCaseAttribute("EmptyIndividualNames", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. A value in individualNames property is required.", null)]
+        [NUnit.Framework.TestCaseAttribute("WrongType", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. individualNames property has a wrong type.", null)]
+        [NUnit.Framework.TestCaseAttribute("SearchAttributeCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. The property searchAttributes is missing.", null)]
+        public virtual void PrimarySourceDataAcquisition_FailedCheckMessage(string jSONname, string message, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("JSONname", jSONname);
+            argumentsOfScenario.Add("message", message);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PrimarySourceDataAcquisition_Failed check message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 99
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 101
+ testRunner.Given(string.Format("I open the \"{0}\" json", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 102
+ testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 103
+ testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 105
+ testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
+                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 107
+ testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
+                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 108
+ testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table12.AddRow(new string[] {
+                            "messageType",
+                            "PrimarySourceDataAcquisition_Failed"});
+                table12.AddRow(new string[] {
+                            "data.message",
+                            string.Format("{0}", message)});
+#line 109
+ testRunner.And("I verify the JSON response", ((string)(null)), table12, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

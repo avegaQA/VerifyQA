@@ -39,25 +39,16 @@ namespace Verify.StepDefinitions
 
             foreach (var expectedValue in expectedValues)
             {
-                if (expectedValue.Value.Equals("CONTAINS_EXCEPTION"))
-                {
-                    Assert.IsNotEmpty(this._awsContext.response.SelectToken(expectedValue.Key).ToString());
-                    this.LogAndReport("Expected value in " + expectedValue.Key + ": " + expectedValue.Value);
-                    this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
-                }
-                else
-                {
-                    String value = expectedValue.Value;
-                    if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
+                String value = expectedValue.Value;
+                if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
 
-                    String real = value.ToLower().Replace(" ", "");
-                    String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
-                    this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
-                    this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
+                String real = value.ToLower().Replace(" ", "");
+                String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
+                this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
+                this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
 
-                    Assert.AreEqual(real, expected);
-                }
-               
+                Assert.AreEqual(real, expected);
+
             }
         }
 

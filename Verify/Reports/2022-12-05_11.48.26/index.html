@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">11/14/2022 2:32:50 PM</span>
+                    <span class="badge badge-primary">12/5/2022 11:48:26 AM</span>
                 </a>
             </li>
         </ul>
@@ -119,8 +119,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">IOWA Board of Medicine</p> 
-								<p class="duration text-sm">0h:0m:28s+267ms</p> 
-								<span class="datetime">14:32:50 PM</span>
+								<p class="duration text-sm">0h:1m:4s+527ms</p> 
+								<span class="datetime">11:48:26 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -128,9 +128,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">IOWA Board of Medicine</h5>
-										<span class='badge badge-success'>11/14/2022 2:32:50 PM</span>
-										<span class='badge badge-danger'>11/14/2022 2:33:19 PM</span>
-										<span class='badge badge-default'>0h:0m:28s+267ms</span>
+										<span class='badge badge-success'>12/5/2022 11:48:26 AM</span>
+										<span class='badge badge-danger'>12/5/2022 11:49:31 AM</span>
+										<span class='badge badge-default'>0h:1m:4s+527ms</span>
 									</div>
 																	</div>
 							</div>
@@ -160,14 +160,14 @@
                                 </span>
                                 <span>Given <b>I prepare the JSON data</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].firstName with Fred</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].lastName with Goldblatt</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.licenseNumber with DO-02020</i><br>&nbsp;&nbsp;<i>->Replacing data.licenseHash with x02</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].firstName with Abigail</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.individualNames[0].lastName with Scrogum</i><br>&nbsp;&nbsp;<i>->Replacing data.searchAttributes.licenseNumber with R-12485</i><br>&nbsp;&nbsp;<i>->Replacing data.licenseHash with x02</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Given <b>I load the messageId</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: d1911056-8699-4667-9474-ba94b46a2255</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 482366a7-0eb5-4d24-af8b-735b869cd447</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -181,26 +181,26 @@
                                 </span>
                                 <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: 4e79e89a-7116-54d3-b7b7-b376d925c511</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
+			<div class="details">&nbsp;&nbsp;<i>->Message ID: 5340b374-1b56-5f22-a6f7-ef7c2a79d34e</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
   "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "d1911056-8699-4667-9474-ba94b46a2255",
+  "messageId": "482366a7-0eb5-4d24-af8b-735b869cd447",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
   "causationId": "037c5027-daae-442e-976c-90050abbc254",
   "data": {
     "licenseHash": "x02",
     "searchAttributes": {
-      "licenseNumber": "DO-02020",
+      "licenseNumber": "R-12485",
       "licenseType": "state_issued",
-      "primarySource": "IA",
+      "jurisdiction": "IA",
       "fieldOfLicensure": "015",
       "individualNames": [
         {
-          "firstName": "Fred",
-          "lastName": "Goldblatt"
+          "firstName": "Abigail",
+          "lastName": "Scrogum"
         },
         {
           "firstName": "cfhch",
@@ -221,7 +221,7 @@
                                 </span>
                                 <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Found in: 3efbae6b-ed29-4a03-9e91-df17589e061f</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Found in: 0ca6807a-35f5-4ec8-9282-8e4075f3e9e4</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -235,14 +235,14 @@
                                 </span>
                                 <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-11-14T20:33:16.9787325Z","messageId":"cfdaa4c1-f000-4c57-b000-4bdc4220a624","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"d1911056-8699-4667-9474-ba94b46a2255","data":{"licenseDetails":{"licenseNumber":"DO-02020","licenseType":"Physician - Permanent","primarySource":"IA","fieldOfLicensure":"020","issueDate":"Jan 31 1984 12:00AM","expirationDate":"11/01/2024","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Fred","lastName":"Goldblatt"},"dataAcquiredOn":"2022-11-14T20:33:14.8665237+00:00","_links":{"get_proofArtifacts":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/7292396d-6eca-45ff-bf57-390e98469a10","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"http://platformassetsapi-dev.us-west-2.elasticbeanstalk.com/api/assets/sverify/psv-daq/dev/a08cc72c-f572-4f4c-b5dd-eb3cc46726f3","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"LicensePSVData_Acquired","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-12-05T17:49:29.8049096Z","messageId":"7318f774-5ebe-49b1-8dbf-5488349d770e","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"482366a7-0eb5-4d24-af8b-735b869cd447","data":{"licenseDetails":{"licenseNumber":"R-12485","licenseType":"Physician - Resident","primarySource":"IA","fieldOfLicensure":"015, 025","issueDate":"05/20/2022","expirationDate":"06/30/2025","status":"Unknown","disciplinaryActionRecords":[]},"providerDetails":{"firstName":"Abigail","lastName":"Scrogum"},"dataAcquiredOn":"2022-12-05T17:48:57.9851136+00:00","_links":{"get_proofArtifacts":[{"href":"https://dev-platform.symplr.com/digitalassetmgmt/v1/assets/sverify/psv-daq/dev/7ecae613-4028-4ddc-a85c-022d3b3185f3","method":"GET","headers":{"accept":"application/pdf"}}],"get_primarySourceRawHtml":[{"href":"https://dev-platform.symplr.com/digitalassetmgmt/v1/assets/sverify/psv-daq/dev/d826fdcd-ef66-4b92-9f00-51fc72625ecb","method":"GET","headers":{"accept":"text/html"}}]}}}</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I verify the JSON response</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.issueDate: Jan 31 1984 12:00AM</i><br>&nbsp;&nbsp;<i>->Real value: Jan 31 1984 12:00AM</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.expirationDate: 11/01/2024</i><br>&nbsp;&nbsp;<i>->Real value: 11/01/2024</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.licenseNumber: DO-02020</i><br>&nbsp;&nbsp;<i>->Real value: DO-02020</i><br>&nbsp;&nbsp;<i>->Expected value in messageType: LicensePSVData_Acquired</i><br>&nbsp;&nbsp;<i>->Real value: LicensePSVData_Acquired</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.issueDate: 05/20/2022</i><br>&nbsp;&nbsp;<i>->Real value: 05/20/2022</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.expirationDate: 06/30/2025</i><br>&nbsp;&nbsp;<i>->Real value: 06/30/2025</i><br>&nbsp;&nbsp;<i>->Expected value in data.licenseDetails.licenseNumber: R-12485</i><br>&nbsp;&nbsp;<i>->Real value: R-12485</i><br>&nbsp;&nbsp;<i>->Expected value in messageType: LicensePSVData_Acquired</i><br>&nbsp;&nbsp;<i>->Real value: LicensePSVData_Acquired</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -256,14 +256,14 @@
                                 </span>
                                 <span>Then <b>I verify the proof of artifact</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-d1911056-8699-4667-9474-ba94b46a2255.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/7292396d-6eca-45ff-bf57-390e98469a10?AWSAccessKeyId=ASIAX6HXU6SGQ2ME2F3B&Expires=1668458899&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-d1911056-8699-4667-9474-ba94b46a2255.pdf&x-amz-security-token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDA4ldmtyjkiWSMeDexpD8GZMmag0opbAOpAMeqrTN91wIgWvMI9sTeDlS%2BO5GXkaP3bhJWoyT1s4BCHa1gI5ayYdoq1QQI3f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDLUHcvGIZPAxFM9%2B2SqpBH3m15RMjaZT6NelisiSxB279QZM5rPY0cMddKvI2C1U7mB7MmXBHEQEPFuhd14ccVt34XQfmVpoqrAxpRALRP%2Fix7phc8CZ0be8M6DzB1mV0c5iHYFIVux2FRvFfhlZgy8mUkBQx7H9FDe5J%2B4zbCDepRbcO23ltU1lO6UDN97TjbLxb97NhvmgWv7xjAhmN92bhjRADX31SglZIUrxSjNjPsXzuvox0bX79NUo1fQKQ4G0LzQEyrjEPrj3eOcQFnD1XJKYmQxCbdaQAMLNJCDzLmTy8t4cdGLkLbADHNL9eClZozxf%2BzWTVceiVJ%2BBt036BOcpSqpL4%2Fj%2B8kdNyF0KHCawFlmA1GgI%2FAmnmF2Wbc8fOztsD9jjPtPr7bTa7N0ZS9utWGUEqIVfRtTeapmkPHV9xGdnjgnTnVOolbcJYnw7qTOk645qx7lNFP0y3yH7vBQSOXONYtAFpANc0xCUwq0DLZIXOv80flnS8tEndrFi%2BWDBeQccxQrSvB%2FHD7XnuEFPFiKZVqghdEi43eJVgiJQqGM7XMK4XG8qqTFKXZJLLkTnqRKs2a5rY2CdqZMQF5DLOkOFoXGBxMUqJya2ATR41R0TAg9nYYsFLIv2zvCVwYUEWBRtW9PxR%2BKP%2BJigqU%2FqRgHQuiPFPJaS9G6G%2FVsKOc9%2B9CeXZbfbDzJ83et5T%2F%2BsiOE8xymmKOS5lvDV27HFMkHk0ZnewiXI9p%2FXxdFLGFS3kV0wjsPKmwY6qQGwSYsDr9%2FimtfF5S70m3gHfoLn077exLngd2M397ZIgZT9y33%2B8qRghzn820CtwwKI9GCWQutqDTbWwHE1T3eihaFXvCyVKsXfPfM62ypHjmumjzd5ioaGywGMUlgWKRlc2oGLjJQExN5y5xQp2MyjF5ITnvVpr%2BxnbtK8onfpwKFhB9iuU4xa4ORQi9n%2FqEjrZkVLe8DDande1nfzf78qXMbua3Gngwqn&Signature=ry5fixfoqJasSTO7vzgEsBTbv2Q%3D">Presigned PDF URL (Expires in 30min)</a><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->File name: IABoardOfMedicineProofArtifact-resultsPDF-482366a7-0eb5-4d24-af8b-735b869cd447.pdf</i><br>&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-dam-dev-platform-assets-9007.s3.us-east-2.amazonaws.com/sverify/dam-test-sverify-1/dev/7ecae613-4028-4ddc-a85c-022d3b3185f3?X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQCc%2F6Kf7N1YfkfF%2BfL249HboHZBLBk1TwwJZ%2BVZ3ou%2FwQIhAPVCMH0x%2Bcjy39OdLEQOBq1oyWkDYmM4KZ8ISCYjGCECKqEFCPL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNDg3MzQ0NzU5MDA3IgwwaE0Mr%2FJnELJp%2Brsq9QRcY4UIIAYOTuN0Fjen8AoUTD%2FTJFHQQhPtNv6pKHpnO8N%2B7IsBatXoPOO2f2T24MGU9VzwB8R%2FoZNhIAkRURrussrvfu7H9VvZed9FT98ZbgW8UF6ds7u%2Fd41Y2b1ZoROOe%2BVSkxotkRRbu9%2BvF8sznaQRKebkTj3pdI0ZuHPgMZeOJkFIL6QjupOxIhuzM2wt7yHY9SbaMKUooglXFYznqXHmJmuKyMzleWLwrliLHwtMrfxcXirPJufzfEqhLLfF9pIILMnaap5YqK9edUHw7duIG1StX4uJUIouhPPiayP8ubcM1Tqr6PtIupe0KMaqrBt3OnY8MLEfrOuDr25WNNOo7bDfMhHrKexgSSuwAwEFzhXepxxHnepl736twHBrZMxWQ1GPNkNE6VvYbPOMon6MSuJAe7FQskUCB%2F%2FfaCwrCI5IMocrS7sk0tKWSFvXPDztG%2BHInc3i3jhA7dBZB5rUNSYatjERUAsL6b7VzSQFyavebc6Y7GcBs9OCtZnzUbGu5C7CU6yFtulphC4pt9hwxnuoGgkIMMIpwt4DJNXSa8tmsxW9SJqPgeY1k6hqQlqxZ0%2FmmR7Y6MeKXCwpsxk6Xis3tHIImzm%2BbYDmnWcCcuHoLl4NIQOX4f0t55jCsIe3xUY3C6e27Q1oes7QVveKgKN9uOqFtnMe8dyqPSfaxwfRzk%2BjGEevECf%2BHbqL1PNuFV52QkxW1cbZUly39f90vyJc6%2F%2Fd4M5lKds9%2FDWdNuLHv4hdxmhd45ZJWaNkQe2kExBK9fpwQ%2BSbs661CJONqJEL%2FPJmUG64RVPpn9xP3SZM40dVmQ5gtj%2By%2FoekBKnZ0TDPx7icBjqaASedL0UjQp34A2EPelZyXmHY%2BBnEJmUpdGoa2WljFCU4wQLG9V5g1wUiAxR4zwulZHvJfZhZ3hRgyQiPCSZBbUgOgKuWATOhRNub%2F%2B99qcwhG1Hgr9O2j%2FkOVb2KQhYwGr1vHjl2JcRX3U4VPT5iGFNfpVM3eveN63m1jAk36V7MbCWLvA4fEYDg9O%2F98DnUIs5pTh%2F9tIK%2Bvo0%3D&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-resultsPDF-482366a7-0eb5-4d24-af8b-735b869cd447.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXC6AC4DP37FSR7HT/20221205/us-east-2/s3/aws4_request&X-Amz-Date=20221205T174935Z&X-Amz-SignedHeaders=host&X-Amz-Signature=a04b9eeb926d74c6b6c9ea4cfb73ab88738d8f63ea60522a6c78816f12c6c5fb">Presigned PDF URL (Expires in 30min)</a><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>Then <b>I verify the Raw HTML</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-platform-digital-assets.s3.amazonaws.com/sverify/dam-test-sverify-1/dev/a08cc72c-f572-4f4c-b5dd-eb3cc46726f3?AWSAccessKeyId=ASIAX6HXU6SGQ2ME2F3B&Expires=1668458900&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-rawHTML-d1911056-8699-4667-9474-ba94b46a2255.html&x-amz-security-token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDA4ldmtyjkiWSMeDexpD8GZMmag0opbAOpAMeqrTN91wIgWvMI9sTeDlS%2BO5GXkaP3bhJWoyT1s4BCHa1gI5ayYdoq1QQI3f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NDU5ODAyMTY0NjEiDLUHcvGIZPAxFM9%2B2SqpBH3m15RMjaZT6NelisiSxB279QZM5rPY0cMddKvI2C1U7mB7MmXBHEQEPFuhd14ccVt34XQfmVpoqrAxpRALRP%2Fix7phc8CZ0be8M6DzB1mV0c5iHYFIVux2FRvFfhlZgy8mUkBQx7H9FDe5J%2B4zbCDepRbcO23ltU1lO6UDN97TjbLxb97NhvmgWv7xjAhmN92bhjRADX31SglZIUrxSjNjPsXzuvox0bX79NUo1fQKQ4G0LzQEyrjEPrj3eOcQFnD1XJKYmQxCbdaQAMLNJCDzLmTy8t4cdGLkLbADHNL9eClZozxf%2BzWTVceiVJ%2BBt036BOcpSqpL4%2Fj%2B8kdNyF0KHCawFlmA1GgI%2FAmnmF2Wbc8fOztsD9jjPtPr7bTa7N0ZS9utWGUEqIVfRtTeapmkPHV9xGdnjgnTnVOolbcJYnw7qTOk645qx7lNFP0y3yH7vBQSOXONYtAFpANc0xCUwq0DLZIXOv80flnS8tEndrFi%2BWDBeQccxQrSvB%2FHD7XnuEFPFiKZVqghdEi43eJVgiJQqGM7XMK4XG8qqTFKXZJLLkTnqRKs2a5rY2CdqZMQF5DLOkOFoXGBxMUqJya2ATR41R0TAg9nYYsFLIv2zvCVwYUEWBRtW9PxR%2BKP%2BJigqU%2FqRgHQuiPFPJaS9G6G%2FVsKOc9%2B9CeXZbfbDzJ83et5T%2F%2BsiOE8xymmKOS5lvDV27HFMkHk0ZnewiXI9p%2FXxdFLGFS3kV0wjsPKmwY6qQGwSYsDr9%2FimtfF5S70m3gHfoLn077exLngd2M397ZIgZT9y33%2B8qRghzn820CtwwKI9GCWQutqDTbWwHE1T3eihaFXvCyVKsXfPfM62ypHjmumjzd5ioaGywGMUlgWKRlc2oGLjJQExN5y5xQp2MyjF5ITnvVpr%2BxnbtK8onfpwKFhB9iuU4xa4ORQi9n%2FqEjrZkVLe8DDande1nfzf78qXMbua3Gngwqn&Signature=Y9KYdPC7dgejJiZ98sh%2FOZYuKzg%3D">Presigned HTML URL (Expires in 30min)</a><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Status code: OK</i><br><a href= "https://ce-dam-dev-platform-assets-9007.s3.us-east-2.amazonaws.com/sverify/dam-test-sverify-1/dev/d826fdcd-ef66-4b92-9f00-51fc72625ecb?X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQCc%2F6Kf7N1YfkfF%2BfL249HboHZBLBk1TwwJZ%2BVZ3ou%2FwQIhAPVCMH0x%2Bcjy39OdLEQOBq1oyWkDYmM4KZ8ISCYjGCECKqEFCPL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNDg3MzQ0NzU5MDA3IgwwaE0Mr%2FJnELJp%2Brsq9QRcY4UIIAYOTuN0Fjen8AoUTD%2FTJFHQQhPtNv6pKHpnO8N%2B7IsBatXoPOO2f2T24MGU9VzwB8R%2FoZNhIAkRURrussrvfu7H9VvZed9FT98ZbgW8UF6ds7u%2Fd41Y2b1ZoROOe%2BVSkxotkRRbu9%2BvF8sznaQRKebkTj3pdI0ZuHPgMZeOJkFIL6QjupOxIhuzM2wt7yHY9SbaMKUooglXFYznqXHmJmuKyMzleWLwrliLHwtMrfxcXirPJufzfEqhLLfF9pIILMnaap5YqK9edUHw7duIG1StX4uJUIouhPPiayP8ubcM1Tqr6PtIupe0KMaqrBt3OnY8MLEfrOuDr25WNNOo7bDfMhHrKexgSSuwAwEFzhXepxxHnepl736twHBrZMxWQ1GPNkNE6VvYbPOMon6MSuJAe7FQskUCB%2F%2FfaCwrCI5IMocrS7sk0tKWSFvXPDztG%2BHInc3i3jhA7dBZB5rUNSYatjERUAsL6b7VzSQFyavebc6Y7GcBs9OCtZnzUbGu5C7CU6yFtulphC4pt9hwxnuoGgkIMMIpwt4DJNXSa8tmsxW9SJqPgeY1k6hqQlqxZ0%2FmmR7Y6MeKXCwpsxk6Xis3tHIImzm%2BbYDmnWcCcuHoLl4NIQOX4f0t55jCsIe3xUY3C6e27Q1oes7QVveKgKN9uOqFtnMe8dyqPSfaxwfRzk%2BjGEevECf%2BHbqL1PNuFV52QkxW1cbZUly39f90vyJc6%2F%2Fd4M5lKds9%2FDWdNuLHv4hdxmhd45ZJWaNkQe2kExBK9fpwQ%2BSbs661CJONqJEL%2FPJmUG64RVPpn9xP3SZM40dVmQ5gtj%2By%2FoekBKnZ0TDPx7icBjqaASedL0UjQp34A2EPelZyXmHY%2BBnEJmUpdGoa2WljFCU4wQLG9V5g1wUiAxR4zwulZHvJfZhZ3hRgyQiPCSZBbUgOgKuWATOhRNub%2F%2B99qcwhG1Hgr9O2j%2FkOVb2KQhYwGr1vHjl2JcRX3U4VPT5iGFNfpVM3eveN63m1jAk36V7MbCWLvA4fEYDg9O%2F98DnUIs5pTh%2F9tIK%2Bvo0%3D&response-content-disposition=attachment%3B%20filename%3DIABoardOfMedicineProofArtifact-rawHTML-482366a7-0eb5-4d24-af8b-735b869cd447.html&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXC6AC4DP37FSR7HT/20221205/us-east-2/s3/aws4_request&X-Amz-Date=20221205T174935Z&X-Amz-SignedHeaders=host&X-Amz-Signature=c096696ae494be46c6a49d48bc9311563eee64be12f4e07190f8fc26845358ec">Presigned HTML URL (Expires in 30min)</a><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -405,7 +405,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">11/14/2022 2:32:50 PM</h6>
+							<h6 class="font-weight-light">12/5/2022 11:48:26 AM</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -421,7 +421,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:28.2982012</h6>
+							<h6 class="font-weight-light">00:01:04.5893189</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">

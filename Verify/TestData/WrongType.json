@@ -2,7 +2,7 @@
   "version": "1.0",
   "messageType": "Retrieve_LicensePSVData",
   "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
-  "destination": "PSV-DAQ | DAQ Workers | null-primary-source",
+  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
   "sendDate": "2022-02-16T19:42:00Z",
   "messageId": "e47e2a93-2985-4d15-9b6c-08c321318e35",
   "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
@@ -10,24 +10,11 @@
   "data": {
     "licenseHash": "x01",
     "searchAttributes": {
-      "licenseNumber": "ABC12",
+      "licenseNumber": "R-12632",
       "licenseType": "state_issued",
-      "jurisdiction": "CA",
+      "jurisdiction": "IA",
       "fieldOfLicensure": "015",
-      "individualNames": [
-        {
-          "firstName": "James",
-          "lastName": "Doe"
-        },
-        {
-          "firstName": "Jim",
-          "lastName": "Doe"
-        },
-        {
-          "firstName": "Jim",
-          "lastName": "Smith"
-        }
-      ],
+      "individualNames": "this should be an array but its not!",
       "businessNames": []
     },
     "subscribingSystemIds": [

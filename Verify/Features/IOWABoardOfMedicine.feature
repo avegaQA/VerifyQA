@@ -50,7 +50,7 @@ Examples:
 @SNS
 @SQS
 @SRS_459745.001
-Scenario Outline: PrimarySource, LicenseType and FieldOFLicensure valid combinations
+Scenario Outline: jurisdiction, LicenseType and FieldOFLicensure valid combinations
 
 	Given I open the "IOWABoardOfMedicine" json
 	And I prepare the JSON data
@@ -58,7 +58,7 @@ Scenario Outline: PrimarySource, LicenseType and FieldOFLicensure valid combinat
 		| data.searchAttributes.individualNames[0].firstName | Sally              |
 		| data.searchAttributes.individualNames[0].lastName  | Smith              |
 		| data.searchAttributes.licenseNumber                | R-12632            |
-		| data.searchAttributes.primarySource                | <PrimarySource>    |
+		| data.searchAttributes.jurisdiction                 | <jurisdiction>     |
 		| data.searchAttributes.fieldOfLicensure             | <FieldOfLicensure> |
 		| data.searchAttributes.licenseType                  | <LicenseType>      |
 	And I load the messageId
@@ -80,11 +80,11 @@ Scenario Outline: PrimarySource, LicenseType and FieldOFLicensure valid combinat
 	And I verify the Raw HTML
 
 Examples:
-	| PrimarySource | FieldOfLicensure | LicenseType  |
-	| IA            | 010              | state_issued |
-	| IA            | 015              | state_issued |
-	| IA            | 020              | state_issued |
-	| IA            | 025              | state_issued |
+	| jurisdiction | FieldOfLicensure | LicenseType  |
+	| IA           | 010              | state_issued |
+	| IA           | 015              | state_issued |
+	| IA           | 020              | state_issued |
+	| IA           | 025              | state_issued |
 	
 	#state_issued or state?
 
