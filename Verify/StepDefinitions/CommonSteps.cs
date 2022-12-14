@@ -38,6 +38,13 @@ namespace Verify.StepDefinitions
             this._awsContext.payload = this.readJSONfile(fileName + ".json");
         }
 
+        [Given(@"I open the ""([^""]*)"" json in folder ""([^""]*)""")]
+        public void GivenIOpenTheJsonInFolder(string fileName, string folderName)
+        {
+            this._awsContext.payload = this.readJSONfile(folderName  +@"\" + fileName + ".json");
+        }
+
+
 
         [When(@"I publish the json to the ""([^""]*)"" arn")]
         public async Task WhenIPublishTheJsonToTheArnAsync(string arnName)

@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">12/6/2022 1:20:55 PM</span>
+                    <span class="badge badge-primary">12/13/2022 7:07:24 PM</span>
                 </a>
             </li>
         </ul>
@@ -118,19 +118,19 @@
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
-								<p class="name">IOWA Board of Medicine Unhappy paths</p> 
-								<p class="duration text-sm">0h:0m:47s+849ms</p> 
-								<span class="datetime">13:20:55 PM</span>
+								<p class="name">OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints</p> 
+								<p class="duration text-sm">0h:0m:1s+062ms</p> 
+								<span class="datetime">19:07:24 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
 							<div class="detail-head">
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
-										<h5 class="test-status text-pass">IOWA Board of Medicine Unhappy paths</h5>
-										<span class='badge badge-success'>12/6/2022 1:20:55 PM</span>
-										<span class='badge badge-danger'>12/6/2022 1:21:43 PM</span>
-										<span class='badge badge-default'>0h:0m:47s+849ms</span>
+										<h5 class="test-status text-pass">OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints</h5>
+										<span class='badge badge-success'>12/13/2022 7:07:24 PM</span>
+										<span class='badge badge-danger'>12/13/2022 7:07:25 PM</span>
+										<span class='badge badge-default'>0h:0m:1s+062ms</span>
 									</div>
 																	</div>
 							</div>
@@ -139,7 +139,7 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: PrimarySourceDataAcquisition_Failed</div>
+				<div class="node">Scenario: license-monitoring-enrollments</div>
 				<div class="status-avatar float-left pass-bg">
 					<i class="fa fa-check text-white"></i>
 				</div>
@@ -151,91 +151,57 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I open the "LicenseNumberCorrupted" json</b></span>
+                                <span>Given <b>I open the "license-psv-data-requests" json in folder "LicenseAPI"</b></span>
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I load the messageId</b></span>
+                                <span>Given <b>I prepare the JSON data</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 8dfe1243-ee99-46a3-8d4c-074f5ab6f02b</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing subscribingSystemId with sVerify</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                                <span>Given <b>I get the access token for API</b></span>
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start when" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                                <span>When <b>I "POST" the payload to "https://verify.nonprod.symplr.com/gondordev01/api/license-monitoring-enrollments"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: a81a315e-1caa-505a-ad43-6d5784f727f4</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
-  "version": "1.0",
-  "messageType": "Retrieve_LicensePSVData",
-  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
-  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
-  "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "8dfe1243-ee99-46a3-8d4c-074f5ab6f02b",
-  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
-  "causationId": "037c5027-daae-442e-976c-90050abbc254",
-  "data": {
-    "licenseHash": "x01",
-    "searchAttributes": {
-      "licNumber": "R-12632",
-      "licenseType": "state_issued",
-      "jurisdiction": "IA",
-      "fieldOfLicensure": "015",
-      "individualNames": [
-        {
-          "firstName": "drfhgfc",
-          "lastName": "cfhhcc"
-        },
-        {
-          "firstName": "cfhch",
-          "lastName": "cfhchf"
-        }
-      ],
-      "businessNames": []
-    },
-    "subscribingSystemIds": [
-      "sVerify",
-      "sDirectory"
-    ]
-  }
+			<div class="details">&nbsp;&nbsp;<i>->Expected code: UnprocessableEntity</i><br>&nbsp;&nbsp;<i>->Real code: UnprocessableEntity</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the API response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{
+  "errorId": "e70e673a-bcf9-4976-bffb-c4a9837632bd",
+  "messages": [
+    "This license has already been enrolled in periodic monitoring for subscribing system: sPayer. And can be located at: https://localhost/license-monitoring-enrollments/4c1b670a-a82e-44d5-a990-3ec54c6a4a43"
+  ],
+  "timestamp": "2022-12-13T19:07:25.075-06:00"
 }</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                                <span>Then <b>I verify that JSON response contains</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Found in: e1364222-9b06-4a13-8703-6680a70e048b</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PrimarySourceDataAcquisition_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-12-06T19:21:23.3953529Z","messageId":"08e053a1-ca13-4380-8b85-d300a9bd0b89","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"8dfe1243-ee99-46a3-8d4c-074f5ab6f02b","data":{"message":"Unable to proceed with PSV data retrieval due to incomplete provider license information. The property licenseNumber is missing.","referenceId":"548518c7-f60e-4f12-9f4d-58a830122487"}}</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I verify the JSON response</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Real value: PrimarySourceDataAcquisition_Failed</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messages[0]: This license has already been enrolled in periodic monitoring for subscribing system</i><br>&nbsp;&nbsp;<i>->Real value: This license has already been enrolled in periodic monitoring for subscribing system: sPayer. And can be located at: https://localhost/license-monitoring-enrollments/4c1b670a-a82e-44d5-a990-3ec54c6a4a43</i><br></div>
                     </div>
 				</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: PrimarySourceDataAcquisition_Failed</div>
+				<div class="node">Scenario: license-psv-data-requests</div>
 				<div class="status-avatar float-left pass-bg">
 					<i class="fa fa-check text-white"></i>
 				</div>
@@ -247,66 +213,50 @@
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I open the "IOWABoardOfMedicineIncomplete" json</b></span>
+                                <span>Given <b>I open the "license-psv-data-requests" json in folder "LicenseAPI"</b></span>
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I load the messageId</b></span>
+                                <span>Given <b>I prepare the JSON data</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Payload messageID: 651223db-bbe0-403a-ad8c-727c74c98dea</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing subscribingSystemId with sVerify</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Given <b>I set IABoardOfMedicine message attributes</b></span>
+                                <span>Given <b>I get the access token for API</b></span>
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start when" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>When <b>I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn</b></span>
+                                <span>When <b>I "POST" the payload to "https://verify.nonprod.symplr.com/gondordev01/api/license-psv-data-requests"</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Message ID: a97bb28f-7471-52c8-b350-ee86ec0973ae</i><br>&nbsp;&nbsp;<i>->Status: OK</i><br>&nbsp;&nbsp;<i>->Message: {
-  "version": "1.0",
-  "messageType": "Retrieve_LicensePSVData",
-  "source": "PSV-DAQ | Scheduled License Monitoring Initiator",
-  "destination": "PSV-DAQ | DAQ Workers | IABoardOfMedicine",
-  "sendDate": "2022-02-16T19:42:00Z",
-  "messageId": "651223db-bbe0-403a-ad8c-727c74c98dea",
-  "correlationId": "a15446ff-761a-4e81-bdef-be949e59156c",
-  "causationId": "037c5027-daae-442e-976c-90050abbc254",
-  "data": {
-    "subscribingSystemIds": [
-      "sVerify",
-      "sDirectory"
-    ]
-  }
+			<div class="details">&nbsp;&nbsp;<i>->Expected code: UnprocessableEntity</i><br>&nbsp;&nbsp;<i>->Real code: UnprocessableEntity</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the API response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{
+  "errorId": "e70e673a-bcf9-4976-bffb-c4a9837632bd",
+  "messages": [
+    "This license was previously enrolled in periodic monitoring for subscribing system: sPayer."
+  ],
+  "timestamp": "2022-12-13T19:07:25.461-06:00"
 }</i><br></div>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
                                 </span>
-                                <span>Then <b>I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"</b></span>
+                                <span>Then <b>I verify that JSON response contains</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Found in: f809e2b2-cbd6-4c5d-8f87-eca45ce3a87b</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I parse the json response for IOWA Board of medicine</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->{"version":"1.0.0","messageType":"PrimarySourceDataAcquisition_Failed","source":"PSV-DAQ | DAQ Workers | IABoardOfMedicine","destination":"sVerify, sDirectory","sendDate":"2022-12-06T19:21:48.2853988Z","messageId":"3d6742c8-1687-4cbe-ad8b-4a8266199c9f","correlationId":"a15446ff-761a-4e81-bdef-be949e59156c","causationId":"651223db-bbe0-403a-ad8c-727c74c98dea","data":{"message":"Unable to proceed with PSV data retrieval due to incomplete provider license information. The property searchAttributes is missing.","referenceId":"aa6044ad-da73-42ac-add1-89d900d3b825"}}</i><br></div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then <b>I verify the JSON response</b></span>
-                            </div>
-			<div class="details">&nbsp;&nbsp;<i>->Expected value in messageType: PrimarySourceDataAcquisition_Failed</i><br>&nbsp;&nbsp;<i>->Real value: PrimarySourceDataAcquisition_Failed</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Expected value in messages[0]: This license was previously enrolled in periodic monitoring for subscribing system:</i><br>&nbsp;&nbsp;<i>->Real value: This license was previously enrolled in periodic monitoring for subscribing system: sPayer.</i><br></div>
                     </div>
 				</div>
 	</div>
@@ -386,7 +336,7 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='100%'><b>14</b> steps passed</small></div>
+	                <div><small data-tooltip='100%'><b>12</b> steps passed</small></div>
 	                <div>
 	                    <small data-tooltip='0%'><b>0</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
@@ -441,7 +391,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">12/6/2022 1:20:55 PM</h6>
+							<h6 class="font-weight-light">12/13/2022 7:07:24 PM</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -457,7 +407,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:47.9637731</h6>
+							<h6 class="font-weight-light">00:00:01.0922075</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -491,8 +441,8 @@
 		infoChild: 0,
 		debugChild: 0,
 		exceptionsChild: 0,
-		grandChildCount: 14,
-		passGrandChild: 14,
+		grandChildCount: 12,
+		passGrandChild: 12,
 		failGrandChild: 0,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,

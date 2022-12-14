@@ -7,9 +7,9 @@ Feature: IOWA Board of Medicine
 @SQS
 @SRS_459745.003 @SRS_459745.004
 @SRS_459745.005 @SRS_459745.006
-Scenario Outline: Search doctor
+Scenario Outline: Search by first name, last name and License number
 
-	Given I open the "IOWABoardOfMedicine" json
+	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
 	And I prepare the JSON data
 		| key                                                | value           |
 		| data.searchAttributes.individualNames[0].firstName | <firstName>     |
@@ -52,7 +52,7 @@ Examples:
 @SRS_459745.001
 Scenario Outline: jurisdiction, LicenseType and FieldOFLicensure valid combinations
 
-	Given I open the "IOWABoardOfMedicine" json
+	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
 	And I prepare the JSON data
 		| key                                                | value              |
 		| data.searchAttributes.individualNames[0].firstName | Sally              |
@@ -93,7 +93,7 @@ Examples:
 @Lambda
 @SRS_459745.008
 Scenario Outline: Check for batchItemFailures
-	Given I open the "<JSONname>" json
+	Given I open the "<JSONname>" json in folder "IOWAboardOfMedicine"
 
 	When I test the lambda function "pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func"
 

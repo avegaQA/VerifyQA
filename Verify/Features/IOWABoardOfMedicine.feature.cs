@@ -74,7 +74,7 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search doctor")]
+        [NUnit.Framework.DescriptionAttribute("Search by first name, last name and License number")]
         [NUnit.Framework.CategoryAttribute("SNS")]
         [NUnit.Framework.CategoryAttribute("SQS")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.003")]
@@ -86,7 +86,7 @@ namespace Verify.Features
         [NUnit.Framework.TestCaseAttribute("Kathleen", "Jones", "MD-32008", "Aug 12 1997 12:00AM", "12/01/2024", "0", "x01", null)]
         [NUnit.Framework.TestCaseAttribute("Abigail", "Scrogum", "R-12485", "05/20/2022", "06/30/2025", "0", "x02", null)]
         [NUnit.Framework.TestCaseAttribute("Kirk", "Smith", "NA", "NA", "04/26/2002", "2", "F74BF2B5C91BB04243432CD8AF30A7D2", null)]
-        public virtual void SearchDoctor(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string disciplinaryActionRecords, string licenseHash, string[] exampleTags)
+        public virtual void SearchByFirstNameLastNameAndLicenseNumber(string firstName, string lastName, string licenseNumber, string issueDate, string expirationDate, string disciplinaryActionRecords, string licenseHash, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "SNS",
@@ -108,7 +108,7 @@ namespace Verify.Features
             argumentsOfScenario.Add("expirationDate", expirationDate);
             argumentsOfScenario.Add("disciplinaryActionRecords", disciplinaryActionRecords);
             argumentsOfScenario.Add("licenseHash", licenseHash);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search doctor", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search by first name, last name and License number", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -130,7 +130,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 12
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
@@ -250,7 +250,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 55
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
@@ -362,7 +362,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 96
- testRunner.Given(string.Format("I open the \"{0}\" json", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I open the \"{0}\" json in folder \"IOWAboardOfMedicine\"", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 98
  testRunner.When("I test the lambda function \"pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

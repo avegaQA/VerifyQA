@@ -103,8 +103,8 @@ namespace Verify.StepDefinitions
 
         public async Task<RestResponse> GetAccessToken()
         {
-            String PINGONE_PASSWORD = Environment.GetEnvironmentVariable("PINGONE_PASSWORD");
-            String PINGONE_USERNAME = Environment.GetEnvironmentVariable("PINGONE_USERNAME");
+            String PINGONE_PASSWORD = Environment.GetEnvironmentVariable("PINGONE_PASSWORD_DAM");
+            String PINGONE_USERNAME = Environment.GetEnvironmentVariable("PINGONE_USERNAME_DAM");
 
             client = new RestClient("https://auth.pingone.com");
 

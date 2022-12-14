@@ -83,14 +83,14 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("ProviderLicenseMatch_NotFound")]
+        [NUnit.Framework.DescriptionAttribute("Search for a non-existant person (ProviderLicenseMatch_NotFound)")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.015")]
-        public virtual void ProviderLicenseMatch_NotFound()
+        public virtual void SearchForANon_ExistantPersonProviderLicenseMatch_NotFound()
         {
             string[] tagsOfScenario = new string[] {
                     "SRS_459745.015"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ProviderLicenseMatch_NotFound", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for a non-existant person (ProviderLicenseMatch_NotFound)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 11
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
@@ -160,16 +160,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PsvDaqMessage_Misdelivered")]
+        [NUnit.Framework.DescriptionAttribute("Search in a non-supported board (PsvDaqMessage_Misdelivered)")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.001")]
         [NUnit.Framework.CategoryAttribute("SRS_502180.011")]
-        public virtual void PsvDaqMessage_Misdelivered()
+        public virtual void SearchInANon_SupportedBoardPsvDaqMessage_Misdelivered()
         {
             string[] tagsOfScenario = new string[] {
                     "SRS_459745.001",
                     "SRS_502180.011"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PsvDaqMessage_Misdelivered", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search in a non-supported board (PsvDaqMessage_Misdelivered)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -191,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 34
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
@@ -245,14 +245,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("RequestForUnsupportedLicense_Received")]
+        [NUnit.Framework.DescriptionAttribute("Search for a non-supported combination (RequestForUnsupportedLicense_Received)")]
         [NUnit.Framework.CategoryAttribute("SRS_502180.012")]
-        public virtual void RequestForUnsupportedLicense_Received()
+        public virtual void SearchForANon_SupportedCombinationRequestForUnsupportedLicense_Received()
         {
             string[] tagsOfScenario = new string[] {
                     "SRS_502180.012"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("RequestForUnsupportedLicense_Received", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for a non-supported combination (RequestForUnsupportedLicense_Received)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -274,7 +274,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 58
- testRunner.Given("I open the \"IOWABoardOfMedicine\" json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
@@ -319,13 +319,13 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PrimarySourceDataAcquisition_Failed")]
+        [NUnit.Framework.DescriptionAttribute("Invalid schema request (PrimarySourceDataAcquisition_Failed)")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.018")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.020")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.019")]
         [NUnit.Framework.TestCaseAttribute("LicenseNumberCorrupted", null)]
         [NUnit.Framework.TestCaseAttribute("IOWABoardOfMedicineIncomplete", null)]
-        public virtual void PrimarySourceDataAcquisition_Failed(string jSONname, string[] exampleTags)
+        public virtual void InvalidSchemaRequestPrimarySourceDataAcquisition_Failed(string jSONname, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "SRS_459745.018",
@@ -338,7 +338,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("JSONname", jSONname);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PrimarySourceDataAcquisition_Failed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid schema request (PrimarySourceDataAcquisition_Failed)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 78
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -360,7 +360,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 80
- testRunner.Given(string.Format("I open the \"{0}\" json", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I open the \"{0}\" json in folder \"IOWAboardOfMedicine\"", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 81
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -393,7 +393,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PrimarySourceDataAcquisition_Failed check message")]
+        [NUnit.Framework.DescriptionAttribute("Invalid Schema validating error message (PrimarySourceDataAcquisition_Failed)")]
         [NUnit.Framework.TestCaseAttribute("LicenseNumberCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
             "rmation. The property licenseNumber is missing.", null)]
         [NUnit.Framework.TestCaseAttribute("EmptyIndividualNames", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
@@ -402,13 +402,13 @@ this.ScenarioInitialize(scenarioInfo);
             "rmation. individualNames property has a wrong type.", null)]
         [NUnit.Framework.TestCaseAttribute("SearchAttributeCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
             "rmation. The property searchAttributes is missing.", null)]
-        public virtual void PrimarySourceDataAcquisition_FailedCheckMessage(string jSONname, string message, string[] exampleTags)
+        public virtual void InvalidSchemaValidatingErrorMessagePrimarySourceDataAcquisition_Failed(string jSONname, string message, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("JSONname", jSONname);
             argumentsOfScenario.Add("message", message);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PrimarySourceDataAcquisition_Failed check message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid Schema validating error message (PrimarySourceDataAcquisition_Failed)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 99
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -430,7 +430,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 101
- testRunner.Given(string.Format("I open the \"{0}\" json", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I open the \"{0}\" json in folder \"IOWAboardOfMedicine\"", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 102
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

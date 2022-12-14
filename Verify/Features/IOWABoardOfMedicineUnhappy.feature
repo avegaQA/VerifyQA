@@ -6,9 +6,9 @@
 Feature: IOWA Board of Medicine Unhappy paths
 
 @SRS_459745.015
-Scenario: ProviderLicenseMatch_NotFound
+Scenario: Search for a non-existant person (ProviderLicenseMatch_NotFound)
 
-	Given I open the "IOWABoardOfMedicine" json
+	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
 	And I prepare the JSON data
 		| key                                                | value      |
 		| data.searchAttributes.individualNames[0].firstName | sefsefsese |
@@ -29,9 +29,9 @@ Scenario: ProviderLicenseMatch_NotFound
 
 @SRS_459745.001
 @SRS_502180.011
-Scenario: PsvDaqMessage_Misdelivered
+Scenario: Search in a non-supported board (PsvDaqMessage_Misdelivered)
 
-	Given I open the "IOWABoardOfMedicine" json
+	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
 	And I prepare the JSON data
 		| key                                                | value                                                |
 		| data.searchAttributes.individualNames[0].firstName | Alfonso                                              |
@@ -53,9 +53,9 @@ Scenario: PsvDaqMessage_Misdelivered
 #***************************************************************************************************************************************
 
 @SRS_502180.012
-Scenario: RequestForUnsupportedLicense_Received
+Scenario: Search for a non-supported combination (RequestForUnsupportedLicense_Received)
 
-	Given I open the "IOWABoardOfMedicine" json
+	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
 	And I prepare the JSON data
 		| key                                    | value |
 		| data.searchAttributes.jurisdiction     | TA    |
@@ -75,9 +75,9 @@ Scenario: RequestForUnsupportedLicense_Received
 
 @SRS_459745.018 
 @SRS_459745.020 @SRS_459745.019
-Scenario Outline: PrimarySourceDataAcquisition_Failed
+Scenario Outline: Invalid schema request (PrimarySourceDataAcquisition_Failed)
 
-	Given I open the "<JSONname>" json
+	Given I open the "<JSONname>" json in folder "IOWAboardOfMedicine"
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 
@@ -96,9 +96,9 @@ Examples:
 
 #***************************************************************************************************************************************
 
-Scenario Outline: PrimarySourceDataAcquisition_Failed check message
+Scenario Outline: Invalid Schema validating error message (PrimarySourceDataAcquisition_Failed)
 
-	Given I open the "<JSONname>" json
+	Given I open the "<JSONname>" json in folder "IOWAboardOfMedicine"
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 

@@ -52,6 +52,27 @@ namespace Verify.StepDefinitions
             }
         }
 
+        [Then(@"I verify that JSON response contains")]
+        public void ThenIVerifyThatJSONResponseContains(Table table)
+        {
+            Dictionary<string, string> expectedValues = this.ToDictionary(table);
+
+            foreach (var expectedValue in expectedValues)
+            {
+                String value = expectedValue.Value;
+                if (value.ToLower().Replace(" ", "").Equals("na")) value = "";
+
+                String real = value.ToLower().Replace(" ", "");
+                String expected = this._awsContext.response.SelectToken(expectedValue.Key).ToString().ToLower().Replace(" ", "");
+                this.LogAndReport("Expected value in " + expectedValue.Key + ": " + value);
+                this.LogAndReport("Real value: " + this._awsContext.response.SelectToken(expectedValue.Key));
+
+                Assert.True(expected.Contains(real));
+
+            }
+        }
+
+
         [Then(@"I verify the message destinations field")]
         public void ThenIVerifyTheMessageDestinationsField()
         {
