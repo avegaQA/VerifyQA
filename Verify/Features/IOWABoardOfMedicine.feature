@@ -19,7 +19,9 @@ Scenario Outline: Search by first name, last name and License number
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 
-	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
+	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy-psvDaqRequests-topic" arn
+	#arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy-psvDaqRequests-topic
+	#arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic
 
 	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
 	And I check for error messages
@@ -50,6 +52,7 @@ Examples:
 @SNS
 @SQS
 @SRS_459745.001
+@NEW
 Scenario Outline: jurisdiction, LicenseType and FieldOFLicensure valid combinations
 
 	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"
@@ -64,7 +67,7 @@ Scenario Outline: jurisdiction, LicenseType and FieldOFLicensure valid combinati
 	And I load the messageId
 	And I set IABoardOfMedicine message attributes
 
-	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqRequests-topic" arn
+	When I publish the json to the "arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy-psvDaqRequests-topic" arn
 
 	Then I look for the JSON response in "https://sqs.us-east-2.amazonaws.com/379493731719/pdm-dev-vfy-testAutomationSubscriber-queue"
 	And I check for error messages

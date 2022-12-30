@@ -20,22 +20,22 @@ namespace Verify.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SNS infrastructure check")]
-    public partial class SNSInfrastructureCheckFeature
+    [NUnit.Framework.DescriptionAttribute("Invalid Schema validation")]
+    public partial class InvalidSchemaValidationFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "SNS.feature"
+#line 1 "InvalidSchema.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SNS infrastructure check", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Invalid Schema validation", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,24 +74,33 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check if topic is set")]
+        [NUnit.Framework.DescriptionAttribute("Invalid Schema validating error message (PrimarySourceDataAcquisition_Failed)")]
         [NUnit.Framework.CategoryAttribute("SNS")]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqRequests-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-p1-psvDaqResults-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqRequests-topic\"", null)]
-        [NUnit.Framework.TestCaseAttribute("\"pdm-dev-vfy-psvDaqResults-topic\"", null)]
-        public virtual void CheckIfTopicIsSet(string topicName, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("SQS")]
+        [NUnit.Framework.CategoryAttribute("576412.007")]
+        [NUnit.Framework.TestCaseAttribute("LicenseNumberCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. The property licenseNumber is missing.", null)]
+        [NUnit.Framework.TestCaseAttribute("EmptyIndividualNames", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. A value in individualNames property is required.", null)]
+        [NUnit.Framework.TestCaseAttribute("WrongType", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. individualNames property has a wrong type.", null)]
+        [NUnit.Framework.TestCaseAttribute("SearchAttributeCorrupted", "Unable to proceed with PSV data retrieval due to incomplete provider license info" +
+            "rmation. The property searchAttributes is missing.", null)]
+        public virtual void InvalidSchemaValidatingErrorMessagePrimarySourceDataAcquisition_Failed(string jSONname, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "SNS"};
+                    "SNS",
+                    "SQS",
+                    "576412.007"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("topicName", topicName);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if topic is set", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("JSONname", jSONname);
+            argumentsOfScenario.Add("message", message);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid Schema validating error message (PrimarySourceDataAcquisition_Failed)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,11 +121,37 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
- testRunner.When("I list all topics", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 9
- testRunner.Then(string.Format("I check {0} is available", topicName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given(string.Format("I open the \"{0}\" json in folder \"IOWAboardOfMedicine\"", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 10
+ testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+ testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy" +
+                        "-psvDaqRequests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
+ testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
+                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 16
+ testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table1.AddRow(new string[] {
+                            "messageType",
+                            "PrimarySourceDataAcquisition_Failed"});
+                table1.AddRow(new string[] {
+                            "data.message",
+                            string.Format("{0}", message)});
+#line 17
+ testRunner.And("I verify the JSON response", ((string)(null)), table1, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

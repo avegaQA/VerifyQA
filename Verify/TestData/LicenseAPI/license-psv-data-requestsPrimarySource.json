@@ -1,0 +1,25 @@
+{
+  "subscribingSystemId": "sVerify",
+  "customerId": "customer01",
+  "maximumAcceptableStaleness": {
+    "value": 30,
+    "units": "day"
+  },
+  "searchAttributes": {
+    "licenseDetails": {
+      "licenseNumber": "R-12485",
+      "licenseType": "state_issued",
+      "PrimarySource": "IA",
+      "fieldOfLicensure": "015"
+    },
+    "providerDetails": {
+      "individualNames": [
+        {
+          "firstName": "Abigail",
+          "lastName": "Scrogum"
+        }
+      ],
+      "businessNames": []
+    }
+  }
+}

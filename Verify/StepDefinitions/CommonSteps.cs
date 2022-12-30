@@ -42,6 +42,7 @@ namespace Verify.StepDefinitions
         public void GivenIOpenTheJsonInFolder(string fileName, string folderName)
         {
             this._awsContext.payload = this.readJSONfile(folderName  +@"\" + fileName + ".json");
+            this.LogAndReport(this._awsContext.payload.ToString());
         }
 
 

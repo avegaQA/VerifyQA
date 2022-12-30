@@ -132,23 +132,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].firstName",
                             string.Format("{0}", firstName)});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].lastName",
                             string.Format("{0}", lastName)});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "data.licenseHash",
                             string.Format("{0}", licenseHash)});
 #line 13
- testRunner.And("I prepare the JSON data", ((string)(null)), table1, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table2, "And ");
 #line hidden
 #line 19
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -157,47 +157,47 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
-                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy" +
+                        "-psvDaqRequests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 26
  testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
                         "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 25
+#line 27
  testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 28
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.licenseDetails.issueDate",
                             string.Format("{0}", issueDate)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.licenseDetails.expirationDate",
                             string.Format("{0}", expirationDate)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.licenseDetails.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "messageType",
                             "LicensePSVData_Acquired"});
-#line 27
- testRunner.And("I verify the JSON response", ((string)(null)), table2, "And ");
-#line hidden
-#line 34
- testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 35
- testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("I verify the JSON response", ((string)(null)), table3, "And ");
 #line hidden
 #line 36
- testRunner.And("I verify the Raw HTML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 37
+ testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 38
+ testRunner.And("I verify the Raw HTML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 39
  testRunner.And(string.Format("I check the disciplinary records to match with \"{0}\"", disciplinaryActionRecords), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -209,6 +209,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("SNS")]
         [NUnit.Framework.CategoryAttribute("SQS")]
         [NUnit.Framework.CategoryAttribute("SRS_459745.001")]
+        [NUnit.Framework.CategoryAttribute("NEW")]
         [NUnit.Framework.TestCaseAttribute("IA", "010", "state_issued", null)]
         [NUnit.Framework.TestCaseAttribute("IA", "015", "state_issued", null)]
         [NUnit.Framework.TestCaseAttribute("IA", "020", "state_issued", null)]
@@ -218,7 +219,8 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "SNS",
                     "SQS",
-                    "SRS_459745.001"};
+                    "SRS_459745.001",
+                    "NEW"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -229,7 +231,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("FieldOfLicensure", fieldOfLicensure);
             argumentsOfScenario.Add("LicenseType", licenseType);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("jurisdiction, LicenseType and FieldOFLicensure valid combinations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 53
+#line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -249,72 +251,72 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 55
+#line 58
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "key",
-                            "value"});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[0].firstName",
-                            "Sally"});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.individualNames[0].lastName",
-                            "Smith"});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.licenseNumber",
-                            "R-12632"});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.jurisdiction",
-                            string.Format("{0}", jurisdiction)});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.fieldOfLicensure",
-                            string.Format("{0}", fieldOfLicensure)});
-                table3.AddRow(new string[] {
-                            "data.searchAttributes.licenseType",
-                            string.Format("{0}", licenseType)});
-#line 56
- testRunner.And("I prepare the JSON data", ((string)(null)), table3, "And ");
-#line hidden
-#line 64
- testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 65
- testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 67
- testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-dev-vfy-psvDaqR" +
-                        "equests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 69
- testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
-                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 70
- testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 71
- testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
                 table4.AddRow(new string[] {
+                            "data.searchAttributes.individualNames[0].firstName",
+                            "Sally"});
+                table4.AddRow(new string[] {
+                            "data.searchAttributes.individualNames[0].lastName",
+                            "Smith"});
+                table4.AddRow(new string[] {
+                            "data.searchAttributes.licenseNumber",
+                            "R-12632"});
+                table4.AddRow(new string[] {
+                            "data.searchAttributes.jurisdiction",
+                            string.Format("{0}", jurisdiction)});
+                table4.AddRow(new string[] {
+                            "data.searchAttributes.fieldOfLicensure",
+                            string.Format("{0}", fieldOfLicensure)});
+                table4.AddRow(new string[] {
+                            "data.searchAttributes.licenseType",
+                            string.Format("{0}", licenseType)});
+#line 59
+ testRunner.And("I prepare the JSON data", ((string)(null)), table4, "And ");
+#line hidden
+#line 67
+ testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+ testRunner.And("I set IABoardOfMedicine message attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.When("I publish the json to the \"arn:aws:sns:us-east-2:379493731719:pdm-gondordev01-vfy" +
+                        "-psvDaqRequests-topic\" arn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 72
+ testRunner.Then("I look for the JSON response in \"https://sqs.us-east-2.amazonaws.com/379493731719" +
+                        "/pdm-dev-vfy-testAutomationSubscriber-queue\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 73
+ testRunner.And("I check for error messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 74
+ testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table5.AddRow(new string[] {
                             "messageType",
                             "LicensePSVData_Acquired"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.licenseDetails.issueDate",
                             "06/08/2022"});
-#line 72
- testRunner.And("I verify the JSON response", ((string)(null)), table4, "And ");
+#line 75
+ testRunner.And("I verify the JSON response", ((string)(null)), table5, "And ");
 #line hidden
-#line 78
+#line 81
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 79
+#line 82
  testRunner.And("I verify the proof of artifact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 80
+#line 83
  testRunner.And("I verify the Raw HTML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -341,7 +343,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("JSONname", jSONname);
             argumentsOfScenario.Add("NumberOfFailures", numberOfFailures);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for batchItemFailures", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 95
+#line 98
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -361,13 +363,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 96
+#line 99
  testRunner.Given(string.Format("I open the \"{0}\" json in folder \"IOWAboardOfMedicine\"", jSONname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 98
+#line 101
  testRunner.When("I test the lambda function \"pdm-dev-vfy-daqWorkers-IABoardOfMedicine-func\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 100
+#line 103
  testRunner.Then(string.Format("I verify the lambda response \"{0}\"", numberOfFailures), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

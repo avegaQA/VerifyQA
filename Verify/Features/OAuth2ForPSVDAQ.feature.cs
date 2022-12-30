@@ -21,12 +21,14 @@ namespace Verify.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints")]
+    [NUnit.Framework.CategoryAttribute("NEW")]
     public partial class OAuth2AccessTokenAuthorizationForPSV_DAQApiEndpointsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "NEW"};
         
 #line 1 "OAuth2ForPSVDAQ.feature"
 #line hidden
@@ -35,7 +37,8 @@ namespace Verify.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints", null, ProgrammingLanguage.CSharp, new string[] {
+                        "NEW"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +77,12 @@ namespace Verify.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("license-psv-data-requests")]
-        public virtual void License_Psv_Data_Requests()
+        [NUnit.Framework.DescriptionAttribute("Check for previously recorded license (license-psv-data-requests)")]
+        public virtual void CheckForPreviouslyRecordedLicenseLicense_Psv_Data_Requests()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("license-psv-data-requests", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for previously recorded license (license-psv-data-requests)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -100,50 +103,50 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table13.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "subscribingSystemId",
-                            "sVerify"});
-#line 9
- testRunner.And("I prepare the JSON data", ((string)(null)), table13, "And ");
+                            "sPayer"});
+#line 10
+ testRunner.And("I prepare the JSON data", ((string)(null)), table15, "And ");
 #line hidden
-#line 13
+#line 14
  testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 15
+#line 16
  testRunner.When("I \"POST\" the payload to \"https://verify.nonprod.symplr.com/gondordev01/api/licens" +
                         "e-psv-data-requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 18
  testRunner.Then("I parse the API response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table14.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "messages[0]",
                             "This license was previously enrolled in periodic monitoring for subscribing syste" +
                                 "m:"});
-#line 18
- testRunner.And("I verify that JSON response contains", ((string)(null)), table14, "And ");
+#line 19
+ testRunner.And("I verify that JSON response contains", ((string)(null)), table16, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("license-monitoring-enrollments")]
-        public virtual void License_Monitoring_Enrollments()
+        [NUnit.Framework.DescriptionAttribute("Check for previously recorded license (license-monitoring-enrollments)")]
+        public virtual void CheckForPreviouslyRecordedLicenseLicense_Monitoring_Enrollments()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("license-monitoring-enrollments", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for previously recorded license (license-monitoring-enrollments)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -163,37 +166,96 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 27
  testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table15.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "subscribingSystemId",
-                            "sVerify"});
-#line 26
- testRunner.And("I prepare the JSON data", ((string)(null)), table15, "And ");
-#line hidden
-#line 30
- testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+                            "sPayer"});
+#line 28
+ testRunner.And("I prepare the JSON data", ((string)(null)), table17, "And ");
 #line hidden
 #line 32
+ testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 34
  testRunner.When("I \"POST\" the payload to \"https://verify.nonprod.symplr.com/gondordev01/api/licens" +
                         "e-monitoring-enrollments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 36
  testRunner.Then("I parse the API response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table16.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "messages[0]",
                             "This license has already been enrolled in periodic monitoring for subscribing sys" +
                                 "tem"});
-#line 35
- testRunner.And("I verify that JSON response contains", ((string)(null)), table16, "And ");
+#line 37
+ testRunner.And("I verify that JSON response contains", ((string)(null)), table18, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Record a new license through API (license-psv-data-requests)")]
+        public virtual void RecordANewLicenseThroughAPILicense_Psv_Data_Requests()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Record a new license through API (license-psv-data-requests)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 43
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 45
+ testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table19.AddRow(new string[] {
+                            "subscribingSystemId",
+                            "sVerify"});
+                table19.AddRow(new string[] {
+                            "customerId",
+                            "TestAutomation"});
+#line 46
+ testRunner.And("I prepare the JSON data", ((string)(null)), table19, "And ");
+#line hidden
+#line 50
+ testRunner.And("I set random license number, firstname and lastname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+ testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 54
+ testRunner.When("I \"POST\" the payload to \"https://verify.nonprod.symplr.com/gondordev01/api/licens" +
+                        "e-psv-data-requests\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 56
+ testRunner.Then("I parse the API response with a valid response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

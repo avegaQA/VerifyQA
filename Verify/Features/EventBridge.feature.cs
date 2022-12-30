@@ -20,9 +20,9 @@ namespace Verify.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EventBridge")]
+    [NUnit.Framework.DescriptionAttribute("EventBridge infrastructure check")]
     [NUnit.Framework.CategoryAttribute("EventBridge")]
-    public partial class EventBridgeFeature
+    public partial class EventBridgeInfrastructureCheckFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -37,7 +37,7 @@ namespace Verify.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "EventBridge", null, ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "EventBridge infrastructure check", null, ProgrammingLanguage.CSharp, new string[] {
                         "EventBridge"});
             testRunner.OnFeatureStart(featureInfo);
         }

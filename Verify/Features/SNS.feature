@@ -1,4 +1,4 @@
-﻿Feature: SNS
+﻿Feature: SNS infrastructure check
 
 A short summary of the feature
 

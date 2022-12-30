@@ -1,7 +1,7 @@
 ﻿#Author: alfonso.vega@symplr.com
 #Keywords Summary :
 @EventBridge
-Feature: EventBridge
+Feature: EventBridge infrastructure check
 
 Scenario Outline: Check if rule is set
 	When I list all rules
