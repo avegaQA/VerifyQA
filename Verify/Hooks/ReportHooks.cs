@@ -24,11 +24,11 @@ namespace Verify.Hooks
 
             DateTime now = DateTime.Now;
             String folderName = now.ToString("yyyy-MM-dd_HH.mm.ss");
-            String reportFolderPath = rootPath + @"\Reports\" + folderName;
+            String reportFolderPath = rootPath + @"/Reports/" + folderName;
 
             Directory.CreateDirectory(reportFolderPath);
 
-            String reportPath = reportFolderPath + @"\ExtentReport.html";
+            String reportPath = reportFolderPath + @"/ExtentReport.html";
 
             var htmlReporter = new ExtentHtmlReporter(reportPath);
 

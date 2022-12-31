@@ -1,5 +1,5 @@
 ﻿# User Story: https://dev.azure.com/symplr/Provider%20Management/_sprints/taskboard/Gondor/Provider%20Management/2022%20PI%204/Sprint%201?workitem=459745
-
+#dotnet test --filter Category=RunThis
 
 Feature: IOWA Board of Medicine
 

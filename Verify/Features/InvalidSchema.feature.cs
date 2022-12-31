@@ -141,17 +141,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 16
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "messageType",
                             "PrimarySourceDataAcquisition_Failed"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "data.message",
                             string.Format("{0}", message)});
 #line 17
- testRunner.And("I verify the JSON response", ((string)(null)), table1, "And ");
+ testRunner.And("I verify the JSON response", ((string)(null)), table2, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

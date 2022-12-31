@@ -106,14 +106,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "subscribingSystemId",
                             "sPayer"});
 #line 10
- testRunner.And("I prepare the JSON data", ((string)(null)), table15, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table16, "And ");
 #line hidden
 #line 14
  testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -125,15 +125,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 18
  testRunner.Then("I parse the API response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "messages[0]",
                             "This license was previously enrolled in periodic monitoring for subscribing syste" +
                                 "m:"});
 #line 19
- testRunner.And("I verify that JSON response contains", ((string)(null)), table16, "And ");
+ testRunner.And("I verify that JSON response contains", ((string)(null)), table17, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -169,14 +169,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 27
  testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table17.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "subscribingSystemId",
                             "sPayer"});
 #line 28
- testRunner.And("I prepare the JSON data", ((string)(null)), table17, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table18, "And ");
 #line hidden
 #line 32
  testRunner.Given("I get the access token for API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -188,15 +188,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 36
  testRunner.Then("I parse the API response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table18.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "messages[0]",
                             "This license has already been enrolled in periodic monitoring for subscribing sys" +
                                 "tem"});
 #line 37
- testRunner.And("I verify that JSON response contains", ((string)(null)), table18, "And ");
+ testRunner.And("I verify that JSON response contains", ((string)(null)), table19, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -232,17 +232,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 45
  testRunner.Given("I open the \"license-psv-data-requests\" json in folder \"LicenseAPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table19.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "subscribingSystemId",
                             "sVerify"});
-                table19.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "customerId",
                             "TestAutomation"});
 #line 46
- testRunner.And("I prepare the JSON data", ((string)(null)), table19, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table20, "And ");
 #line hidden
 #line 50
  testRunner.And("I set random license number, firstname and lastname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

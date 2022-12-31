@@ -132,23 +132,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].firstName",
                             string.Format("{0}", firstName)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].lastName",
                             string.Format("{0}", lastName)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "data.licenseHash",
                             string.Format("{0}", licenseHash)});
 #line 13
- testRunner.And("I prepare the JSON data", ((string)(null)), table2, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table3, "And ");
 #line hidden
 #line 19
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -170,23 +170,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 28
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "data.licenseDetails.issueDate",
                             string.Format("{0}", issueDate)});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "data.licenseDetails.expirationDate",
                             string.Format("{0}", expirationDate)});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "data.licenseDetails.licenseNumber",
                             string.Format("{0}", licenseNumber)});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "messageType",
                             "LicensePSVData_Acquired"});
 #line 29
- testRunner.And("I verify the JSON response", ((string)(null)), table3, "And ");
+ testRunner.And("I verify the JSON response", ((string)(null)), table4, "And ");
 #line hidden
 #line 36
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -254,29 +254,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 58
  testRunner.Given("I open the \"IOWABoardOfMedicine\" json in folder \"IOWAboardOfMedicine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].firstName",
                             "Sally"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.individualNames[0].lastName",
                             "Smith"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.licenseNumber",
                             "R-12632"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.jurisdiction",
                             string.Format("{0}", jurisdiction)});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.fieldOfLicensure",
                             string.Format("{0}", fieldOfLicensure)});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "data.searchAttributes.licenseType",
                             string.Format("{0}", licenseType)});
 #line 59
- testRunner.And("I prepare the JSON data", ((string)(null)), table4, "And ");
+ testRunner.And("I prepare the JSON data", ((string)(null)), table5, "And ");
 #line hidden
 #line 67
  testRunner.And("I load the messageId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -298,17 +298,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 74
  testRunner.And("I parse the json response for IOWA Board of medicine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "key",
                             "value"});
-                table5.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "messageType",
                             "LicensePSVData_Acquired"});
-                table5.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "data.licenseDetails.issueDate",
                             "06/08/2022"});
 #line 75
- testRunner.And("I verify the JSON response", ((string)(null)), table5, "And ");
+ testRunner.And("I verify the JSON response", ((string)(null)), table6, "And ");
 #line hidden
 #line 81
  testRunner.Then("I get the access token", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

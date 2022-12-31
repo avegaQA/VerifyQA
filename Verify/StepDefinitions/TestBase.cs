@@ -28,7 +28,7 @@ namespace Verify.StepDefinitions
         public JObject readJSONfile(String fileName)
         {
             String workingDirectory = Environment.CurrentDirectory;
-            String path = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\TestData\" + fileName;
+            String path = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"/TestData/" + fileName;
 
             StreamReader file = File.OpenText(path);
             JsonTextReader reader = new JsonTextReader(file);

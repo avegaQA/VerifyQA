@@ -41,7 +41,7 @@ namespace Verify.StepDefinitions
         [Given(@"I open the ""([^""]*)"" json in folder ""([^""]*)""")]
         public void GivenIOpenTheJsonInFolder(string fileName, string folderName)
         {
-            this._awsContext.payload = this.readJSONfile(folderName  +@"\" + fileName + ".json");
+            this._awsContext.payload = this.readJSONfile(folderName  +@"/" + fileName + ".json");
             this.LogAndReport(this._awsContext.payload.ToString());
         }
 

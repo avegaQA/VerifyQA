@@ -30,6 +30,8 @@ namespace Verify.Context
 
         public JObject response { get; set; }
 
+        public AWSCLIHandler awscliHandler { get; set; }
+
         //private readonly ISecretsManager _secretsManager;
 
         public Dictionary<string, MessageAttributeValue> snsMessageAttributes = new Dictionary<string, MessageAttributeValue>();

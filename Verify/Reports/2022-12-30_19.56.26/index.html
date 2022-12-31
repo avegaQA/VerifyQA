@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">12/27/2022 3:35:40 PM</span>
+                    <span class="badge badge-primary">12/30/2022 19:56:26</span>
                 </a>
             </li>
         </ul>
@@ -104,7 +104,7 @@
 						<i class="fa fa-exclamation-circle"></i>
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>						<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																														<div class="dropdown-divider"></div>
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
 				</li>
@@ -112,25 +112,25 @@
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="fail" author="" device="" tag="" test-id="1"> 
-						<div class="status-avatar fail-bg">
-							<i class="fa fa-times text-white"></i>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
-								<p class="name">OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints</p> 
-								<p class="duration text-sm">18h:18m:21s+266ms</p> 
-								<span class="datetime">15:35:40 PM</span>
+								<p class="name">DisenrollSubSystemAPI</p> 
+								<p class="duration text-sm">0h:0m:3s+908ms</p> 
+								<span class="datetime">19:56:26 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
 							<div class="detail-head">
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
-										<h5 class="test-status text-fail">OAuth2 Access Token & Authorization For PSV-DAQ Api Endpoints</h5>
-										<span class='badge badge-success'>12/27/2022 3:35:40 PM</span>
-										<span class='badge badge-danger'>12/28/2022 9:54:01 AM</span>
-										<span class='badge badge-default'>18h:18m:21s+266ms</span>
+										<h5 class="test-status text-pass">DisenrollSubSystemAPI</h5>
+										<span class='badge badge-success'>12/30/2022 19:56:26</span>
+										<span class='badge badge-danger'>12/30/2022 19:56:30</span>
+										<span class='badge badge-default'>0h:0m:3s+908ms</span>
 									</div>
 																	</div>
 							</div>
@@ -139,9 +139,9 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Scenario: Check for previously recorded license (license-psv-data-requests)</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="node">Scenario: Disenroll the enrollment for the requesting subscribing system's enrollmentId</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -184,7 +184,14 @@
                                 </span>
                                 <span>Given <b>I prepare the JSON data</b></span>
                             </div>
-			<div class="details">&nbsp;&nbsp;<i>->Replacing subscribingSystemId with sVerify</i><br></div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing subscribingSystemId with sVerify</i><br>&nbsp;&nbsp;<i>->Replacing customerId with TestAutomation</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Given <b>I set random license number, firstname and lastname</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->Replacing searchAttributes.licenseDetails.licenseNumber with TestAuto8711</i><br>&nbsp;&nbsp;<i>->Replacing searchAttributes.providerDetails.individualNames[0].firstName with TestAuto8711</i><br>&nbsp;&nbsp;<i>->Replacing searchAttributes.providerDetails.individualNames[0].lastName with TestAuto8711</i><br></div>
                             <div class="d-flex align-items-center justify-content-start given" title="">
                                 <span class="alert-icon pass-bg">
                                     <i class="fa fa-check text-white"></i>
@@ -193,21 +200,21 @@
                             </div>
 			<div class="details"></div>
                             <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>When <b>I "POST" the payload to "https://verify.nonprod.symplr.com/gondordev01/api/license-psv-data-requests"</b></span>
                             </div>
-			<div class="details"><i>Error reading JObject from JsonReader. Path '', line 0, position 0.<br>&nbsp;&nbsp;<i>->{
+			<div class="details">&nbsp;&nbsp;<i>->{
   "subscribingSystemId": "sVerify",
-  "customerId": "customer01",
+  "customerId": "TestAutomation",
   "maximumAcceptableStaleness": {
     "value": 30,
     "units": "day"
   },
   "searchAttributes": {
     "licenseDetails": {
-      "licenseNumber": "R-12485",
+      "licenseNumber": "TestAuto8711",
       "licenseType": "state_issued",
       "jurisdiction": "IA",
       "fieldOfLicensure": "015"
@@ -215,14 +222,75 @@
     "providerDetails": {
       "individualNames": [
         {
-          "firstName": "Abigail",
-          "lastName": "Scrogum"
+          "firstName": "TestAuto8711",
+          "lastName": "TestAuto8711"
         }
       ],
       "businessNames": []
     }
   }
-}</i><br></i></div>
+}</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I parse the API response with a valid response</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{
+  "enrollmentId": "f26a6f4b-fc72-48b0-b984-a58a4b809348"
+}</i><br>&nbsp;&nbsp;<i>->Expected code: Accepted</i><br>&nbsp;&nbsp;<i>->Real code: Accepted</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I get the EnrollmentId</b></span>
+                            </div>
+			<div class="details">&nbsp;&nbsp;<i>->{
+    "records": [
+        [
+            {
+                "stringValue": "2d1fea1f-91d8-41a9-96dd-5c309390cc47"
+            },
+            {
+                "stringValue": "d2ea478f2ba7880de91353efc3060087"
+            },
+            {
+                "stringValue": "sVerify"
+            },
+            {
+                "stringValue": "customer01"
+            },
+            {
+                "longValue": 720
+            },
+            {
+                "stringValue": "{\"licenseNumber\":\"R-12632\",\"jurisdiction\":\"IA\",\"fieldOfLicensure\":\"015\",\"licenseType\":\"state_issued\",\"individualNames\":[{\"firstName\":\"Sally\",\"lastName\":\"Smith\"},{\"firstName\":\"Jim\",\"lastName\":\"Doe\"}],\"businessNames\":[]}"
+            },
+            {
+                "stringValue": "2022-12-28 20:20:16.239085"
+            },
+            {
+                "isNull": true
+            },
+            {
+                "booleanValue": true
+            },
+            {
+                "stringValue": "57598eeb-419f-4aeb-ba2a-b2ba195e2e3f"
+            }
+        ]
+    ],
+    "numberOfRecordsUpdated": 0
+}
+
+</i><br></div>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then <b>I get the status by EnrollmentId</b></span>
+                            </div>
+			<div class="details"></div>
                     </div>
 				</div>
 	</div>
@@ -260,11 +328,11 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='0%'>
-	                    <b>0</b> features passed
+	                <div><small data-tooltip='100%'>
+	                    <b>1</b> features passed
                     </small></div>
 	                <div>
-	                    <small data-tooltip='100%'><b>1</b> features failed, 
+	                    <small data-tooltip='0%'><b>0</b> features failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -282,9 +350,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+	                <div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='100%'><b>1</b> scenarios failed, 
+	                    <small data-tooltip='0%'><b>0</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -302,9 +370,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='75%'><b>3</b> steps passed</small></div>
+	                <div><small data-tooltip='100%'><b>8</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='25%'><b>1</b> steps failed, 
+	                    <small data-tooltip='0%'><b>0</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -322,7 +390,7 @@
 							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>0%</span>
+								<span>100%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -341,7 +409,7 @@
 							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>0%</span>
+								<span>100%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -357,7 +425,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">12/27/2022 3:35:40 PM</h6>
+							<h6 class="font-weight-light">12/30/2022 19:56:26</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -373,7 +441,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">18:18:24.4070477</h6>
+							<h6 class="font-weight-light">00:00:04.0177601</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -390,33 +458,33 @@
 <script>
 	var statusGroup = {
     parentCount: 1,
-		passParent: 0,
-		failParent: 1,
+		passParent: 1,
+		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 1,
+		exceptionsParent: 0,
 		childCount: 1,
-		passChild: 0,
-		failChild: 1,
+		passChild: 1,
+		failChild: 0,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 1,
-		grandChildCount: 4,
-		passGrandChild: 3,
-		failGrandChild: 1,
+		exceptionsChild: 0,
+		grandChildCount: 8,
+		passGrandChild: 8,
+		failGrandChild: 0,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 1,
+		exceptionsGrandChild: 0,
 	};
 </script>
 

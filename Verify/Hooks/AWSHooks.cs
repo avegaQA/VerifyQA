@@ -73,6 +73,11 @@ namespace Verify.Hooks
             this._awsContext.LambdaClient.closeClient();
         }
 
+        [BeforeScenario("AWSCLI")]
+        public void BeforeScenarioAWSCLI()
+        {
+            this._awsContext.awscliHandler = new AWSCLIHandler();
+        }
 
     }
 }
