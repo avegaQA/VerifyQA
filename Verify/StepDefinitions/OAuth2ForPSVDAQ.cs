@@ -87,6 +87,18 @@ namespace Verify.StepDefinitions
             this._awsContext.payload.SelectToken("searchAttributes.providerDetails.individualNames[0].lastName").Replace(randString);
         }
 
+        [When(@"I disenroll the subscribing system by the API")]
+        public async Task WhenIDisenrollTheSubscribingSystemByTheAPI()
+        {
+            String url;
+            
+            url = "https://verify.nonprod.symplr.com/gondordev01/api/license-monitoring-enrollments/" + this._awsContext.response["enrollmentId"].ToString();
+            this.restResponse = await this.CallAPI("DELETE", url);
+            this.LogAndReport("Response Code: "+this.restResponse.StatusCode.ToString());
+            Assert.AreEqual(HttpStatusCode.OK, this.restResponse.StatusCode);
+        }
+
+
 
 
         public async Task<RestResponse> GetAccessTokenAPI()
@@ -128,6 +140,35 @@ namespace Verify.StepDefinitions
 
                 case "get":
                     return client.ExecuteGetAsync(request);
+
+                default:
+                    return null;
+            }
+        }
+
+        public Task<RestResponse> CallAPI(string method, string url)
+        {
+            var options = new RestClientOptions(url)
+            {
+                RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true,
+
+            };
+            client = new RestClient(options);
+
+            client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(this.accessToken, "Bearer");
+
+            request = new RestRequest(url);
+
+            switch (method.ToLower())
+            {
+                case "post":
+                    return client.ExecutePostAsync(request);
+
+                case "get":
+                    return client.ExecuteGetAsync(request);
+
+                case "delete":
+                    return client.DeleteAsync(request);
 
                 default:
                     return null;

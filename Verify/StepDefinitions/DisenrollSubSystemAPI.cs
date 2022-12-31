@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ namespace Verify.StepDefinitions
     {
         private AWSContext _awsContext;
 
+        public String enrollmentId;
+
         public DisenrollSubSystemAPI(AWSContext awsContext)
         {
             this._awsContext = awsContext;
@@ -20,18 +24,43 @@ namespace Verify.StepDefinitions
         [Then(@"I get the EnrollmentId")]
         public void ThenIGetTheEnrollmentId()
         {
-            this._awsContext.awscliHandler.SetFileName("database_test.sh");
-            this._awsContext.awscliHandler.SetQueryParams("Enrollment", " EnrollmentId"," 2d1fea1f-91d8-41a9-96dd-5c309390cc47");
+            this.enrollmentId = this._awsContext.response["enrollmentId"].ToString();
 
-            String dbResult = this._awsContext.awscliHandler.RunQuery();
-
-            this.LogAndReport(dbResult);
+            this.LogAndReport("EnrollmentId: " + this.enrollmentId);
+            
         }
 
-        [Then(@"I get the status by EnrollmentId")]
-        public void ThenIGetTheStatusByEnrollmentId()
+        [Then(@"I verify the ""([^""]*)"" status by EnrollmentId")]
+        public void ThenIVerifyTheStatusByEnrollmentId(string expectedStatus)
         {
-            
+            String isActive;
+            this._awsContext.awscliHandler.initProcess();
+            this._awsContext.awscliHandler.SetFileName("Select.sh");
+            this._awsContext.awscliHandler.SetQueryParams("Enrollment", " EnrollmentId", this.enrollmentId);
+
+            JObject dbResult = JObject.Parse(this._awsContext.awscliHandler.RunQuery());
+            isActive = dbResult.SelectToken("records[0][8].booleanValue").ToString();
+
+            this.LogAndReport(dbResult.ToString());
+            this.LogAndReport("Active: " + isActive);
+
+            if (expectedStatus.Equals("True"))
+            {
+                Assert.True(bool.Parse(isActive));
+            }
+            else
+            {
+                Assert.False(bool.Parse(isActive));
+            }           
+        }
+
+        [Then(@"I clean the database from any test data")]
+        public void ThenICleanTheDatabaseFromAnyTestData()
+        {
+            this._awsContext.awscliHandler.initProcess();
+            this._awsContext.awscliHandler.SetFileName("Delete.sh");
+
+            this._awsContext.awscliHandler.RunQuery();
         }
 
 

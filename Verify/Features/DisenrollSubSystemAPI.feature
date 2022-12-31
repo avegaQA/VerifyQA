@@ -1,4 +1,6 @@
-﻿Feature: DisenrollSubSystemAPI
+﻿
+#dotnet test --filter Category=RunThis
+Feature: Disenroll the enrollment for the requesting subscribing system's enrollmentId
 
 @RunThis
 @AWSCLI
@@ -17,5 +19,10 @@ Scenario: Disenroll the enrollment for the requesting subscribing system's enrol
 
 	Then I parse the API response with a valid response
 	And I get the EnrollmentId
-	And I get the status by EnrollmentId
+	And I verify the "True" status by EnrollmentId
+
+	When I disenroll the subscribing system by the API
+	Then I verify the "False" status by EnrollmentId
+	
+	And I clean the database from any test data
 

@@ -17,6 +17,11 @@ namespace Verify.AWSHandlers
 
         public AWSCLIHandler() 
         {
+            this.initProcess();
+        }
+
+        public void initProcess()
+        {
             extScript = new Process();
             extScript.StartInfo.CreateNoWindow = true;
             extScript.StartInfo.RedirectStandardOutput = true;
@@ -48,12 +53,15 @@ namespace Verify.AWSHandlers
             {
                 Console.WriteLine("Query result");
                 Console.WriteLine(stdOutput.ToString());
+                extScript.Dispose();
                 return stdOutput.ToString();
             }
             else
             {
+                extScript.Dispose();
                 return null;
             }
+
         }
     }
 }
