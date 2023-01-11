@@ -52,7 +52,6 @@ Examples:
 @SNS
 @SQS
 @SRS_459745.001
-@NEW
 Scenario Outline: jurisdiction, LicenseType and FieldOFLicensure valid combinations
 
 	Given I open the "IOWABoardOfMedicine" json in folder "IOWAboardOfMedicine"

@@ -71,7 +71,7 @@ namespace Verify.StepDefinitions
                 if (log != null)
                 {
                     Console.WriteLine("log Found!");
-                    Console.WriteLine(log);
+                    this.LogAndReport(log);
                     if (AWSContext.troubleShootReports) this.LogAndReport(log);
                     this._awsContext.response = JObject.Parse(log);
                     break;

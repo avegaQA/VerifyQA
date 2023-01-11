@@ -144,9 +144,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Then("I verify the \"False\" status by EnrollmentId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 27
- testRunner.And("I clean the database from any test data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }

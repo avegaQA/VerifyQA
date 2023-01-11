@@ -93,6 +93,7 @@ namespace Verify.StepDefinitions
             String url;
             
             url = "https://verify.nonprod.symplr.com/gondordev01/api/license-monitoring-enrollments/" + this._awsContext.response["enrollmentId"].ToString();
+            this.LogAndReport("DELETE API Call: " + url);
             this.restResponse = await this.CallAPI("DELETE", url);
             this.LogAndReport("Response Code: "+this.restResponse.StatusCode.ToString());
             Assert.AreEqual(HttpStatusCode.OK, this.restResponse.StatusCode);

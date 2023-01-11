@@ -24,5 +24,5 @@ Scenario: Disenroll the enrollment for the requesting subscribing system's enrol
 	When I disenroll the subscribing system by the API
 	Then I verify the "False" status by EnrollmentId
 	
-	And I clean the database from any test data
+	#And I clean the database from any test data
 
